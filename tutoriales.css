@@ -151,3 +151,21 @@
 @media(prefers-reduced-motion:reduce){
  .tutorial-card,.tutorial-card-thumb img,.tutorial-play-icon,.tutorial-channel-link{transition:none!important}
 }
+
+/* Acciones de YouTube: canal y suscripción, manteniendo el reproductor. */
+.tutorial-channel-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:9px;max-width:370px}
+.tutorial-subscribe-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;
+ padding:10px 17px;border:1px solid #edacc8;background:#fff4fa;border-radius:13px;
+ font-size:12px;font-weight:800;color:#a34270;white-space:nowrap;text-decoration:none;
+ box-shadow:0 6px 19px #4c2a4216;transition:transform .2s,background .2s}
+.tutorial-subscribe-link span{font-size:20px;line-height:1;color:#e24d86}
+.tutorial-subscribe-link:hover{background:#ffe5f2;transform:translateY(-2px)}
+.tutorial-subscribe-link:focus-visible{outline:2px solid #b95c88;outline-offset:3px}
+.tutorial-follow-note{flex-basis:100%;color:#93758a;font-size:10px;text-align:right;line-height:1.4}
+.tutorial-section + .how-section::before{background:linear-gradient(to bottom,#f2ecf5,transparent)!important}
+@media(max-width:780px){
+ .tutorial-channel-actions{justify-content:flex-start;max-width:100%;gap:8px}
+ .tutorial-subscribe-link{min-height:39px;padding:8px 13px}
+ .tutorial-follow-note{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){.tutorial-subscribe-link{transition:none!important}}
