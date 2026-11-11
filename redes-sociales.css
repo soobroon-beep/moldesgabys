@@ -1,0 +1,73 @@
+/* Enlaces directos a redes sociales; compactos en escritorio y celular. */
+footer .footer-socials{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:9px;
+  width:100%;
+  min-width:0;
+  margin-top:2px;
+}
+footer .footer-socials-title{
+  display:block;
+  color:#f4dbea;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.015em;
+}
+footer .footer-socials-links{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:9px;
+}
+footer .footer-social-link{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:6px 9px 6px 6px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:12px;
+  background:rgba(255,255,255,.055);
+  color:#fdf4fa;
+  font-size:11px;
+  font-weight:800;
+  line-height:1;
+  white-space:nowrap;
+  text-decoration:none;
+  min-height:41px;
+  transition:background .2s ease,border-color .2s ease,transform .2s ease;
+}
+footer .footer-social-link:hover{
+  background:rgba(255,255,255,.14);
+  border-color:rgba(255,255,255,.38);
+  transform:translateY(-2px);
+}
+footer .footer-social-link:focus-visible{
+  outline:2px solid #efbed7;
+  outline-offset:3px;
+}
+footer .footer-social-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:27px;
+  height:27px;
+  flex:none;
+}
+footer .footer-social-icon svg{
+  display:block;
+  width:25px;
+  height:25px;
+}
+@media(max-width:680px){
+  footer .footer-socials{gap:8px;margin-top:0}
+  footer .footer-socials-links{gap:8px}
+  footer .footer-social-link{
+    min-height:40px;
+    padding:5px 9px 5px 6px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  footer .footer-social-link{transition:none!important}
+}
