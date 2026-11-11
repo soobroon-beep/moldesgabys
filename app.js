@@ -59,7 +59,7 @@ function renderCollections(){
     backdrop.addEventListener('error',()=>fallbackImage(backdrop,preview));
     b.prepend(backdrop);
   }
-  b.addEventListener('click',()=>{season=c.key;activeResultCodes=null;visible=48;$('#search').value='';renderCollections();renderProducts();$('#catalogo').scrollIntoView({behavior:'smooth'})});wrap.appendChild(b);
+  b.addEventListener('click',()=>{season=c.key;activeResultCodes=null;visible=48;$('#search').value='';window.GABYS_SET_SEASON?.(season);renderCollections();renderProducts();$('#catalogo').scrollIntoView({behavior:'smooth'})});wrap.appendChild(b);
  }
 }
 function filtered(){
@@ -135,7 +135,7 @@ function openAssistant(){const panel=$('#assistant-panel');panel.hidden=false;$(
 }$('#assistant-question').focus()}
 function closeAssistant(){$('#assistant-panel').hidden=true;$('#assistant-launcher').hidden=false}
 function showInCatalog(hits){
- activeResultCodes=new Set(hits.map(p=>p.codigo));season='todos';$('#search').value='';$('#sort').value='asc';visible=48;renderCollections();renderProducts();
+ activeResultCodes=new Set(hits.map(p=>p.codigo));season='todos';window.GABYS_SET_SEASON?.('todos');$('#search').value='';$('#sort').value='asc';visible=48;renderCollections();renderProducts();
  closeAssistant();$('#catalogo').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function resultMessage(hits,subject,visual){

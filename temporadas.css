@@ -1,0 +1,67 @@
+
+/* Ambientación original por temporada. No se usan emojis ni imágenes externas. */
+#gabys-season-effects{
+ position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:27;
+ opacity:0;transition:opacity 800ms ease;user-select:none;
+ -webkit-mask-image:linear-gradient(90deg,#000 0%,#000 11%,#000b 19%,transparent 32%,transparent 68%,#000b 81%,#000 89%,#000 100%);
+ mask-image:linear-gradient(90deg,#000 0%,#000 11%,#000b 19%,transparent 32%,transparent 68%,#000b 81%,#000 89%,#000 100%);
+}
+body[data-gabys-season="halloween"] #gabys-season-effects,
+body[data-gabys-season="navidad"] #gabys-season-effects,
+body[data-gabys-season="patrias"] #gabys-season-effects{opacity:.88}
+body[data-gabys-season="halloween"] .ambient-stars,
+body[data-gabys-season="navidad"] .ambient-stars,
+body[data-gabys-season="patrias"] .ambient-stars{opacity:.04;transition:opacity .55s ease}
+.catalog-section,.collections-section,.how-section,.recent-section{transition:background 950ms ease,background-color 950ms ease}
+body[data-gabys-season="halloween"] .catalog-section{
+ background:radial-gradient(ellipse at 4% 21%,#ecb68158,transparent 36%),
+ radial-gradient(ellipse at 98% 70%,#a888d04d,transparent 37%),
+ linear-gradient(135deg,#fbece7 0%,#f4e8f3 52%,#fcf1e6 100%);
+}
+body[data-gabys-season="halloween"] .collections-section,
+body[data-gabys-season="halloween"] .how-section{
+ background:radial-gradient(ellipse at 5% 44%,#f5d3ad68,transparent 34%),
+ linear-gradient(115deg,#fff8f2,#f7effa 60%,#fff9f3);
+}
+body[data-gabys-season="halloween"] .recent-section{
+ background:radial-gradient(circle at 88% 23%,#d3a5c66e,transparent 45%),linear-gradient(130deg,#fff4eb,#f6ebf8,#fff3e8);
+}
+body[data-gabys-season="navidad"] .catalog-section{
+ background:radial-gradient(ellipse at 96% 25%,#b5d6ef87,transparent 39%),
+ radial-gradient(ellipse at 1% 74%,#d1c5e96b,transparent 36%),
+ linear-gradient(128deg,#edf5fc 0%,#f3f1fa 51%,#fff9fb 100%);
+}
+body[data-gabys-season="navidad"] .collections-section,
+body[data-gabys-season="navidad"] .how-section{
+ background:radial-gradient(ellipse at 8% 46%,#c3dff27a,transparent 37%),
+ linear-gradient(130deg,#f6fbff,#f7f2fc 65%,#fcfaff);
+}
+body[data-gabys-season="navidad"] .recent-section{
+ background:radial-gradient(ellipse at 87% 33%,#d3e7f07c,transparent 39%),linear-gradient(115deg,#fffafd,#edf7ff 53%,#f7effe);
+}
+body[data-gabys-season="patrias"] .catalog-section{
+ background:radial-gradient(ellipse at 2% 20%,#a5d9bd8f,transparent 39%),
+ radial-gradient(ellipse at 98% 81%,#efb4b282,transparent 40%),
+ linear-gradient(135deg,#f3faf4,#fffdfa 52%,#fff0f1 100%);
+}
+body[data-gabys-season="patrias"] .collections-section,
+body[data-gabys-season="patrias"] .how-section{
+ background:radial-gradient(ellipse at 2% 32%,#d7eddf90,transparent 35%),
+ linear-gradient(125deg,#f7fcf6,#fffcfa 60%,#fff5f4);
+}
+body[data-gabys-season="patrias"] .recent-section{
+ background:radial-gradient(ellipse at 88% 26%,#f4cece85,transparent 39%),linear-gradient(115deg,#f5fdf5,#fffafb 45%,#fff5f3);
+}
+@media(max-width:700px){
+ #gabys-season-effects{
+   -webkit-mask-image:linear-gradient(90deg,#000b 0%,#0007 12%,transparent 28%,transparent 72%,#0007 88%,#000b 100%);
+   mask-image:linear-gradient(90deg,#000b 0%,#0007 12%,transparent 28%,transparent 72%,#0007 88%,#000b 100%);
+ }
+ body[data-gabys-season="halloween"] #gabys-season-effects,
+ body[data-gabys-season="navidad"] #gabys-season-effects,
+ body[data-gabys-season="patrias"] #gabys-season-effects{opacity:.70}
+}
+@media(prefers-reduced-motion:reduce){
+ #gabys-season-effects{transition:none}
+ .catalog-section,.collections-section,.how-section,.recent-section{transition:none}
+}

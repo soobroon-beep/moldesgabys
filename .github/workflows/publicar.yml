@@ -21,7 +21,7 @@ jobs:
       - name: Preparar sitio público sin archivos privados
         run: |
           mkdir -p _site
-          cp index.html styles.css novedades.css app.js novedades.js catalogo.js catalogo.json navidad.js navidad.json etiquetas-visuales.js configuracion.js favicon.svg manifest.webmanifest _site/
+          cp index.html styles.css novedades.css temporadas.css app.js novedades.js temporadas.js catalogo.js catalogo.json navidad.js navidad.json etiquetas-visuales.js configuracion.js favicon.svg manifest.webmanifest _site/
           if [ -d images ]; then cp -r images _site/; fi
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
