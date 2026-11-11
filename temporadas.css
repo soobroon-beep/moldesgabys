@@ -1,61 +1,89 @@
-/* Ajuste refinado de fondos por temporada para Moldes Gaby's.
-   Diseñado para trabajar con body[data-gabys-season] y #gabys-season-effects. */
+/* Escenarios de temporada integrados detrás de las fotografías: Moldes y Diseños Gaby's. */
+#gabys-season-effects{display:none!important}
+#catalogo.catalog-section{position:relative;isolation:isolate;overflow:clip;transition:background 800ms ease;background:#f3eff0}
+#catalogo.catalog-section>.shell{position:relative;z-index:2}
+#gabys-season-stage{position:absolute;inset:0;z-index:0;overflow:clip;pointer-events:none;--scene-opacity:0}
+.gabys-stage-sticky{position:sticky;top:0;width:100%;height:100vh;min-height:450px;overflow:hidden;opacity:var(--scene-opacity);transition:opacity .3s ease}
+.gabys-scene{position:absolute;inset:0;opacity:0;transition:opacity .75s ease;overflow:hidden}
+#gabys-season-stage[data-scene="halloween"] .gabys-halloween,
+#gabys-season-stage[data-scene="navidad"] .gabys-christmas,
+#gabys-season-stage[data-scene="patrias"] .gabys-patrias{opacity:1}
+body[data-gabys-season="halloween"] #catalogo{background:linear-gradient(155deg,#30123d 0%,#1e112e 49%,#482047 100%)}
+body[data-gabys-season="navidad"] #catalogo{background:linear-gradient(150deg,#0d1730,#17213e 50%,#241833)}
+body[data-gabys-season="patrias"] #catalogo{background:linear-gradient(150deg,#132d29,#152137 52%,#3c202f)}
+body[data-gabys-season="halloween"] #catalogo .catalog-heading h2,
+body[data-gabys-season="navidad"] #catalogo .catalog-heading h2,
+body[data-gabys-season="patrias"] #catalogo .catalog-heading h2{color:#fff}
+body[data-gabys-season="halloween"] #catalogo .catalog-heading>div>p,
+body[data-gabys-season="navidad"] #catalogo .catalog-heading>div>p,
+body[data-gabys-season="patrias"] #catalogo .catalog-heading>div>p{color:#f8eaf6d6}
+body[data-gabys-season="halloween"] #catalogo .section-label,
+body[data-gabys-season="navidad"] #catalogo .section-label,
+body[data-gabys-season="patrias"] #catalogo .section-label{color:#ffdbad}
+body[data-gabys-season="halloween"] #catalogo .catalog-count,
+body[data-gabys-season="navidad"] #catalogo .catalog-count,
+body[data-gabys-season="patrias"] #catalogo .catalog-count{background:#fffefa;border-color:#fff7}
 
-#gaby-season-anchor, #gabys-season-effects { pointer-events:none; }
+/* Halloween — noche morada, gran luna cálida, bosque y siluetas fieles a las referencias */
+.gabys-halloween{background:radial-gradient(circle at 75% 20%,#85316680 0,transparent 38%),radial-gradient(ellipse at 20% 86%,#aa487644 0,transparent 46%)}
+.gabys-h-haze{position:absolute;inset:-15%;opacity:.5;background:radial-gradient(ellipse at 68% 53%,#f56b3c44,transparent 28%),radial-gradient(ellipse at 10% 82%,#b9539b3c,transparent 24%);filter:blur(42px);animation:gabysHaze 16s ease-in-out infinite alternate}
+.gabys-h-moon{position:absolute;right:10%;top:3%;width:clamp(210px,28vw,405px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 31% 29%,#ffbb69 0%,#ff822d 44%,#e95328 74%,#d13c39 100%);box-shadow:0 0 55px #f67a3e67,0 0 155px #e86b4c31,inset -16px -24px 35px #b52b393b;animation:gabysMoon 18s ease-in-out infinite alternate}
+.gabys-h-trees{position:absolute;inset:0;width:100%;height:100%;opacity:.78}
+.gabys-h-trees .tree-trunk{fill:none;stroke:#130f27;stroke-width:21;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(1px 2px 2px #110920)}
+.gabys-h-trees .tree-twigs{fill:none;stroke:#21102f;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}
+.gabys-h-witch{position:absolute;width:clamp(120px,17vw,260px);height:auto;aspect-ratio:1.08;opacity:.83;filter:drop-shadow(0 3px 9px #1c0c21a6);animation:gabysWitch 13s ease-in-out infinite alternate}
+.gabys-h-witch svg{width:100%;height:100%;overflow:visible}
+.gabys-h-witch path{fill:#1c1029}
+.gabys-h-witch.witch-one{top:28%;left:3%;--flight:45px;--turn:-4deg}
+.gabys-h-witch.witch-two{bottom:14%;right:3%;width:clamp(96px,13vw,190px);opacity:.67;--flight:-30px;--turn:6deg;animation-duration:16s;animation-delay:-7s}
+.gabys-h-bat{position:absolute;left:var(--x);top:var(--y);width:var(--size);height:var(--size);transform-origin:center;opacity:.76;animation:gabysBat var(--duration) ease-in-out infinite alternate;animation-delay:var(--delay)}
+.gabys-h-bat svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 3px 4px #180a26a2)}
+.gabys-h-bat path{fill:#21112c}
+@keyframes gabysWitch{0%{transform:translate3d(-11px,10px,0) rotate(-3deg)}50%{transform:translate3d(calc(var(--flight)*.45),-15px,0) rotate(var(--turn))}100%{transform:translate3d(var(--flight),7px,0) rotate(2deg)}}
+@keyframes gabysBat{0%{transform:translate(-17px,-8px) scaleY(.86) rotate(-5deg)}100%{transform:translate(17px,10px) scaleY(1.10) rotate(5deg)}}
+@keyframes gabysMoon{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-17px,9px,0) scale(1.035)}}
+@keyframes gabysHaze{0%{transform:translateX(-1%)}100%{transform:translateX(3%)}}
 
-#gabys-season-effects{
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  z-index:18;
-  opacity:0;
-  transition:opacity .75s ease, filter .75s ease;
-  user-select:none;
-  mix-blend-mode:normal;
-  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 58%,rgba(0,0,0,.72) 72%,transparent 100%);
-  mask-image:linear-gradient(180deg,#000 0%,#000 58%,rgba(0,0,0,.72) 72%,transparent 100%);
-}
-body[data-gabys-season="halloween"] #gabys-season-effects,
-body[data-gabys-season="navidad"] #gabys-season-effects,
-body[data-gabys-season="patrias"] #gabys-season-effects{
-  opacity:var(--gabys-season-opacity, .9);
-}
+/* Navidad — guirnaldas luminosas estilo retro-fantástico, con copos visibles y grandes */
+.gabys-christmas{background:radial-gradient(ellipse at 17% 23%,#1c3464af,transparent 46%),radial-gradient(ellipse at 92% 64%,#4b24548b,transparent 47%),linear-gradient(148deg,#0d142c,#160f2b)}
+.gabys-xmas-glow{position:absolute;inset:0;opacity:.6;background:radial-gradient(circle at 11% 12%,#ec56bb28,transparent 22%),radial-gradient(circle at 88% 29%,#388df828,transparent 24%);animation:gabysHaze 18s ease-in-out infinite alternate}
+.gabys-xmas-wires{position:absolute;inset:0;width:100%;height:100%;opacity:.95}
+.gabys-xmas-wires>svg{width:100%;height:100%;display:block}
+.gabys-light-wire{stroke:#171124;stroke-width:4.4;stroke-linecap:round;stroke-linejoin:round;fill:none;filter:drop-shadow(0 1px 1px #000)}
+.gabys-light-stem{stroke:#23182b;stroke-width:3.3;stroke-linecap:round}
+.gabys-light{animation:gabysLightPulse var(--light-duration) ease-in-out infinite;animation-delay:var(--light-delay)}
+.gabys-light-aura{fill:var(--light);opacity:.20;filter:blur(7px)}
+.gabys-light-bulb{fill:var(--light);filter:drop-shadow(0 0 6px var(--light)) drop-shadow(0 0 16px var(--light))}
+@keyframes gabysLightPulse{0%,62%,100%{opacity:1}74%{opacity:.30}82%{opacity:.94}87%{opacity:.52}}
+.gabys-xmas-snow{position:absolute;inset:0;overflow:hidden}
+.gabys-snowflake{position:absolute;left:var(--sx);top:-55px;width:var(--ss);height:var(--ss);color:#e9f5ff;opacity:var(--so);filter:drop-shadow(0 0 6px #cae6ff);animation:gabysSnow var(--sd) linear infinite;animation-delay:var(--sl);will-change:transform}
+.gabys-snowflake svg{width:100%;height:100%;display:block}
+@keyframes gabysSnow{0%{transform:translate3d(0,-10vh,0) rotate(0)}100%{transform:translate3d(var(--sw),120vh,0) rotate(250deg)}}
 
-/* El fondo general de estrellas sigue vivo, pero se baja un poco cuando se activa una temporada. */
+/* Fiestas Patrias — fuegos artificiales detrás del catálogo */
+.gabys-patrias{background:radial-gradient(circle at 14% 28%,#2f8b5b4e,transparent 40%),radial-gradient(circle at 86% 70%,#ab394e42,transparent 42%)}
+.gabys-firework{position:absolute;left:var(--fx);top:var(--fy);width:clamp(140px,19vw,260px);aspect-ratio:1;transform:translate(-50%,-50%);opacity:.8;filter:drop-shadow(0 0 8px #ffeab654)}
+.gabys-firework svg{width:100%;height:100%;animation:gabysFireworks 4.2s ease-out infinite;animation-delay:var(--fd)}
+@keyframes gabysFireworks{0%,16%{opacity:0;transform:scale(.18) rotate(-10deg)}36%{opacity:1;transform:scale(1) rotate(6deg)}80%,100%{opacity:0;transform:scale(1.16) rotate(12deg)}}
+
+/* Ambientación normal cuando se elige Todas las temporadas. */
+body[data-gabys-season="todos"] #catalogo{background:#f3eff0}
 body[data-gabys-season="halloween"] .ambient-stars,
 body[data-gabys-season="navidad"] .ambient-stars,
-body[data-gabys-season="patrias"] .ambient-stars{
-  opacity:calc(.65 - (var(--gabys-season-opacity, 0) * .48));
-  transition:opacity .5s ease;
+body[data-gabys-season="patrias"] .ambient-stars{opacity:.28}
+@media(max-width:700px){
+ .gabys-h-moon{right:-14%;top:10%;width:245px}
+ .gabys-h-witch.witch-one{left:-4%;top:31%;width:115px}
+ .gabys-h-witch.witch-two{right:-5%;bottom:19%;width:96px}
+ .gabys-h-trees{opacity:.57}
+ .gabys-xmas-wires{opacity:.86}
+ .gabys-snowflake{filter:drop-shadow(0 0 3px #cae6ff)}
 }
-
-/* Los efectos y fondos temáticos solo acompañan al catálogo.
-   Portada, últimos modelos e instrucciones conservan su diseño normal. */
-.catalog-section{transition:background .8s ease}
-body[data-gabys-season="halloween"] .catalog-section{
- background:radial-gradient(circle at 7% 22%,rgba(255,160,65,.19),transparent 25%),
- radial-gradient(circle at 93% 32%,rgba(160,102,231,.19),transparent 27%),
- linear-gradient(145deg,#fff6ef,#f7eefb 48%,#fff5f0);
+@media(prefers-reduced-motion:reduce){
+ .gabys-scene,.gabys-stage-sticky{transition:none}
+ .gabys-h-witch,.gabys-h-moon,.gabys-h-bat,.gabys-h-haze,
+ .gabys-light,.gabys-snowflake,.gabys-firework svg,.gabys-xmas-glow{animation:none!important}
+ .gabys-snowflake{transform:translateY(47vh)}
+ .gabys-firework svg{opacity:.55;transform:scale(.8)}
 }
-body[data-gabys-season="navidad"] .catalog-section{
- background:radial-gradient(circle at 6% 23%,rgba(159,212,255,.22),transparent 28%),
- radial-gradient(circle at 95% 45%,rgba(197,216,255,.20),transparent 27%),
- linear-gradient(145deg,#f6fcff,#eef7ff 55%,#faf4ff);
-}
-body[data-gabys-season="patrias"] .catalog-section{
- background:radial-gradient(circle at 6% 22%,rgba(74,180,108,.18),transparent 27%),
- radial-gradient(circle at 95% 58%,rgba(229,88,88,.16),transparent 30%),
- linear-gradient(145deg,#f5fff7,#fffdfb 50%,#fff1f2);
-}
-@media (max-width: 768px){
-  #gabys-season-effects{
-    -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 44%,rgba(0,0,0,.45) 62%,transparent 100%);
-    mask-image:linear-gradient(180deg,#000 0%,#000 44%,rgba(0,0,0,.45) 62%,transparent 100%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce){
-  #gabys-season-effects{transition:none}
-  .catalog-section{transition:none}
-}
+.scene-paused *{animation-play-state:paused!important}
