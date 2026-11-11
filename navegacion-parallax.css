@@ -1,0 +1,97 @@
+
+/* Navegación de cristal flotante: se compacta con el desplazamiento sin tapar la lectura. */
+.site-header.gabys-parallax{
+  position:sticky;top:0;z-index:45;
+  background:var(--gp-head-bg,rgba(250,248,246,.84))!important;
+  border-bottom:1px solid var(--gp-head-border,#eee3ec)!important;
+  box-shadow:none!important;
+  -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+  overflow:visible!important;
+}
+.site-header.gabys-parallax .header-inner{
+  position:relative;isolation:isolate;
+  height:var(--gp-height,108px)!important;min-height:var(--gp-height,108px)!important;
+  padding-inline:var(--gp-padding,0px);
+  background:var(--gp-panel-bg,rgba(255,251,255,0))!important;
+  border:1px solid var(--gp-panel-border,transparent);
+  border-radius:var(--gp-radius,0px);
+  box-shadow:var(--gp-shadow,none);
+  -webkit-backdrop-filter:blur(var(--gp-blur,0px)) saturate(1.16);
+  backdrop-filter:blur(var(--gp-blur,0px)) saturate(1.16);
+  transform:translate3d(0,var(--gp-shift,0px),0);
+  overflow:visible!important;
+  transition:box-shadow .22s ease,border-radius .25s ease,background .22s ease,border-color .22s ease;
+}
+.site-header.gabys-parallax .header-inner::after{
+  content:'';position:absolute;left:12%;right:12%;bottom:-2px;height:2px;
+  border-radius:100%;background:linear-gradient(90deg,transparent,#e8a8ca,transparent);
+  opacity:var(--gp-glow,0);
+  pointer-events:none;
+}
+.site-header.gabys-parallax .brand.brand-oficial{
+  display:flex;align-items:center;justify-content:flex-start;
+  min-width:0!important;gap:var(--gp-brand-gap,9px);
+  white-space:nowrap;overflow:visible;flex-shrink:0;
+}
+.site-header.gabys-parallax .brand-oficial .brand-bird-large{
+  width:var(--gp-bird,90px)!important;height:var(--gp-bird,90px)!important;
+  max-width:none!important;flex:0 0 auto;object-fit:contain!important;
+  transition:filter .3s ease;
+}
+.site-header.gabys-parallax .brand-oficial .brand-lettering{
+  display:block!important;
+  width:var(--gp-letter,104px)!important;height:var(--gp-letter,104px)!important;
+  max-width:none!important;max-height:none!important;
+  flex:0 0 auto;object-fit:contain!important;object-position:center!important;
+  background:transparent!important;border:0!important;border-radius:0!important;
+  clip-path:none!important;overflow:visible!important;
+  margin:0!important;padding:0!important;
+  filter:drop-shadow(0 2px 2px rgba(30,15,38,.10))!important;
+}
+.site-header.gabys-parallax .desktop-nav{
+  gap:clamp(16px,2.3vw,36px);
+  transform:translate3d(0,var(--gp-links-shift,0px),0);
+  opacity:var(--gp-links-alpha,1);
+}
+.site-header.gabys-parallax .desktop-nav a{
+  position:relative;transition:color .25s ease,transform .25s ease;
+}
+.site-header.gabys-parallax .desktop-nav a:hover{transform:translateY(-2px)}
+.site-header.gabys-parallax .desktop-nav a::after{
+  content:'';position:absolute;left:0;right:100%;height:2px;bottom:-6px;
+  background:#ca83ac;border-radius:4px;transition:right .28s ease;
+}
+.site-header.gabys-parallax .desktop-nav a:hover::after{right:0}
+.site-header.gabys-parallax .header-actions{flex-shrink:0;transform:translate3d(0,var(--gp-action-shift,0px),0)}
+.site-header.gabys-parallax .brand-oficial:focus-visible,
+.site-header.gabys-parallax .desktop-nav a:focus-visible{
+  outline:2px solid #b45e98;outline-offset:4px;border-radius:6px;
+}
+/* Parallax visual discreto: únicamente la textura detrás de las fotos de portada. */
+.hero .hero-noise{transform:translate3d(0,var(--gp-hero-shift,0px),0);will-change:transform}
+/* Aparición escalonada de las tarjetas al llegar a Colecciones por primera vez. */
+@keyframes gp-show-collection{
+  from{opacity:.35;transform:translate3d(0,23px,0) scale(.975)}
+  to{opacity:1;transform:translate3d(0,0,0) scale(1)}
+}
+.collections-section.gp-arrived .collection{
+  animation:gp-show-collection .66s cubic-bezier(.2,.8,.2,1) backwards;
+  animation-delay:var(--gp-stagger,0ms);
+}
+@media(max-width:780px){
+  .site-header.gabys-parallax .header-inner{gap:8px}
+  .site-header.gabys-parallax .brand.brand-oficial{gap:var(--gp-brand-gap,5px)}
+}
+@media(max-width:480px){
+  .site-header.gabys-parallax .header-inner{gap:4px}
+  .site-header.gabys-parallax .header-actions{gap:6px}
+}
+@media(prefers-reduced-motion:reduce){
+  .site-header.gabys-parallax *,
+  .site-header.gabys-parallax .header-inner,
+  .hero .hero-noise,
+  .collections-section.gp-arrived .collection{
+    animation:none!important;transition:none!important;
+  }
+  .hero .hero-noise{transform:none!important}
+}

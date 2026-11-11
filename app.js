@@ -14,7 +14,6 @@ const seasons=[
 {key:'amor',label:'San Valentín',icon:'💗'},
 {key:'bebes',label:'Bebés',icon:'🧸'},
 {key:'bano',label:'Juegos de baño',icon:'🛁'},
-{key:'cocina',label:'Cocina',icon:'🫖'},
 {key:'toda-ocasion',label:'Toda ocasión',icon:'✂️'}
 ];
 const $=sel=>document.querySelector(sel);

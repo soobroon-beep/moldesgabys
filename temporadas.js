@@ -7,7 +7,7 @@ const catalog=document.getElementById('catalogo');
 if(!catalog)return;
 const body=document.body;
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
-const allowed=new Set(['halloween','navidad','patrias','amor','bebes','bano','cocina','toda-ocasion']);
+const allowed=new Set(['halloween','navidad','patrias','amor','bebes','bano','toda-ocasion']);
 const clamp=(v,lo=0,hi=1)=>Math.min(hi,Math.max(lo,v));
 const random=n=>{const v=Math.sin(n*127.1+31.7)*43758.5453;return v-Math.floor(v)};
 const witchPath="M12,12 L13,14 L21,18 L22,20 L21,22 L23,24 L23,27 L26,27 L28,29 L26,32 L28,32 L27,44 L25,44 L26,46 L22,49 L18,49 L16,51 L9,53 L1,47 L0,48 L8,54 L9,56 L13,57 L15,59 L22,61 L20,64 L21,67 L29,75 L33,83 L37,79 L41,85 L43,89 L42,95 L45,93 L47,87 L52,93 L52,99 L54,98 L55,90 L53,81 L49,83 L47,82 L47,80 L45,79 L43,77 L51,78 L54,76 L62,80 L59,81 L62,82 L59,83 L68,83 L72,89 L78,95 L73,89 L85,98 L85,97 L90,99 L82,93 L89,97 L87,96 L93,98 L90,96 L96,96 L93,95 L95,94 L88,92 L98,93 L94,92 L97,91 L95,90 L98,90 L94,89 L99,88 L94,86 L96,86 L91,85 L99,84 L91,83 L99,81 L90,81 L93,80 L87,80 L87,79 L91,79 L81,78 L85,78 L67,78 L62,73 L63,75 L61,75 L62,76 L61,76 L61,77 L56,75 L62,69 L66,68 L69,69 L64,67 L49,67 L53,63 L55,57 L73,62 L80,61 L84,60 L86,58 L85,52 L89,49 L85,49 L79,53 L77,51 L78,47 L81,42 L86,40 L90,40 L93,43 L91,39 L86,38 L81,38 L56,43 L56,42 L60,41 L51,40 L45,36 L39,31 L42,31 L48,35 L46,34 L51,34 L54,33 L49,33 L48,31 L54,32 L59,29 L55,31 L52,30 L60,27 L56,27 L60,26 L57,25 L51,26 L50,26 L52,25 L49,25 L51,23 L43,25 L47,23 L42,24 L37,22 L45,21 L35,16 L36,12 L34,9 L37,8 L38,3 L41,3 L43,5 L45,4 L39,0 L30,3 L23,12Z";

@@ -3,7 +3,7 @@
 (()=>{
 'use strict';
 if(!window.matchMedia('(hover:hover) and (pointer:fine)').matches)return;
-const emojis={halloween:'🕷️',navidad:'❄️',amor:'💗',bebes:'🍼',bano:'🛁',cocina:'🥄','toda-ocasion':'✂️'};
+const emojis={halloween:'🕷️',navidad:'❄️',amor:'💗',bebes:'🍼',bano:'🛁','toda-ocasion':'✂️'};
 const cache={};
 function drawSombrero(ctx){
  ctx.save();ctx.lineWidth=2;ctx.strokeStyle='#3c251b';

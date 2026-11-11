@@ -3,7 +3,7 @@
 (()=>{'use strict';
 const $=sel=>document.querySelector(sel);
 const all=()=>window.GABYS_TIENDA?.obtenerModelos?.()||window.GABYS_CATALOGO||[];
-const seasons=[['navidad','Navidad'],['halloween','Halloween'],['patrias','Fiestas Patrias'],['amor','San Valentín'],['bebes','Bebés'],['bano','Juegos de baño'],['cocina','Cocina'],['toda-ocasion','Toda ocasión']];
+const seasons=[['navidad','Navidad'],['halloween','Halloween'],['patrias','Fiestas Patrias'],['amor','San Valentín'],['bebes','Bebés'],['bano','Juegos de baño'],['toda-ocasion','Toda ocasión']];
 const byName=Object.fromEntries(seasons);
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const dateOf=p=>{const v=p.fechaPublicacion||p.fechaActualizacion||p.actualizado||p.fecha;const ms=Date.parse(v||'');return Number.isFinite(ms)?ms:0};
