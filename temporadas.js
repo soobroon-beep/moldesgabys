@@ -188,7 +188,9 @@ function visibility(){
  const enter=clamp((vh*.92-bounds.top)/(vh*.64));
  const exit=clamp((bounds.bottom-vh*.18)/(vh*.72));
  const amount=theme==='todos'?0:Math.min(enter,exit);
- stage.style.setProperty('--scene-opacity',amount.toFixed(3));
+ const eased=amount*amount*(3-2*amount);
+ stage.style.setProperty('--scene-opacity',eased.toFixed(3));
+ stage.style.setProperty('--gs-scene-offset',((1-eased)*18).toFixed(1)+'px');
  if(theme!=='halloween')return;
  // La densidad crece durante los primeros ~1500px de recorrido de Halloween.
  const progress=clamp((vh*.75-bounds.top)/(Math.min(bounds.height,1450)+vh*.35));

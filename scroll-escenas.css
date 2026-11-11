@@ -1,0 +1,128 @@
+/* Gaby's · transiciones y animaciones de desplazamiento.
+   Inspirado en el comportamiento ScrollExpand: implementación nativa, sin React.
+   No altera el contenido de los moldes ni requiere bibliotecas externas. */
+
+body{--gs-edge-top:#f3eff0;--gs-edge-bottom:#f3eff0}
+body[data-gabys-season="halloween"]{--gs-edge-top:#3d1b4a;--gs-edge-bottom:#180e2a}
+body[data-gabys-season="navidad"]{--gs-edge-top:#233b65;--gs-edge-bottom:#201b3e}
+body[data-gabys-season="patrias"]{--gs-edge-top:#22564c;--gs-edge-bottom:#482b3c}
+body[data-gabys-season="amor"]{--gs-edge-top:#823857;--gs-edge-bottom:#3e253f}
+body[data-gabys-season="bebes"]{--gs-edge-top:#66547c;--gs-edge-bottom:#34344b}
+body[data-gabys-season="bano"]{--gs-edge-top:#245e6e;--gs-edge-bottom:#302f59}
+body[data-gabys-season="toda-ocasion"]{--gs-edge-top:#35646a;--gs-edge-bottom:#293948}
+
+/* Las transiciones ocupan solo los extremos de las secciones contiguas:
+   se funden hacia el morado/azul/verde propio, sin neblina BLANCA sobre el catálogo. */
+#colecciones.collections-section,
+#comprar.how-section{position:relative;isolation:isolate}
+#colecciones.collections-section::after{
+  content:"";position:absolute;inset:auto 0 -1px;height:clamp(118px,17vw,220px);
+  pointer-events:none;z-index:0;
+  background:linear-gradient(to bottom,transparent 0%,var(--gs-edge-top) 100%);
+}
+#comprar.how-section::before{
+  content:"";position:absolute;inset:-1px 0 auto;height:clamp(90px,10vw,140px);
+  pointer-events:none;z-index:0;
+  background:linear-gradient(to bottom,var(--gs-edge-bottom) 0%,transparent 100%);
+}
+#colecciones.collections-section>.shell,#comprar.how-section>.shell{
+  position:relative;z-index:1;
+}
+#catalogo.catalog-section{position:relative}
+#gabys-season-stage .gabys-stage-sticky{
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 11%,#000 88%,transparent 100%)!important;
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 11%,#000 88%,transparent 100%)!important;
+  transform:translate3d(0,var(--gs-scene-offset,0px),0);
+}
+#gabys-season-stage .gabys-scene{
+  transition:opacity .95s cubic-bezier(.18,.8,.2,1);
+}
+
+/* Las tarjetas aparecen de distinta dirección conforme entran en pantalla.
+   La clase se añade únicamente si IntersectionObserver está disponible. */
+.gs-motion-ready .gs-reveal{
+  opacity:0;
+  filter:blur(3px);
+  transform:translate3d(0,30px,0) scale(.985);
+  transition:opacity .72s cubic-bezier(.18,.73,.21,1),
+             transform .80s cubic-bezier(.18,.73,.21,1),
+             filter .75s ease;
+  transition-delay:var(--gs-delay,0ms);
+}
+.gs-motion-ready .gs-reveal[data-gs-motion="left"]{
+  transform:translate3d(-28px,10px,0) scale(.985);
+}
+.gs-motion-ready .gs-reveal[data-gs-motion="right"]{
+  transform:translate3d(28px,10px,0) scale(.985);
+}
+.gs-motion-ready .gs-reveal[data-gs-motion="zoom"]{
+  transform:translate3d(0,19px,0) scale(.94);
+}
+.gs-motion-ready .gs-reveal.gs-visible{
+  opacity:1;
+  filter:none;
+  transform:translate3d(0,0,0) scale(1);
+}
+.gs-motion-ready #catalogo .product-card.gs-reveal{
+  animation:none!important; /* reemplaza solamente el reveal anterior, no la interactividad */
+}
+.gs-motion-ready #catalogo .product-card.gs-reveal.gs-visible:hover{
+  transform:translateY(-5px) scale(1.01);
+}
+.gs-motion-ready .how-grid>article.gs-reveal.gs-visible:hover{
+  transform:translateY(-5px);
+}
+
+/* ScrollExpand nativo en el carrusel: empieza como ventana elegante
+   y se abre progresivamente hasta ocupar toda su anchura sin agregar scroll extra. */
+.gs-motion-ready #ultimos-modelos .recent-gallery{
+  --gs-expand-inset:6%;
+  --gs-expand-radius:32px;
+  --gs-expand-scale:.965;
+  -webkit-clip-path:inset(0 var(--gs-expand-inset) round var(--gs-expand-radius));
+  clip-path:inset(0 var(--gs-expand-inset) round var(--gs-expand-radius));
+  transform:scale(var(--gs-expand-scale));
+  transform-origin:center center;
+  transition:none;
+}
+.gs-motion-ready #ultimos-modelos .recent-gallery .recent-floating-star{
+  opacity:var(--gs-star-opacity,1);
+}
+.gs-motion-ready #ultimos-modelos .recent-gallery .recent-paint{
+  opacity:var(--gs-paint-opacity,.75);
+}
+.gs-motion-ready #colecciones .collection-grid{
+  transform:translate3d(0,var(--gs-collection-lift,0px),0);
+  opacity:var(--gs-collection-opacity,1);
+  will-change:transform;
+}
+.gs-motion-ready #comprar .how-grid{
+  transform:translate3d(0,var(--gs-how-lift,0px),0);
+}
+
+/* Suavizar la transición de las secciones sin sacrificar lectura o interacción. */
+#ultimos-modelos .recent-section,.collections-section,.how-section{scroll-margin-top:88px}
+@media(max-width:780px){
+  #colecciones.collections-section::after{height:112px}
+  #comprar.how-section::before{height:78px}
+  #gabys-season-stage .gabys-stage-sticky{
+    -webkit-mask-image:linear-gradient(to bottom,transparent,#000 8%,#000 93%,transparent)!important;
+    mask-image:linear-gradient(to bottom,transparent,#000 8%,#000 93%,transparent)!important;
+  }
+  .gs-motion-ready .gs-reveal[data-gs-motion="left"]{transform:translate3d(-18px,10px,0) scale(.99)}
+  .gs-motion-ready .gs-reveal[data-gs-motion="right"]{transform:translate3d(18px,10px,0) scale(.99)}
+  .gs-motion-ready .gs-reveal[data-gs-motion].gs-visible{transform:translate3d(0,0,0) scale(1)}
+}
+@media(prefers-reduced-motion:reduce){
+  .gs-motion-ready .gs-reveal,
+  .gs-motion-ready .gs-reveal[data-gs-motion],
+  .gs-motion-ready .gs-reveal.gs-visible{
+    opacity:1!important;transform:none!important;filter:none!important;transition:none!important;
+  }
+  .gs-motion-ready #ultimos-modelos .recent-gallery{
+    -webkit-clip-path:none!important;clip-path:none!important;transform:none!important;
+  }
+  #gabys-season-stage .gabys-stage-sticky{transform:none!important}
+  .gs-motion-ready #colecciones .collection-grid,
+  .gs-motion-ready #comprar .how-grid{transform:none!important;opacity:1!important}
+}
