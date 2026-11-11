@@ -18,7 +18,7 @@
   <script defer src="navidad.js"></script>
   <script defer src="etiquetas-visuales.js"></script>
   <script defer src="app.js?v=3"></script>
-  <script defer src="novedades.js?v=3"></script>
+  <script defer src="novedades.js?v=4"></script>
 </head>
 <body>
   <div class="announcement"><span class="ann-star">✦</span> Diseños que inspiran, creaciones que enamoran <span class="announcement-divider">•</span> Más de 30 años creando contigo <span class="ann-star">✦</span></div>
@@ -70,11 +70,10 @@
           <div class="recent-heading-copy">
             <span class="recent-announcement"><span aria-hidden="true">✺</span> ¡MIRA LOS ÚLTIMOS MODELOS! <span aria-hidden="true">✺</span></span>
             <h2 id="recent-title">¡Últimos <em>modelos!</em><span class="recent-heading-star" aria-hidden="true">✳</span></h2>
-            <p>¡Inspírate con nuestra selección de cada temporada! Fotos superpuestas, detalles encantadores y tus favoritos a un toque.</p>
+            <p>¡Descubre 10 modelos destacados! Fotografías más grandes y siempre a la vista; desliza para explorar y toca la que te enamore.</p>
           </div>
           <div class="recent-controls" aria-label="Controles de la galería de modelos destacados">
             <button type="button" id="recent-prev" aria-label="Ver modelo anterior">←</button>
-            <button type="button" id="recent-pause" aria-label="Pausar animación" aria-pressed="false">Ⅱ</button>
             <button type="button" id="recent-next" aria-label="Ver modelo siguiente">→</button>
           </div>
         </div>
@@ -84,12 +83,12 @@
           <span class="recent-floating-star recent-star-one" aria-hidden="true">✺</span>
           <span class="recent-floating-star recent-star-two" aria-hidden="true">✧</span>
           <span class="recent-floating-star recent-star-three" aria-hidden="true">✦</span>
-          <div class="recent-viewport" id="recent-viewport" tabindex="0" role="region" aria-roledescription="carrusel" aria-label="Fotografías superpuestas de los últimos modelos disponibles">
+          <div class="recent-viewport" id="recent-viewport" tabindex="0" role="region" aria-roledescription="carrusel" aria-label="Diez fotografías grandes, fijas y desplazables de modelos del catálogo">
             <div class="recent-track" id="recent-track"></div>
           </div>
-          <div class="recent-current-label" id="recent-current-label" aria-live="polite">Descubre el siguiente diseño ✦</div>
+          <div class="recent-current-label" id="recent-current-label" aria-live="polite">✦ Fotos destacadas: desliza para ver las diez</div>
         </div>
-        <div class="recent-foot"><span id="recent-count"></span> · <small>Selección basada en la numeración disponible.</small><a href="#colecciones">Explorar todas las colecciones <span aria-hidden="true">↗</span></a></div>
+        <div class="recent-foot"><span id="recent-count"></span> · <small>Los modelos se renuevan cuando se actualiza el catálogo publicado.</small><a href="#colecciones">Explorar todas las colecciones <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
     <section class="collections-section" id="colecciones"><div class="shell">
@@ -106,7 +105,32 @@
       </div>
     </div></section>
     <section class="how-section" id="comprar"><div class="shell"><div class="section-heading reveal"><div><span class="section-label">03 / ES MUY SENCILLO</span><h2>De la inspiración <em>a tus manos.</em></h2></div><p>Selecciona todo lo que te guste y organiza tu pedido desde el catálogo.</p></div>
-    <div class="how-grid"><article><div class="how-icon">⌕</div><span>01 — EXPLORA</span><h3>Descubre tu favorito.</h3><p>Encuentra tu molde por temporada, por número o por nombre.</p><div class="how-art">✿</div></article><article><div class="how-icon">♡</div><span>02 — SELECCIONA</span><h3>Añade a tu selección.</h3><p>Elige digital o físico y guarda varios moldes en tu carrito.</p><div class="how-art">✦</div></article><article><div class="how-icon">↗</div><span>03 — CONFIRMA</span><h3>Prepara tu pedido.</h3><p>Revisa tus modelos y prepara el mensaje por WhatsApp. El cobro en línea se activará después de configurarlo.</p><div class="how-art">✳</div></article></div>
+    <div class="how-grid">
+      <article>
+        <div class="how-icon">⌕</div>
+        <span>PASO 1 · DESCUBRE</span>
+        <h3>Descubre tu favorito.</h3>
+        <p>Entra a la colección de <strong>Navidad</strong> o <strong>Halloween</strong>. Busca por foto o por número y toca <strong>«Ver y seleccionar»</strong> en el modelo que te guste.</p>
+        <a class="how-action" href="#colecciones">Ver las colecciones <span aria-hidden="true">↗</span></a>
+        <div class="how-art">✿</div>
+      </article>
+      <article>
+        <div class="how-icon">♡</div>
+        <span>PASO 2 · ELIGE</span>
+        <h3>Añade a tu selección.</h3>
+        <p>Escoge si quieres el <strong>molde digital</strong> o <strong>físico</strong>. Después toca <strong>«Añadir a mi selección»</strong>. Puedes elegir varios modelos.</p>
+        <a class="how-action" href="#catalogo">Elegir mis moldes <span aria-hidden="true">↗</span></a>
+        <div class="how-art">✦</div>
+      </article>
+      <article>
+        <div class="how-icon">↗</div>
+        <span>PASO 3 · CONFIRMA</span>
+        <h3>Prepara tu pedido.</h3>
+        <p>Pulsa <strong>«Mi selección»</strong> arriba de la página. Revisa los moldes y toca <strong>«Preparar pedido por WhatsApp»</strong>. Allí confirmamos precios, entrega y forma de pago.</p>
+        <button type="button" class="how-action" id="how-open-cart">Abrir mi selección <span aria-hidden="true">↗</span></button>
+        <div class="how-art">✳</div>
+      </article>
+    </div>
     </div></section>
     <section class="callout shell"><div class="callout-glow"></div><div class="callout-copy"><span>✦ TU CREATIVIDAD, NUESTRA INSPIRACIÓN</span><h2>¿No sabes por <em>dónde empezar?</em></h2><p>Tu asesor Gaby's puede ayudarte a encontrar modelos, entender el catálogo y preparar tu pedido.</p><button class="btn btn-primary" id="open-assistant-inline">Hablar con el asesor <span>✦</span></button></div><div class="callout-symbol" aria-hidden="true">g<span>✳</span></div></section>
   </main>
@@ -116,7 +140,7 @@
           <span>WhatsApp<small>272 130 08 18</small></span>
           <span class="footer-contact-arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="footer-location" href="https://www.google.com/maps/search/?api=1&query=Venustiano%20Carranza%20150%2C%20Planta%20Alta%2C%20Local%20138%2C%20Centro%20Hist%C3%B3rico%2C%20Ciudad%20de%20M%C3%A9xico" target="_blank" rel="noopener noreferrer" aria-label="Ver ubicación de Moldes y Diseños Gaby's en Google Maps">
+        <a class="footer-location" href="https://maps.app.goo.gl/8dvFUe5max9YMt6i6" target="_blank" rel="noopener noreferrer" aria-label="Ver ubicación de Moldes y Diseños Gaby's en Google Maps">
           <span class="footer-location-icon" aria-hidden="true">⌖</span>
           <span><b>Visítanos en CDMX</b><small>Venustiano Carranza #150, planta alta, local 138.<br>Entre Cruces y Jesús María, Centro Histórico, Ciudad de México.</small><em>Ver ubicación en Maps ↗</em></span>
         </a>

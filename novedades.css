@@ -141,3 +141,46 @@ footer .footer-main{display:grid;grid-template-columns:minmax(210px,1.6fr) minma
 @media(max-width:750px){.recent-section{padding:57px 0 62px}.recent-gallery{min-height:405px}.recent-viewport{height:390px}.recent-track{--spread:clamp(115px,27vw,175px)}.recent-card{width:clamp(180px,40vw,235px);height:315px;padding:8px;border-width:5px}.recent-card img{height:205px}.recent-heading h2{font-size:clamp(40px,8vw,59px)}.recent-card.deck-back{--pose:translate(-50%,-50%) translateX(24px) translateY(-29px) scale(.74) rotate(10deg)}}
 @media(max-width:480px){.recent-heading h2{font-size:45px}.recent-heading p{font-size:12px;max-width:96%}.recent-gallery{min-height:362px}.recent-viewport{height:348px}.recent-track{--spread:clamp(91px,27vw,119px)}.recent-card{width:clamp(155px,52vw,207px);height:278px;padding:6px;border-width:4px;border-radius:19px 29px 22px 27px}.recent-card img{height:180px;padding:3px}.recent-card .recent-model{font-size:12px}.recent-card .recent-cat{font-size:9px}.recent-card .recent-chip{top:12px;left:10px;padding:5px 7px}.recent-current-label{margin-top:-7px;padding:9px 15px;font-size:10px}.recent-foot{align-items:flex-start;flex-direction:column;gap:8px}.recent-paint{width:60%}.recent-controls button{height:39px;width:39px}}
 @media(prefers-reduced-motion:reduce){.hero-showcase .hero-photo>img.hero-image-next,.recent-card,.collection-grid .collection.has-photo .collection-photo{transition:none}.recent-floating-star,.recent-heading-star{animation:none}}
+
+/* Ajustes v4: diez fotos grandes, permanentes, con desplazamiento manual. */
+.recent-section{padding-top:62px;padding-bottom:60px}
+.recent-gallery{min-height:0}
+.recent-viewport{height:500px;max-height:500px;padding:26px 14px 34px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scroll-padding-inline:25px;scrollbar-width:thin;scrollbar-color:#d6a7c0 #f9eaf2;touch-action:pan-x pan-y;overscroll-behavior-x:contain;position:relative;z-index:2}
+.recent-viewport::-webkit-scrollbar{height:7px}.recent-viewport::-webkit-scrollbar-thumb{background:#d6a7c0;border-radius:99px}.recent-viewport::-webkit-scrollbar-track{background:#f9eaf2;border-radius:99px}
+#recent-track{display:flex;gap:12px;align-items:center;width:max-content;min-width:100%;height:100%;min-height:0;padding:0 26px;--spread:0}
+#recent-track .recent-card{position:relative;top:auto;left:auto;z-index:1;opacity:1;pointer-events:auto;filter:none;flex:0 0 clamp(265px,30vw,350px);width:clamp(265px,30vw,350px);height:420px;min-height:0;margin-left:-16px;padding:12px 12px 17px;border:1px solid #f2dbe7;border-radius:23px 35px 24px 32px;background:#fff;scroll-snap-align:center;scroll-snap-stop:normal;--pose:none;transform:translateY(var(--rise,0px)) rotate(var(--tilt,0deg));transform-origin:center 53%;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;box-shadow:0 20px 42px #50364a26;overflow:hidden}
+#recent-track .recent-card:first-child{margin-left:0}
+#recent-track .recent-card:hover,#recent-track .recent-card:focus-visible{z-index:3;transform:translateY(calc(var(--rise,0px) - 9px)) rotate(0deg) scale(1.02);box-shadow:0 28px 54px #50364a3c;border-color:#dfa7c4}
+#recent-track .recent-card img{height:306px;max-height:none;flex:1 1 auto;min-height:0;width:100%;object-fit:contain;border:0;padding:0;border-radius:15px 28px 16px 26px;background:#fff;box-shadow:none}
+#recent-track .recent-card .recent-chip{top:19px;left:20px}
+#recent-track .recent-card .recent-cat{margin-top:11px;font-size:10px}
+#recent-track .recent-card .recent-model{font-size:14px;margin-top:3px}
+#recent-track .recent-card .recent-code{font-size:10px}
+.recent-current-label{margin:4px auto 12px;padding:10px 18px;font-size:11px}
+.recent-heading{margin-bottom:9px}
+.recent-heading p{max-width:610px}
+.recent-foot{margin-top:6px}
+.recent-foot small{font-style:normal}
+/* Fotos originales sin doble marco blanco: fondo continuo, adornos rosas alrededor. */
+.product-card{background:#fff;box-shadow:0 13px 31px #7f466918;border:1px solid #edd8e3}
+.product-image{background:#fff;padding:0;overflow:hidden;border-bottom:1px solid #f4e5ed}
+.product-image::before,.product-image::after{display:none}
+.product-image>img{background:#fff;border:0;padding:0;border-radius:0;box-shadow:none;object-fit:contain;width:100%;height:100%;max-width:100%}
+.product-card:hover .product-image>img{transform:scale(1.025)}
+.product-content{background:linear-gradient(175deg,#fff 0%,#fff8fc 100%);padding:17px 16px 19px}
+.product-image .number{background:#ffebf3f0;color:#7d4968;border:1px solid #f0cadf;backdrop-filter:blur(5px);top:12px;left:12px}
+/* La fotografía no se recorta en la ficha grande y el blanco se integra al marco. */
+.modal-visual{background:linear-gradient(145deg,#f9ecf3,#fff);padding:24px}
+.modal-visual>img{background:#fff;box-shadow:0 8px 30px #744e6717;border-radius:16px;border:0;object-fit:contain}
+/* Pasos grandes y concretos, con acceso directo. */
+.how-grid article{min-height:335px;display:flex;flex-direction:column;align-items:flex-start}
+.how-grid p{font-size:13px;line-height:1.86;max-width:310px;color:#716776}
+.how-grid p strong{font-weight:800;color:#4e354b}
+.how-grid article>span{font-size:11px;color:#a55d83;letter-spacing:.11em}
+.how-grid .how-icon{margin-bottom:21px}
+.how-action{margin-top:auto;padding:15px 0 0;display:inline-flex;align-items:center;gap:8px;background:transparent;border:0;color:#9a5176;font-family:inherit;font-weight:800;font-size:12px;text-decoration:underline;text-decoration-color:#e8bfd2;text-underline-offset:5px;position:relative;z-index:2;cursor:pointer}
+.how-action:hover{color:#693b58}.how-action:focus-visible{outline:2px solid #ad6b8f;outline-offset:5px}
+.how-action span{transition:transform .25s}.how-action:hover span{transform:translate(3px,-3px)}
+@media(max-width:900px){#recent-track .recent-card{flex-basis:clamp(255px,36vw,310px);width:clamp(255px,36vw,310px);height:397px}.recent-viewport{height:475px;max-height:475px}.how-grid article{min-height:345px}}
+@media(max-width:600px){.recent-section{padding-top:48px;padding-bottom:49px}.recent-viewport{height:448px;max-height:448px;padding:20px 5px 30px}.recent-gallery{min-height:0}#recent-track{padding:0 18px;gap:11px}#recent-track .recent-card{flex-basis:clamp(242px,75vw,295px);width:clamp(242px,75vw,295px);height:385px;margin-left:-10px;border-radius:21px 32px 23px 30px}#recent-track .recent-card img{height:280px}.recent-current-label{font-size:10px;max-width:calc(100% - 16px)}.how-grid article{min-height:0}.how-grid p{font-size:13px}}
+@media(prefers-reduced-motion:reduce){#recent-track .recent-card{transition:none}#recent-track .recent-card:hover{transform:translateY(var(--rise,0px)) rotate(var(--tilt,0deg))}}
