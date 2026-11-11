@@ -23,7 +23,11 @@ products+=json.loads((BASE/'navidad.json').read_text(encoding='utf-8'))
 def download_one(p):
     if not p.get('id') or not p.get('codigo'):
         return False, p.get('codigo','?'), 'sin ID'
-    path=DEST/(p['codigo']+'.webp')
+    relative=Path(p.get('imagenLocal') or ('images/'+p['codigo']+'.webp'))
+    if relative.is_absolute() or '..' in relative.parts:
+        return False,p['codigo'],'ruta inválida'
+    path=BASE/relative
+    path.parent.mkdir(parents=True,exist_ok=True)
     if path.exists() and path.stat().st_size>2000:
         return True,p['codigo'],'existente'
     fid=quote(p['id'],safe='')

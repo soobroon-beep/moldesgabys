@@ -1,4 +1,4 @@
-name: Optimizar fotos de Halloween y Navidad
+name: Optimizar fotos de todas las categorías
 on:
   push:
     branches: [main]
@@ -23,18 +23,11 @@ jobs:
       - run: python -m pip install --disable-pip-version-check Pillow requests
       - name: Crear miniaturas WebP con numeración original
         run: python scripts/sincronizar_fotos.py
-      - name: Instalar modelo visual open source para búsqueda por descripción
-        continue-on-error: true
-        run: |
-          python -m pip install --disable-pip-version-check 'transformers==4.48.3' 'torch>=2.3,<3' 'safetensors>=0.4'
-      - name: Reconocer figuras y generar índice visual
-        continue-on-error: true
-        run: python scripts/etiquetar_fotos.py
       - name: Publicar fotografías optimizadas en el mismo repositorio
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add images/ etiquetas-visuales.js
+          git add images/
           if ! git diff --cached --quiet; then
             git commit -m "assets: fotografías e índice visual de Halloween y Navidad"
             git push

@@ -13,6 +13,7 @@ const seasons=[
 {key:'patrias',label:'Fiestas patrias',icon:'🇲🇽'},
 {key:'amor',label:'San Valentín',icon:'💗'},
 {key:'bebes',label:'Bebés',icon:'🧸'},
+{key:'bano',label:'Juegos de baño',icon:'🛁'},
 {key:'cocina',label:'Cocina',icon:'🫖'},
 {key:'toda-ocasion',label:'Toda ocasión',icon:'✂️'}
 ];
@@ -23,10 +24,11 @@ const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLo
 function safeCart(){try{let c=JSON.parse(localStorage.getItem('gabys_new_cart_v1')||'[]');return Array.isArray(c)?c.filter(x=>x&&typeof x.codigo==='string'&&['digital','fisico'].includes(x.formato)).slice(0,100):[]}catch{return []}}
 let cart=safeCart();
 function store(){try{localStorage.setItem('gabys_new_cart_v1',JSON.stringify(cart))}catch{}renderCart()}
-function itemImage(p){return p.id?'images/'+encodeURIComponent(p.codigo)+'.webp':(p.imagen||'uploads/'+encodeURIComponent(p.archivo))}
+function itemImage(p){return p.imagenLocal||p.imagen||(p.id?'images/'+encodeURIComponent(p.codigo)+'.webp':'uploads/'+encodeURIComponent(p.archivo))}
 function fallbackImage(img,p){
   const attempt=Number(img.dataset.retry||0);
   const urls=[
+    p.imagen,
     'https://lh3.googleusercontent.com/d/'+encodeURIComponent(p.id)+'=w900',
     'https://drive.google.com/thumbnail?id='+encodeURIComponent(p.id)+'&sz=w900',
     'https://drive.google.com/uc?export=view&id='+encodeURIComponent(p.id)
@@ -48,8 +50,8 @@ function renderCollections(){
   const b=document.createElement('button');b.type='button';b.className='collection'+(season===c.key?' active':'');b.setAttribute('aria-pressed',String(season===c.key));
   b.dataset.theme=c.key;
   b.innerHTML=`<span class="collection-icon">${c.icon}</span><strong>${esc(c.label)}</strong><small>${count?`${count.toLocaleString('es-MX')} modelos disponibles`:'Próximamente'}</small>`;
-  const featured={navidad:'NAV-1162',halloween:'HAL-253',todos:'NAV-1173'};
-  const preview=products.find(p=>p.codigo===featured[c.key])||products.find(p=>p.seccion===c.key);
+  const preferred=c.key==='todos'?'navidad':c.key;
+  const preview=products.filter(p=>p.seccion===preferred).sort((a,b)=>(b.numero??-1)-(a.numero??-1))[0]||products[0];
   if(preview){
     b.classList.add('has-photo');
     const backdrop=document.createElement('img');
@@ -188,7 +190,7 @@ async function askAssistant(query){
  if(search.subject){say('No encontré coincidencias verificables para «'+search.subject+'». Prueba un nombre más corto, como «renos», «muñecos de nieve» o «brujitas».');return}
  say('Descríbeme la figura que quieres o dime el número de su foto. También puedo ayudarte con tu pedido.');
 }
-function setup(){setHeroImage('#hero-photo',products.find(p=>p.codigo==='NAV-1162')||base[0]);setHeroImage('#hero-photo-left',products.find(p=>p.codigo==='HAL-253')||base[1]);setHeroImage('#hero-photo-right',products.find(p=>p.codigo==='NAV-1173')||base[2]);renderCollections();renderProducts();renderCart();$('#open-cart').addEventListener('click',openCart);$('#shade').addEventListener('click',closeCart);document.querySelectorAll('[data-close="cart"]').forEach(x=>x.addEventListener('click',closeCart));document.querySelectorAll('[data-close="modal"]').forEach(x=>x.addEventListener('click',closeModal));$('#add-cart').addEventListener('click',addCart);$('#search').addEventListener('input',()=>{activeResultCodes=null;visible=48;renderProducts()});$('#sort').addEventListener('change',renderProducts);$('#show-more').addEventListener('click',()=>{visible+=48;renderProducts()});$('#clear-search').addEventListener('click',()=>{$('#search').value='';activeResultCodes=null;renderProducts()});$('#open-search').addEventListener('click',()=>{document.getElementById('catalogo').scrollIntoView({behavior:'smooth'});$('#search').focus()});$('#wa-order').addEventListener('click',sendWhatsapp);$('#pay-btn').addEventListener('click',startPayment);$('#assistant-launcher').addEventListener('click',openAssistant);$('#open-assistant-inline').addEventListener('click',openAssistant);$('#close-assistant').addEventListener('click',closeAssistant);$('#assistant-form').addEventListener('submit',e=>{e.preventDefault();askAssistant($('#assistant-question').value)});$$('[data-prompt]').forEach(x=>x.addEventListener('click',()=>askAssistant(x.dataset.prompt)));document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart();closeAssistant()}});
+function setup(){const featured=(key)=>products.filter(p=>p.seccion===key).sort((a,b)=>(b.numero??-1)-(a.numero??-1));setHeroImage('#hero-photo',featured('navidad')[0]||base[0]);setHeroImage('#hero-photo-left',featured('halloween')[0]||base[1]);setHeroImage('#hero-photo-right',featured('navidad')[1]||base[2]);renderCollections();renderProducts();renderCart();$('#open-cart').addEventListener('click',openCart);$('#shade').addEventListener('click',closeCart);document.querySelectorAll('[data-close="cart"]').forEach(x=>x.addEventListener('click',closeCart));document.querySelectorAll('[data-close="modal"]').forEach(x=>x.addEventListener('click',closeModal));$('#add-cart').addEventListener('click',addCart);$('#search').addEventListener('input',()=>{activeResultCodes=null;visible=48;renderProducts()});$('#sort').addEventListener('change',renderProducts);$('#show-more').addEventListener('click',()=>{visible+=48;renderProducts()});$('#clear-search').addEventListener('click',()=>{$('#search').value='';activeResultCodes=null;renderProducts()});$('#open-search').addEventListener('click',()=>{document.getElementById('catalogo').scrollIntoView({behavior:'smooth'});$('#search').focus()});$('#wa-order').addEventListener('click',sendWhatsapp);$('#pay-btn').addEventListener('click',startPayment);$('#assistant-launcher').addEventListener('click',openAssistant);$('#open-assistant-inline').addEventListener('click',openAssistant);$('#close-assistant').addEventListener('click',closeAssistant);$('#assistant-form').addEventListener('submit',e=>{e.preventDefault();askAssistant($('#assistant-question').value)});$$('[data-prompt]').forEach(x=>x.addEventListener('click',()=>askAssistant(x.dataset.prompt)));document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart();closeAssistant()}});
 // When a full Node server is running, it can offer additional uploaded photos, payments and a local open-source model.
 fetch('api/config').then(r=>{if(!r.ok||!r.headers.get('content-type')?.includes('json'))throw Error('static');return r.json()}).then(async data=>{window.GABYS_PAGOS_HABILITADOS=!!data.payments_enabled;window.GABYS_IA_HABILITADA=!!data.ai_enabled;if(data.precios){PRICE.digital=Number(data.precios.digital)||PRICE.digital;PRICE.fisico=Number(data.precios.fisico)||PRICE.fisico}if(data.whatsapp)WHATSAPP=String(data.whatsapp).replace(/\D/g,'');renderCart();if(data.uploads_enabled){const r=await fetch('/api/catalogo');if(r.ok){const j=await r.json();if(Array.isArray(j.products)){products=j.products;renderCollections();renderProducts();renderCart()}}}}).catch(()=>{});
 }

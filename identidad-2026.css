@@ -60,3 +60,22 @@ body.gabys-cursor-active input,body.gabys-cursor-active textarea{cursor:text!imp
 .ft-hero-badge.ft-hero-original>.ft-main-logo,body[data-gabys-season] #catalogo.catalog-section{animation:none!important}
 #catalogo .gabys-stage-sticky{transition:none!important}
 }
+
+/* Barra superior: solo letras originales recortadas, sin marco, fondo ni decoración. */
+.brand-oficial .brand-lettering{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;object-fit:contain!important;display:block!important;width:146px!important;height:100px!important;max-height:none!important;filter:drop-shadow(0 2px 2px rgba(21,14,23,.12))}
+body[data-gabys-season="bano"] #catalogo.catalog-section{background:linear-gradient(150deg,#245e6e,#1e4a62 52%,#302f59)!important}
+body[data-gabys-season="bano"] #catalogo .catalog-heading h2{color:#fff!important}
+body[data-gabys-season="bano"] #catalogo .catalog-heading p{color:#f5eafa!important}
+body[data-gabys-season="bano"] #catalogo .section-label{color:#ffdfbd!important}
+.collection-grid .collection[data-theme="bano"]:not(.has-photo){background:linear-gradient(135deg,#d3eef4,#f3e7fb)}
+/* Ambientación decorativa sutil en nuevas categorías, siempre detrás del catálogo. */
+#catalogo .gabys-stage-sticky::after{position:absolute;inset:4% 3% auto auto;width:80%;max-width:950px;height:70%;z-index:1;pointer-events:none;opacity:.15;white-space:pre-wrap;text-align:right;line-height:2.3;font-size:clamp(23px,4vw,55px);letter-spacing:.8em;animation:gabysGentleLift 14s ease-in-out infinite alternate}
+body[data-gabys-season="amor"] #catalogo .gabys-stage-sticky::after{content:"♡ ♥ ♡ ♥ ♡"}
+body[data-gabys-season="bebes"] #catalogo .gabys-stage-sticky::after{content:"☆ ✦ ♡ ✧ ☆"}
+body[data-gabys-season="bano"] #catalogo .gabys-stage-sticky::after{content:"◌ ◯ ◌ ◯ ◌"}
+body[data-gabys-season="cocina"] #catalogo .gabys-stage-sticky::after{content:"✿ ✦ ✿ ✦ ✿"}
+body[data-gabys-season="toda-ocasion"] #catalogo .gabys-stage-sticky::after{content:"✧ ♡ ✦ ♡ ✧"}
+@keyframes gabysGentleLift{from{transform:translateY(0)}to{transform:translateY(-44px)}}
+@media(max-width:780px){.brand-oficial .brand-lettering{width:112px!important;height:82px!important}}
+@media(max-width:480px){.brand-oficial .brand-lettering{width:99px!important;height:72px!important}}
+@media(prefers-reduced-motion:reduce){#catalogo .gabys-stage-sticky::after{animation:none!important}}

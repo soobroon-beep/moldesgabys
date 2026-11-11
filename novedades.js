@@ -3,14 +3,14 @@
 (()=>{'use strict';
 const $=sel=>document.querySelector(sel);
 const all=()=>window.GABYS_TIENDA?.obtenerModelos?.()||window.GABYS_CATALOGO||[];
-const seasons=[['navidad','Navidad'],['halloween','Halloween'],['patrias','Fiestas Patrias'],['amor','San Valentín'],['bebes','Bebés'],['cocina','Cocina'],['toda-ocasion','Toda ocasión']];
+const seasons=[['navidad','Navidad'],['halloween','Halloween'],['patrias','Fiestas Patrias'],['amor','San Valentín'],['bebes','Bebés'],['bano','Juegos de baño'],['cocina','Cocina'],['toda-ocasion','Toda ocasión']];
 const byName=Object.fromEntries(seasons);
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const dateOf=p=>{const v=p.fechaPublicacion||p.fechaActualizacion||p.actualizado||p.fecha;const ms=Date.parse(v||'');return Number.isFinite(ms)?ms:0};
 const sortLatest=(a,b)=>dateOf(b)-dateOf(a)||Number(b.numero??-1)-Number(a.numero??-1)||String(b.archivo||'').localeCompare(String(a.archivo||''),'es');
 const latest=(key,limit=5)=>all().filter(p=>p.seccion===key).sort(sortLatest).slice(0,limit);
-const imgSrc=p=>p.id?'images/'+encodeURIComponent(p.codigo)+'.webp':p.imagen;
-const urls=p=>[imgSrc(p),p.id?'https://lh3.googleusercontent.com/d/'+encodeURIComponent(p.id)+'=w900':'',p.id?'https://drive.google.com/thumbnail?id='+encodeURIComponent(p.id)+'&sz=w900':''].filter(Boolean);
+const imgSrc=p=>p.imagenLocal||p.imagen||(p.id?'images/'+encodeURIComponent(p.codigo)+'.webp':'');
+const urls=p=>[imgSrc(p),p.imagen,p.id?'https://lh3.googleusercontent.com/d/'+encodeURIComponent(p.id)+'=w900':'',p.id?'https://drive.google.com/thumbnail?id='+encodeURIComponent(p.id)+'&sz=w900':''].filter(Boolean);
 const label=p=>(byName[p.seccion]||'Modelo')+' · '+p.nombre;
 function loadInto(img,p){
   const list=urls(p);let idx=0;
