@@ -1,0 +1,220 @@
+/* Escenarios vivos exclusivos para Fiestas Patrias, San Valentín, Bebés,
+   Juegos de Baño y Toda Ocasión. Animaciones detrás de los moldes. */
+#gabys-season-stage .gx-scene{pointer-events:none;isolation:isolate}
+#gabys-season-stage[data-scene="amor"] .gx-amor,
+#gabys-season-stage[data-scene="bebes"] .gx-bebes,
+#gabys-season-stage[data-scene="bano"] .gx-bano,
+#gabys-season-stage[data-scene="toda-ocasion"] .gx-todo{opacity:1}
+#gabys-season-stage.gx-enhanced .gabys-patrias .gabys-firework{display:none}
+#gabys-season-stage .gx-scene svg{display:block;width:100%;height:auto;overflow:visible}
+#gabys-season-stage .gx-late{visibility:hidden}
+#gabys-season-stage .gx-late.gx-on{visibility:visible}
+/* Pausar las estaciones no seleccionadas reduce uso de CPU y batería. */
+#gabys-season-stage:not([data-scene="patrias"]) .gx-patrias-sky *,
+#gabys-season-stage:not([data-scene="amor"]) .gx-amor *,
+#gabys-season-stage:not([data-scene="bebes"]) .gx-bebes *,
+#gabys-season-stage:not([data-scene="bano"]) .gx-bano *,
+#gabys-season-stage:not([data-scene="toda-ocasion"]) .gx-todo *{animation-play-state:paused!important}
+
+/* FIESTAS PATRIAS: cohetes de ascenso y dos coronas de chispas con destellos. */
+.gx-patrias-sky{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.gx-patrias-glow{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 19% 27%,#27b57424,transparent 35%),
+  radial-gradient(ellipse at 82% 45%,#eb536d28,transparent 33%),
+  radial-gradient(ellipse at 48% 65%,#e7d38b19,transparent 38%);
+  animation:gxAmbientSway 14s ease-in-out infinite alternate}
+.gx-firework-burst{position:absolute;left:var(--fx);top:var(--fy);width:var(--fs);height:var(--fs);
+  transform:translate(-50%,-50%);pointer-events:none;filter:drop-shadow(0 0 7px #f2cf9b72)}
+.gx-firework-burst>svg{position:absolute;inset:0;overflow:visible}
+.gx-fire-ring-a{transform-box:view-box;transform-origin:center;
+ animation:gxFireRingA var(--fperiod) cubic-bezier(.16,.42,.25,1) var(--fd) infinite both}
+.gx-fire-ring-b{transform-box:view-box;transform-origin:center;
+ animation:gxFireRingB var(--fperiod) cubic-bezier(.15,.34,.25,1) var(--fd) infinite both}
+.gx-fire-core{transform-box:fill-box;transform-origin:center;
+ animation:gxFireCore var(--fperiod) ease-out var(--fd) infinite both}
+.gx-fire-launch{position:absolute;left:50%;bottom:50%;height:72%;width:3px;
+ transform-origin:center bottom;background:linear-gradient(to top,transparent,#ffe0a4,#fffaf1);
+ border-radius:6px;box-shadow:0 0 12px #ffd9a29e;
+ animation:gxFireLaunch var(--fperiod) ease-out var(--fd) infinite both}
+@keyframes gxFireLaunch{
+ 0%,4%{opacity:0;transform:translateY(67%) scaleY(.05)}
+ 7%{opacity:.95;transform:translateY(32%) scaleY(.9)}
+ 18%{opacity:0;transform:translateY(-28%) scaleY(.25)}
+ 19%,100%{opacity:0}
+}
+@keyframes gxFireRingA{
+ 0%,18%{opacity:0;transform:scale(.05) rotate(-12deg)}
+ 24%{opacity:1;transform:scale(.34) rotate(-3deg)}
+ 45%{opacity:.95;transform:scale(1.0) rotate(5deg)}
+ 67%{opacity:.44;transform:scale(1.12) rotate(10deg)}
+ 85%,100%{opacity:0;transform:scale(1.24) rotate(12deg)}
+}
+@keyframes gxFireRingB{
+ 0%,24%{opacity:0;transform:scale(.13)}
+ 34%{opacity:1;transform:scale(.5)}
+ 58%{opacity:.93;transform:scale(1.06)}
+ 84%,100%{opacity:0;transform:scale(1.26)}
+}
+@keyframes gxFireCore{
+ 0%,17%{opacity:0;transform:scale(.05)}
+ 21%{opacity:1;transform:scale(1.8)}
+ 37%{opacity:.55;transform:scale(.47)}
+ 48%,100%{opacity:0;transform:scale(0)}
+}
+.gx-fire-glitter{position:absolute;left:var(--x);top:var(--y);width:var(--size);height:var(--size);
+ background:#fff1c8;border-radius:50%;box-shadow:0 0 11px 3px #f7d88c63;
+ animation:gxGlitter var(--dur) ease-in-out var(--delay) infinite}
+@keyframes gxGlitter{0%,100%{opacity:.03;transform:scale(.4)}48%{opacity:.85;transform:scale(1.2)}}
+
+/* SAN VALENTÍN: corazones visibles, querubines y flechas con corazón. */
+.gx-amor{background:radial-gradient(ellipse at 55% 22%,#fa94b23c,transparent 38%),
+  radial-gradient(ellipse at 13% 75%,#ba6ca143,transparent 43%),
+  linear-gradient(145deg,#6e2855,#4b2349 58%,#302345)}
+.gx-love-glow{position:absolute;inset:-12%;background:radial-gradient(circle at 31% 43%,#ff92b72b,transparent 34%),
+ radial-gradient(circle at 79% 64%,#e5b3f62b,transparent 43%);filter:blur(18px);
+ animation:gxAmbientSway 12s ease-in-out infinite alternate}
+.gx-love-ribbon{position:absolute;left:-20%;top:56%;width:145%;height:90px;
+ border-top:1px solid #ffc5e426;border-bottom:1px solid #ffc5e421;
+ border-radius:50%;transform:rotate(-8deg)}
+.gx-heart{position:absolute;left:var(--x);bottom:-15%;width:var(--size);height:auto;
+ color:var(--hue);opacity:0;filter:drop-shadow(0 4px 8px #250e2d5b);
+ animation:gxHeartUp var(--duration) linear var(--delay) infinite;will-change:transform}
+.gx-heart svg{width:100%;height:auto}
+@keyframes gxHeartUp{
+ 0%{opacity:0;transform:translate3d(0,0,0) rotate(-13deg) scale(.72)}
+ 9%{opacity:.82}83%{opacity:.78}
+ 100%{opacity:0;transform:translate3d(var(--sway),-125vh,0) rotate(18deg) scale(1.18)}
+}
+.gx-cupid{position:absolute;left:-200px;top:var(--top);width:var(--size);height:auto;
+ filter:drop-shadow(0 7px 12px #2d103d70);
+ animation:gxCupidFly var(--duration) linear var(--delay) infinite;will-change:transform}
+.gx-cupid svg{animation:gxCupidBob 2.1s ease-in-out infinite alternate}
+@keyframes gxCupidFly{
+ 0%{opacity:0;transform:translate3d(-8vw,10px,0) scale(.78)}
+ 9%{opacity:.88}
+ 50%{opacity:.94;transform:translate3d(57vw,var(--wave),0) scale(1)}
+ 92%{opacity:.88}
+ 100%{opacity:0;transform:translate3d(135vw,-24px,0) scale(.88)}
+}
+@keyframes gxCupidBob{from{transform:translateY(-5px) rotate(-3deg)}to{transform:translateY(6px) rotate(3deg)}}
+.gx-heart-arrow{position:absolute;left:-115px;top:var(--top);width:var(--size);height:auto;
+ opacity:0;filter:drop-shadow(0 0 7px #ffb0c682);
+ animation:gxArrowFly var(--duration) linear var(--delay) infinite}
+@keyframes gxArrowFly{
+ 0%{opacity:0;transform:translateX(-10vw) rotate(-5deg)}
+ 13%{opacity:.91}
+ 83%{opacity:.9}
+ 100%{opacity:0;transform:translateX(130vw) rotate(5deg)}
+}
+
+/* BEBÉS: nubes suaves, luna con carita, biberones, sonajeros y estrellas. */
+.gx-bebes{background:radial-gradient(ellipse at 75% 17%,#c19ddd35,transparent 42%),
+  radial-gradient(ellipse at 15% 75%,#9bdad750,transparent 50%),
+  linear-gradient(155deg,#615579,#424468 55%,#303950)}
+.gx-baby-glow{position:absolute;inset:0;background:
+  radial-gradient(circle at 69% 30%,#ffebdf22,transparent 23%),
+  radial-gradient(circle at 26% 62%,#bcece037,transparent 35%);
+  animation:gxAmbientSway 18s ease-in-out infinite alternate}
+.gx-baby-moon{position:absolute;right:12%;top:8%;width:clamp(112px,16vw,240px);
+ filter:drop-shadow(0 0 32px #ffe7c78a);animation:gxBabyMoon 8s ease-in-out infinite alternate}
+@keyframes gxBabyMoon{from{transform:translateY(0) rotate(-4deg)}to{transform:translateY(16px) rotate(4deg)}}
+.gx-baby-cloud{position:absolute;top:var(--top);left:-24vw;width:var(--size);
+ filter:drop-shadow(0 8px 18px #30345340);
+ animation:gxCloudDrift var(--duration) linear var(--delay) infinite}
+@keyframes gxCloudDrift{from{opacity:0;transform:translate3d(-12vw,0,0)}
+ 8%{opacity:.82}90%{opacity:.82}to{opacity:0;transform:translate3d(148vw,-16px,0)}}
+.gx-baby-twinkle{position:absolute;left:var(--x);top:var(--y);width:var(--size);height:auto;
+ color:var(--color);filter:drop-shadow(0 0 5px #fff5c668);
+ animation:gxBabySparkle var(--duration) ease-in-out var(--delay) infinite}
+@keyframes gxBabySparkle{0%,100%{opacity:.24;transform:scale(.7) rotate(-9deg)}
+ 50%{opacity:.95;transform:scale(1.22) rotate(13deg)}}
+.gx-baby-ornament{position:absolute;left:var(--x);top:var(--top);width:var(--size);
+ opacity:.7;filter:drop-shadow(0 8px 12px #352d4c2b);
+ animation:gxOrnament var(--duration) ease-in-out var(--delay) infinite alternate}
+@keyframes gxOrnament{from{transform:translate3d(-10px,10px,0) rotate(-12deg)}
+ to{transform:translate3d(11px,-12px,0) rotate(12deg)}}
+
+/* JUEGOS DE BAÑO: burbujas translúcidas en ascenso y estallidos ligeros. */
+.gx-bano{background:radial-gradient(ellipse at 73% 16%,#83e6e15c,transparent 45%),
+ radial-gradient(ellipse at 13% 83%,#70acd44f,transparent 42%),
+ linear-gradient(150deg,#215879,#1b516b 55%,#273753)}
+.gx-bath-caustic{position:absolute;inset:-10%;opacity:.45;background:
+ repeating-radial-gradient(ellipse at 37% 65%,transparent 0 31px,#b8fcf219 32px 34px,transparent 38px 69px);
+ animation:gxBathWater 14s ease-in-out infinite alternate}
+.gx-bath-light{position:absolute;inset:0;background:
+ radial-gradient(circle at 30% 28%,#9ae4f04a,transparent 29%),
+ radial-gradient(circle at 80% 58%,#bec7ff32,transparent 33%);
+ animation:gxAmbientSway 13s ease-in-out infinite alternate}
+.gx-bubble{position:absolute;bottom:-14vh;left:var(--x);width:var(--size);height:var(--size);
+ border:1.5px solid #e9ffffb8;border-radius:50%;
+ background:radial-gradient(circle at 28% 25%,#fff9 0 7%,transparent 18%),
+ radial-gradient(circle at 72% 76%,#9fe4ff40,transparent 43%),
+ radial-gradient(circle at 65% 23%,#ffc3e634,transparent 56%);
+ box-shadow:inset -7px -8px 14px #a5d6ff38,inset 4px 4px 7px #ffffff44,0 0 9px #a9f4e62b;
+ opacity:0;animation:gxBubbleRise var(--dur) linear var(--delay) infinite;will-change:transform}
+.gx-bubble::before{content:"";position:absolute;left:20%;top:16%;height:18%;width:32%;
+ border-top:2px solid #fffefc;transform:rotate(-32deg);border-radius:50%;opacity:.9}
+.gx-bubble>i{position:absolute;inset:-20%;border:1.3px solid #e7fffcaa;border-radius:50%;
+ opacity:0;animation:gxBubblePop var(--dur) linear var(--delay) infinite}
+@keyframes gxBubbleRise{
+ 0%{opacity:0;transform:translate3d(0,0,0) scale(.68)}
+ 12%{opacity:var(--opacity)}
+ 70%{opacity:var(--opacity)}
+ 84%{opacity:.94;transform:translate3d(var(--drift),-103vh,0) scale(1.12)}
+ 89%{opacity:0;transform:translate3d(var(--drift),-107vh,0) scale(1.45)}
+ 100%{opacity:0;transform:translate3d(var(--drift),-112vh,0) scale(.1)}
+}
+@keyframes gxBubblePop{0%,80%{opacity:0;transform:scale(.4)}
+ 84%{opacity:.82;transform:scale(.9)}89%{opacity:0;transform:scale(2.2)}
+ 100%{opacity:0}}
+@keyframes gxBathWater{from{transform:translate(-1%,1%) rotate(-3deg)}to{transform:translate(3%,-2%) rotate(4deg)}}
+
+/* TODA OCASIÓN: confeti suave de varios colores, destellos y cintas. */
+.gx-todo{background:radial-gradient(ellipse at 75% 25%,#93b8d23d,transparent 36%),
+ radial-gradient(ellipse at 12% 70%,#bd82c449,transparent 49%),
+ linear-gradient(160deg,#275965,#343e5f 56%,#3b305b)}
+.gx-party-glow{position:absolute;inset:-10%;background:
+ radial-gradient(circle at 27% 29%,#eeb2d336,transparent 25%),
+ radial-gradient(circle at 74% 68%,#91e9cf2f,transparent 37%);
+ animation:gxAmbientSway 15s ease-in-out infinite alternate}
+.gx-party-ribbon{position:absolute;width:140%;height:55%;left:-22%;top:17%;
+ border:2px solid #ffdae340;border-left-color:transparent;border-bottom-color:transparent;
+ border-radius:55%;transform:rotate(-14deg);animation:gxPartyRibbon 17s ease-in-out infinite alternate}
+.gx-party-ribbon.ribbon-b{top:53%;border-color:#a8eae643;border-right-color:transparent;border-top-color:transparent;
+ transform:rotate(16deg);animation-delay:-7s}
+.gx-confetti{position:absolute;left:var(--x);top:-14vh;width:var(--size);height:var(--size);
+ color:var(--color);background:var(--color);
+ opacity:0;will-change:transform;
+ animation:gxPartyFall var(--dur) linear var(--delay) infinite}
+.gx-confetti-dot{border-radius:50%;height:calc(var(--size)*.65)}
+.gx-confetti-petal{border-radius:100% 10% 100% 15%;height:calc(var(--size)*1.4)}
+.gx-confetti-diamond{transform:rotate(45deg);border-radius:4px}
+.gx-confetti-ribbon{width:calc(var(--size)*.3);height:calc(var(--size)*2.2);border-radius:999px}
+.gx-confetti-spark{background:transparent}
+.gx-confetti-spark svg{width:100%;height:auto}
+@keyframes gxPartyFall{0%{opacity:0;transform:translate3d(0,-8vh,0) rotate(0) scale(.7)}
+ 12%{opacity:.89}85%{opacity:.74}
+ 100%{opacity:0;transform:translate3d(var(--drift),120vh,0) rotate(500deg) scale(1.12)}}
+@keyframes gxPartyRibbon{from{translate:0 -10px;rotate:-4deg}to{translate:0 15px;rotate:5deg}}
+@keyframes gxAmbientSway{from{transform:translateX(-2%) scale(1)}to{transform:translateX(2%) scale(1.08)}}
+
+/* Menos elementos decorativos en pantallas angostas y detrás de las tarjetas. */
+@media(max-width:700px){
+ .gx-firework-burst{filter:drop-shadow(0 0 4px #f2cf9b80)}
+ .gx-baby-moon{right:-4%;top:7%;width:135px}
+ .gx-baby-ornament{opacity:.55}
+ .gx-love-glow{filter:blur(10px)}
+ .gx-cupid{left:-125px}
+ .gx-bubble{box-shadow:inset -3px -3px 9px #a5d6ff3a,0 0 5px #b9fbe72e}
+}
+@media(prefers-reduced-motion:reduce){
+ #gabys-season-stage .gx-scene *,
+ #gabys-season-stage .gx-patrias-sky *{animation:none!important;transition:none!important}
+ .gx-fire-ring-a,.gx-fire-ring-b{opacity:.55!important;transform:scale(.95)!important}
+ .gx-fire-core,.gx-fire-launch{display:none!important}
+ .gx-fire-glitter{opacity:.6!important}
+ .gx-heart,.gx-heart-arrow,.gx-cupid,.gx-bubble,.gx-confetti{display:none!important}
+ .gx-baby-cloud{opacity:.65!important;transform:translateX(65vw)!important}
+ .gx-baby-twinkle{opacity:.68!important}
+ .gx-baby-ornament{opacity:.56!important}
+}
