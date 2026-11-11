@@ -79,3 +79,39 @@ body[data-gabys-season="toda-ocasion"] #catalogo .gabys-stage-sticky::after{cont
 @media(max-width:780px){.brand-oficial .brand-lettering{width:112px!important;height:82px!important}}
 @media(max-width:480px){.brand-oficial .brand-lettering{width:99px!important;height:72px!important}}
 @media(prefers-reduced-motion:reduce){#catalogo .gabys-stage-sticky::after{animation:none!important}}
+
+
+/* Cantidad real de moldes, con la temporada indicada en grande.
+   Las cifras se calculan en la interfaz a partir del catálogo publicado. */
+#catalogo.catalog-section .catalog-count{
+ min-width:192px;max-width:min(100%,270px);
+ padding:15px 22px 16px;
+ display:flex;flex-direction:column;align-items:center;gap:3px;
+ text-align:center;
+}
+#catalogo .catalog-count #catalog-total{
+ display:block;font-size:clamp(32px,3.3vw,42px)!important;
+ line-height:1;letter-spacing:-.055em;font-weight:900;color:#332639;
+ font-variant-numeric:tabular-nums;
+}
+#catalogo .catalog-count #catalog-total-category{
+ display:block;font-size:13px;font-weight:850;color:#7d496b;
+ line-height:1.25;letter-spacing:-.015em;
+}
+#catalogo .catalog-count #catalog-total-detail{
+ display:block;font-size:8px;font-weight:800;letter-spacing:.08em;
+ line-height:1.4;color:#9f899b;margin-top:4px;
+}
+@media(max-width:780px){
+ #catalogo.catalog-section .catalog-count{
+  min-width:167px;max-width:min(100%,235px);
+  padding:11px 15px 12px!important;gap:2px;
+ }
+ #catalogo .catalog-count #catalog-total{font-size:34px!important}
+ #catalogo .catalog-count #catalog-total-category{font-size:12px}
+ #catalogo .catalog-count #catalog-total-detail{font-size:8px}
+}
+@media(max-width:380px){
+ #catalogo .catalog-count #catalog-total{font-size:31px!important}
+ #catalogo .catalog-count #catalog-total-category{font-size:11px}
+}

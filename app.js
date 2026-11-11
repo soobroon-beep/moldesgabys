@@ -73,7 +73,26 @@ function filtered(){
 function renderProducts(){
  const sec=seasons.find(x=>x.key===season)||seasons[0],list=filtered();
  $('#catalog-heading').textContent=activeResultCodes?'Resultados del asistente':sec.label;
- $('#catalog-total').textContent=list.length.toLocaleString('es-MX')+' modelo'+(list.length===1?'':'s');
+ const totalEnCategoria=season==='todos'?products.length:products.filter(p=>p.seccion===season).length;
+ const descripcionCategoria={
+  todos:'modelos en total',
+  navidad:'modelos de Navidad',
+  halloween:'modelos de Halloween',
+  patrias:'modelos de Fiestas Patrias',
+  amor:'modelos de San Valentín',
+  bebes:'modelos de Bebés',
+  bano:'modelos de Juegos de Baño',
+  'toda-ocasion':'modelos de Toda Ocasión'
+ };
+ const textoCategoria=totalEnCategoria===1
+  ? (descripcionCategoria[season]||'modelos disponibles').replace(/^modelos/,'modelo')
+  : (descripcionCategoria[season]||'modelos disponibles');
+ $('#catalog-total').textContent=totalEnCategoria.toLocaleString('es-MX');
+ $('#catalog-total-category').textContent=textoCategoria;
+ const buscando=Boolean($('#search').value.trim()||activeResultCodes);
+ $('#catalog-total-detail').textContent=buscando
+  ? list.length.toLocaleString('es-MX')+' RESULTADO'+(list.length===1?'':'S')+' DE BÚSQUEDA'
+  : 'FOTOGRAFÍAS ORIGINALES';
  $('#clear-search').hidden=!($('#search').value.trim()||activeResultCodes);
  $('#current-description').textContent=activeResultCodes?'Aquí puedes abrir todas las coincidencias encontradas y elegir los moldes que te gusten.':season==='navidad'?'Colección de Navidad con la numeración original de tu carpeta de Drive.':season==='halloween'?'Colección de Halloween, conservando los números y nombres originales.':'Busca por nombre, número, descripción o consulta al asesor.';
  const grid=$('#product-grid');grid.replaceChildren();const frag=document.createDocumentFragment();
