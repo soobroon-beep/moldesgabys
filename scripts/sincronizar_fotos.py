@@ -38,7 +38,7 @@ def download_one(p):
         response.raise_for_status()
         if len(response.content)>12_000_000:
             continue
-        if 'image/' not in response.headers.get('Content-Type','').lower() and response.content[:4] not in [b'\xff\xd8\xff\xe0',b'\xff\xd8\xff\xe1',b'\x89PNG']:
+        if 'image/' not in response.headers.get('Content-Type','').lower() and not (response.content.startswith(b'\xff\xd8') or response.content.startswith(b'\x89PNG') or response.content.startswith(b'RIFF')):
             continue
         with Image.open(io.BytesIO(response.content)) as im:
             im=ImageOps.exif_transpose(im).convert('RGB')

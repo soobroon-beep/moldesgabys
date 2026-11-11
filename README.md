@@ -23,3 +23,14 @@ Sitio independiente, responsive, con diseño renovado, buscador, catálogo real 
 Añade entradas al arreglo del `catalogo.json` con `seccion` y `codigo` distintos. El catálogo público usa `catalogo.js` con `window.GABYS_CATALOGO` equivalente; regenera ambos para sincronizar. La galería mostrará automáticamente las fotos sin inventar diseños.
 
 Los archivos `server.mjs`, `admin.html` y `pedido.html` permanecen **solo en el paquete de desarrollo local**, no se publican con el sitio estático. Para ventas con tarjetas y descarga automática se necesitará preparar y desplegar un backend de producción.
+
+
+## Navidad y búsqueda por descripción (noviembre 2026)
+
+- Colección Navidad: `navidad.js`/`navidad.json` (1,135 fotografías). Conserva los números de Drive; códigos con sufijos para variantes.
+- Halloween: 297 fotografías en `catalogo.js`. Total 1,432.
+- El asesor permite buscar por descripción, número y código y devuelve tarjetas pulsables de las fotos; botón **Ver modelos en la página** muestra todos los encontrados.
+- `etiquetas-visuales.js` es un índice sugerido creado por un modelo open source CLIP en GitHub Actions (`scripts/etiquetar_fotos.py`). Los resultados visuales son aproximados, no exhaustivos, y el índice puede tardar en procesarse tras añadir muchas fotografías.
+- Las imágenes son ejemplos de figuras terminadas, no los patrones descargables. **No hay pagos activos**.
+- Contacto público: WhatsApp +52 272 130 0818, presente en el pie de página y en los pedidos.
+- Si Google Drive limita miniaturas al sincronizar, el catálogo conserva enlaces a las fotografías originales.
