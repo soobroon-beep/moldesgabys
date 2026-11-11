@@ -97,7 +97,7 @@ function renderProducts(){
  $('#current-description').textContent=activeResultCodes?'Aquí puedes abrir todas las coincidencias encontradas y elegir los moldes que te gusten.':season==='navidad'?'Colección de Navidad con la numeración original de tu carpeta de Drive.':season==='halloween'?'Colección de Halloween, conservando los números y nombres originales.':'Busca por nombre, número, descripción o consulta al asesor.';
  const grid=$('#product-grid');grid.replaceChildren();const frag=document.createDocumentFragment();
  for(const p of list.slice(0,visible)){
-  const card=document.createElement('article');card.className='product-card';const badge=p.numero===null?'S/N':'# '+String(p.numero).padStart(3,'0');
+  const card=document.createElement('article');card.className='product-card';const badge=p.numeroEtiqueta?'# '+p.numeroEtiqueta:(p.numero===null?'S/N':'# '+String(p.numero).padStart(3,'0'));
   card.innerHTML=`<div class="product-image"><img alt="${esc(p.nombre)}" loading="lazy" data-photo="${esc(p.codigo)}"><span class="number">${esc(badge)}</span><div class="failed-image">🖼️<span>Vista previa no disponible</span><a href="${esc(p.enlace||'#')}" target="_blank" rel="noopener noreferrer">Ver original ↗</a></div></div><div class="product-content"><small>${esc((seasons.find(x=>x.key===p.seccion)||{}).label||'Molde para fieltro')}</small><h3>${esc(p.nombre)}</h3><p class="code">Código: ${esc(p.codigo)}</p><button type="button">Ver y seleccionar ↗</button></div>`;
   card.querySelector('img').addEventListener('click',()=>openProduct(p.codigo));card.querySelector('.product-content button').addEventListener('click',()=>openProduct(p.codigo));frag.appendChild(card);
  }
