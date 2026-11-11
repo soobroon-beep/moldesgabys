@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="scroll-escenas.css?v=1">
   <link rel="stylesheet" href="escenarios-vivos.css?v=1">
   <link rel="stylesheet" href="rendimiento-movil.css?v=1">
+  <link rel="stylesheet" href="tutoriales.css?v=1">
   <script defer src="configuracion.js"></script>
   <script defer src="catalogo.js?v=2"></script>
   <script defer src="navidad.js?v=2"></script>
@@ -36,14 +37,15 @@
   <script defer src="cursores.js?v=3"></script>
   <script defer src="navegacion-parallax.js?v=2"></script>
   <script defer src="scroll-escenas.js?v=2"></script>
+  <script defer src="tutoriales.js?v=1"></script>
 </head>
 <body data-gabys-season="navidad">
   <div class="announcement"><span class="ann-star">✦</span> Diseños que inspiran, creaciones que enamoran <span class="announcement-divider">•</span> Más de 30 años creando contigo <span class="ann-star">✦</span></div>
   <header class="site-header">
     <div class="header-inner shell">
       <a class="brand brand-handmade brand-oficial" href="#inicio" aria-label="Moldes y Diseños Gaby's, inicio"><img class="brand-bird-large" src="assets/gabys-colibri.webp" width="90" height="90" alt="Colibrí original de fieltro"><img class="brand-lettering" src="assets/gabys-letras-completas-v3.webp?v=1" width="104" height="104" alt="Moldes y Diseños Gaby's: únicamente letras originales multicolores de fieltro cosido, sin fondo"></a>
-      <nav class="desktop-nav" aria-label="Navegación principal"><a href="#colecciones">Colecciones</a><a href="#catalogo">Catálogo</a><a href="#comprar">Cómo comprar</a></nav>
-      <div class="header-actions"><button class="search-trigger" id="open-search" aria-label="Buscar modelos"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 5 5"/></svg></button><button class="cart-trigger" id="open-cart" aria-label="Abrir carrito"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span>Mi selección</span><b id="cart-count">0</b></button></div>
+      <nav class="desktop-nav" aria-label="Navegación principal"><a href="#colecciones">Colecciones</a><a href="#catalogo">Catálogo</a><a href="#comprar">Cómo comprar</a><a class="tutorial-nav" href="#tutoriales"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x=".5" y="3" width="23" height="18" rx="5" fill="currentColor"/><path d="M9.5 7.8 17 12l-7.5 4.2Z" fill="#fff"/></svg><span>Tutoriales</span></a></nav>
+      <div class="header-actions"><a class="tutorial-mobile-link" href="#tutoriales" aria-label="Ver tutoriales de Gaby's en YouTube" title="Tutoriales"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x=".5" y="3" width="23" height="18" rx="5" fill="currentColor"/><path d="M9.5 7.8 17 12l-7.5 4.2Z" fill="#fff"/></svg></a><button class="search-trigger" id="open-search" aria-label="Buscar modelos"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 5 5"/></svg></button><button class="cart-trigger" id="open-cart" aria-label="Abrir carrito"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span>Mi selección</span><b id="cart-count">0</b></button></div>
     </div>
   </header>
   <main id="inicio">
@@ -145,8 +147,51 @@
       </article>
     </div>
     </div></section>
+    <section class="tutorial-section" id="tutoriales" aria-labelledby="tutorials-title">
+      <div class="shell">
+        <div class="tutorial-top">
+          <div class="tutorial-intro">
+            <span class="tutorial-eyebrow"><i aria-hidden="true"></i> VIDEOS OFICIALES · MOLDES GABY'S</span>
+            <h2 id="tutorials-title">Aprende con <em>Gaby's.</em></h2>
+            <p>Descubre cómo nuestras ideas cobran vida, puntada por puntada. Reproduce un tutorial y sigue creando con nosotros.</p>
+          </div>
+          <a class="tutorial-channel-link" href="https://www.youtube.com/@moldesgabys" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x=".5" y="3" width="23" height="18" rx="5" fill="currentColor"/><path d="M9.5 7.8 17 12l-7.5 4.2Z" fill="#fff"/></svg><span>Visitar nuestro canal</span><span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="tutorial-featured">
+          <div class="tutorial-video-shell">
+            <div class="tutorial-video-player" id="tutorial-player">
+              <button class="tutorial-poster" id="tutorial-play" type="button" aria-label="Reproducir el tutorial destacado">
+                <img src="https://i.ytimg.com/vi/kzHimwiRCeI/hqdefault.jpg" alt="Vista previa de Santa con pingüino" loading="lazy" decoding="async">
+                <span class="tutorial-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x=".5" y="3" width="23" height="18" rx="5" fill="currentColor"/><path d="M9.5 7.8 17 12l-7.5 4.2Z" fill="#fff"/></svg></span>
+                <span class="tutorial-poster-caption">Reproducir tutorial</span>
+              </button>
+            </div>
+            <div class="tutorial-player-footer">
+              <div><span class="tutorial-playing-label">▶ EN EL TALLER DE GABY'S</span>
+                <h3 id="tutorial-current-title">Santa en chimenea con pingüino y regalo · Modelo 1107</h3>
+                <p id="tutorial-current-subtitle">Tutorial del canal oficial de Moldes Gaby's</p></div>
+              <a class="tutorial-open-youtube" id="tutorial-original" href="https://www.youtube.com/watch?v=kzHimwiRCeI" target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a>
+            </div>
+          </div>
+          <aside class="tutorial-side-note">
+            <span class="tutorial-side-sparkle" aria-hidden="true">✦</span>
+            <strong>¡Creemos algo hermoso!</strong>
+            <p>Inspírate, aprende cada detalle y dale tu toque especial a tus figuras de fieltro.</p>
+            <p class="tutorial-side-small">El video puede comenzar sin sonido para respetar la configuración del navegador. Actívalo desde el reproductor.</p>
+            <a href="#catalogo">Encuentra tus moldes <span aria-hidden="true">↗</span></a>
+          </aside>
+        </div>
+        <div class="tutorial-more-heading">
+          <div><span class="tutorial-mini-label">PARA SEGUIR CREANDO</span><h3>Más tutoriales para ti</h3></div><span aria-hidden="true">✳</span>
+        </div>
+        <div class="tutorial-video-grid" id="tutorial-video-list" aria-label="Selecciona otro tutorial"></div>
+        <div class="tutorial-bottom-note"><span aria-hidden="true">✂</span> Pronto agregaremos más guías y materiales para crear.
+          <a href="https://www.youtube.com/@moldesgabys/videos" target="_blank" rel="noopener noreferrer">Explorar todos nuestros videos ↗</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><div class="shell footer-main"><div class="footer-brand"><a href="#inicio" class="ft-footer-logo" aria-label="Moldes y Diseños Gaby's, inicio"><img class="ft-footer-original-logo" src="assets/gabys-logo-oficial.webp" width="280" height="218" loading="lazy" alt="Logotipo original de Moldes y Diseños Gaby's en fieltro cosido"></a><svg class="ft-thread" viewBox="0 0 300 38" aria-hidden="true"><path d="M2 20 C40 -4 74 40 113 20 S201 4 245 23 S283 34 299 8" fill="none" stroke="#ffc1df" stroke-width="2.5" stroke-dasharray="4 7" stroke-linecap="round"/></svg><p>Un mundo de ideas para crear con tus manos.<br>Creaciones que inspiran, desde hace más de 30 años.</p></div><div class="footer-links"><strong>Explorar</strong><a href="#colecciones">Colecciones</a><a href="#catalogo">Todos los moldes</a><a href="#comprar">Cómo comprar</a></div><div class="footer-links"><strong>Información</strong><p>Las fotos muestran diseños terminados. Los patrones digitales se entregarán cuando estén disponibles.</p><p>Los pagos electrónicos todavía no están habilitados.</p></div><div class="footer-contact" id="contacto"><strong>Contacto</strong>
+  <footer><div class="shell footer-main"><div class="footer-brand"><a href="#inicio" class="ft-footer-logo" aria-label="Moldes y Diseños Gaby's, inicio"><img class="ft-footer-original-logo" src="assets/gabys-logo-oficial.webp" width="280" height="218" loading="lazy" alt="Logotipo original de Moldes y Diseños Gaby's en fieltro cosido"></a><svg class="ft-thread" viewBox="0 0 300 38" aria-hidden="true"><path d="M2 20 C40 -4 74 40 113 20 S201 4 245 23 S283 34 299 8" fill="none" stroke="#ffc1df" stroke-width="2.5" stroke-dasharray="4 7" stroke-linecap="round"/></svg><p>Un mundo de ideas para crear con tus manos.<br>Creaciones que inspiran, desde hace más de 30 años.</p></div><div class="footer-links"><strong>Explorar</strong><a href="#colecciones">Colecciones</a><a href="#catalogo">Todos los moldes</a><a href="#comprar">Cómo comprar</a><a href="#tutoriales">Tutoriales en YouTube</a></div><div class="footer-links"><strong>Información</strong><p>Las fotos muestran diseños terminados. Los patrones digitales se entregarán cuando estén disponibles.</p><p>Los pagos electrónicos todavía no están habilitados.</p></div><div class="footer-contact" id="contacto"><strong>Contacto</strong>
         <a class="footer-wa-compact" id="footer-whatsapp-link" href="https://wa.me/522721300818?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20sus%20moldes%20de%20fieltro." target="_blank" rel="noopener noreferrer" aria-label="Abrir conversación por WhatsApp al 272 130 08 18">
           <span class="footer-wa-icon" aria-hidden="true"><svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 .7C7.6.7.8 7.5.8 15.9c0 2.9.8 5.6 2.3 7.9L.7 31l7.4-2.3c2.2 1.3 4.9 2 7.8 2 8.4 0 15.3-6.8 15.3-15.2C31.2 7.5 24.4.7 16 .7zm0 27.2c-2.5 0-4.8-.7-6.8-2l-.5-.3-4.4 1.4 1.4-4.3-.3-.5a12 12 0 1 1 10.6 5.7zm6.7-8.8c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2l-1.1 1.2c-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.8-1.1-1-1.8-2.1-2-2.5-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2.1-.5 0-.7l-1.1-2.5c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 3s1.2 3.4 1.4 3.7c.2.2 2.4 3.8 5.9 5.1.8.3 1.4.5 1.9.6.8.2 1.5.2 2.1.1.7-.1 2.2-.9 2.5-1.8.3-.8.3-1.5.2-1.8-.1-.2-.3-.4-.7-.6z"/></svg></span>
           <span>WhatsApp<small>272 130 08 18</small></span>

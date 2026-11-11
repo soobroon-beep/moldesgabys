@@ -1,0 +1,153 @@
+/* Tutoriales oficiales · Moldes y Diseños Gaby's. */
+.desktop-nav .tutorial-nav{
+ display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+ padding:10px 13px;border:1px solid #453147;border-radius:999px;
+ background:#29202f;color:#fff!important;font-size:12px;font-weight:800;
+ box-shadow:0 5px 15px #24132b19;transition:transform .2s,box-shadow .2s,background .2s
+}
+.desktop-nav .tutorial-nav svg{width:23px;height:23px;flex:none;color:#ff0033}
+.desktop-nav .tutorial-nav:hover{color:#fff;background:#43283f;transform:translateY(-2px);box-shadow:0 8px 20px #24132b34}
+.desktop-nav .tutorial-nav::after{display:none!important}
+.tutorial-mobile-link{display:none;align-items:center;justify-content:center;flex:none;
+ width:38px;height:38px;border:1px solid #ecc5d5;border-radius:12px;
+ background:#fff5f8;color:#ff0033;text-decoration:none;box-shadow:0 4px 11px #36163214}
+.tutorial-mobile-link svg{width:23px;height:23px;display:block}
+.tutorial-mobile-link:focus-visible,.tutorial-nav:focus-visible{outline:3px solid #e494ba;outline-offset:3px}
+@media(max-width:1020px){
+ .desktop-nav .tutorial-nav{display:none!important}
+ .tutorial-mobile-link{display:inline-flex}
+}
+@media(min-width:1021px){
+ .desktop-nav{gap:clamp(14px,1.7vw,24px)!important}
+}
+@media(max-width:380px){
+ .site-header.gabys-parallax .brand-oficial .brand-bird-large{max-width:50px!important}
+ .site-header.gabys-parallax .brand-oficial .brand-lettering{max-width:84px!important}
+ .site-header.gabys-parallax .header-inner{gap:3px!important}
+ .site-header.gabys-parallax .header-actions{gap:4px!important}
+ .tutorial-mobile-link{width:31px;height:34px;border-radius:10px}
+ .tutorial-mobile-link svg{width:21px;height:21px}
+ .site-header.gabys-parallax .search-trigger{width:34px!important;height:34px!important}
+ .site-header.gabys-parallax .cart-trigger{padding:7px!important}
+}
+.tutorial-section{
+ position:relative;overflow:hidden;isolation:isolate;
+ padding:83px 0 83px;scroll-margin-top:94px;
+ background:radial-gradient(circle at 92% 8%,#f2d8e8 0%,transparent 32%),
+ linear-gradient(160deg,#fcf7fa 0%,#f4ecf5 56%,#f2ecf5 100%);
+ color:#312335;
+}
+.tutorial-section::before{
+ content:'✳';position:absolute;right:-36px;top:5%;font:normal 270px Georgia,serif;
+ color:#edcbdc;opacity:.45;transform:rotate(-16deg);
+ pointer-events:none;z-index:-1
+}
+.tutorial-top{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:28px}
+.tutorial-intro{max-width:700px}
+.tutorial-eyebrow{display:inline-flex;align-items:center;gap:10px;color:#a44970;font-size:10px;
+ font-weight:800;letter-spacing:.13em}
+.tutorial-eyebrow i{display:inline-block;width:9px;height:9px;border-radius:50%;background:#e6284a;box-shadow:0 0 0 5px #f0cad8}
+.tutorial-top h2{font:normal clamp(46px,5.7vw,80px)/1.02 "Instrument Serif",Georgia,serif;letter-spacing:-.035em;margin:16px 0 12px}
+.tutorial-top h2 em{color:#b95c88}
+.tutorial-top p{font-size:13px;line-height:1.8;color:#776675;max-width:560px;margin:0}
+.tutorial-channel-link{
+ display:inline-flex;gap:10px;align-items:center;justify-content:center;min-height:44px;
+ border-radius:13px;padding:10px 14px;white-space:nowrap;text-decoration:none;
+ color:#fff;background:#33253a;font-size:12px;font-weight:800;box-shadow:0 9px 23px #29182b29;
+ transition:transform .22s ease,background .22s
+}
+.tutorial-channel-link svg{width:25px;height:25px;color:#ff0033;flex:none}
+.tutorial-channel-link:hover{background:#593451;transform:translateY(-2px)}
+.tutorial-featured{display:grid;grid-template-columns:minmax(0,1fr) minmax(225px,300px);gap:22px;align-items:stretch}
+.tutorial-video-shell{min-width:0;overflow:hidden;border:1px solid #e7d4e2;border-radius:24px;
+ background:#fff;box-shadow:0 18px 54px #4230471c}
+.tutorial-video-player{position:relative;aspect-ratio:16/9;background:#1b1620;overflow:hidden}
+.tutorial-video-player iframe{position:absolute;inset:0;display:block;border:0;width:100%;height:100%}
+.tutorial-poster{position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;
+ justify-content:center;border:0;padding:0;background:#18151c;cursor:pointer;color:#fff}
+.tutorial-poster[hidden]{display:none!important}
+.tutorial-poster>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.78}
+.tutorial-poster::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,#130b1c88,transparent 50%)}
+.tutorial-play-icon{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;
+ width:82px;height:65px;border-radius:20px;background:#fff9;box-shadow:0 12px 45px #11071863;
+ transition:transform .22s ease}
+.tutorial-play-icon svg{display:block;width:65px;height:49px;color:#ff0033}
+.tutorial-poster:hover .tutorial-play-icon{transform:scale(1.07)}
+.tutorial-poster-caption{position:absolute;z-index:2;bottom:17px;left:20px;font-size:12px;font-weight:800}
+.tutorial-player-footer{display:flex;gap:15px;align-items:center;justify-content:space-between;padding:17px 20px 19px}
+.tutorial-player-footer h3{margin:6px 0 5px;font-size:18px;line-height:1.4;color:#38293c}
+.tutorial-player-footer p{margin:0;color:#958295;font-size:10px}
+.tutorial-playing-label{font-size:9px;font-weight:900;letter-spacing:.11em;color:#b75078}
+.tutorial-open-youtube{font-size:11px;line-height:1.3;font-weight:800;color:#b4476c;white-space:nowrap;text-decoration:none}
+.tutorial-open-youtube:hover{text-decoration:underline}
+.tutorial-side-note{position:relative;display:flex;flex-direction:column;align-items:flex-start;
+ gap:15px;min-width:0;border-radius:24px;padding:33px 27px;overflow:hidden;
+ background:#30233b;color:#fff3fa;box-shadow:0 15px 44px #35253f2b}
+.tutorial-side-note::after{content:'';position:absolute;right:-65px;bottom:-85px;width:240px;height:240px;
+ border:1.5px dashed #efb3d14d;border-radius:50%;pointer-events:none}
+.tutorial-side-sparkle{font-size:55px;line-height:1;color:#efc6da}
+.tutorial-side-note strong{font:italic 39px/.99 "Instrument Serif",Georgia,serif;color:#ffe6f2}
+.tutorial-side-note p{font-size:13px;color:#dcc4d8;line-height:1.75;margin:0}
+.tutorial-side-note .tutorial-side-small{font-size:10px;color:#bb9fb4;border-top:1px solid #fff2;padding-top:14px}
+.tutorial-side-note a{margin-top:auto;color:#ffe0ee;font-size:12px;font-weight:800}
+.tutorial-more-heading{display:flex;align-items:end;justify-content:space-between;margin:45px 0 19px;gap:15px}
+.tutorial-more-heading h3{font:normal clamp(35px,4vw,49px)/1 "Instrument Serif",serif;margin:8px 0 0}
+.tutorial-mini-label{font-size:10px;font-weight:900;letter-spacing:.13em;color:#ac537c}
+.tutorial-more-heading>span{font-size:36px;color:#dc98b8}
+.tutorial-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.tutorial-card{background:#fffcff;border:1px solid #eadce8;border-radius:19px;overflow:hidden;
+ box-shadow:0 8px 23px #4b294811;transition:transform .2s,border-color .2s,box-shadow .2s}
+.tutorial-card:hover{transform:translateY(-4px);box-shadow:0 13px 28px #4b294821}
+.tutorial-card.is-selected{border-color:#ce779f;box-shadow:0 0 0 2px #d48db02a,0 9px 23px #4b294811}
+.tutorial-card-select{display:block;width:100%;height:100%;padding:0;border:0;background:transparent;
+ cursor:pointer;color:inherit;text-align:left;font:inherit}
+.tutorial-card-select:focus-visible{outline:3px solid #b96493;outline-offset:-3px}
+.tutorial-card-thumb{position:relative;display:block;aspect-ratio:16/9;background:#2d2530;overflow:hidden}
+.tutorial-card-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.tutorial-card-select:hover img{transform:scale(1.04)}
+.tutorial-thumb-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+ display:grid;place-items:center;color:#fff;background:#e82049de;border-radius:13px;
+ width:49px;height:39px;box-shadow:0 5px 18px #200b1d77;font-size:18px}
+.tutorial-card-info{display:flex;flex-direction:column;gap:7px;padding:15px 16px 18px}
+.tutorial-card-info small{color:#b55882;font-size:9px;font-weight:900;letter-spacing:.06em}
+.tutorial-card-info strong{color:#402d40;font-size:14px;line-height:1.4;min-height:39px}
+.tutorial-card-info>span{color:#9e7890;font-size:10px;font-weight:800}
+.tutorial-bottom-note{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-top:25px;
+ font-size:11px;color:#8a7486;line-height:1.6}
+.tutorial-bottom-note>span{font-size:23px;color:#c081a2;line-height:1}
+.tutorial-bottom-note a{font-weight:800;color:#ab4977;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1000px){.tutorial-featured{grid-template-columns:minmax(0,1fr) 230px;gap:15px}.tutorial-side-note{padding:26px 20px}}
+@media(max-width:780px){
+ .tutorial-section{padding:50px 0 54px;scroll-margin-top:80px}
+ .tutorial-top{align-items:flex-start;flex-direction:column;gap:17px;margin-bottom:19px}
+ .tutorial-top h2{font-size:clamp(48px,11vw,66px);margin:10px 0 8px}
+ .tutorial-top p{font-size:12px;line-height:1.6}
+ .tutorial-channel-link{min-height:39px;padding:8px 12px}
+ .tutorial-featured{display:block}
+ .tutorial-side-note{display:none}
+ .tutorial-video-shell{border-radius:16px}
+ .tutorial-player-footer{padding:13px 14px 15px;align-items:flex-start;gap:8px}
+ .tutorial-player-footer h3{font-size:14px;line-height:1.35}
+ .tutorial-player-footer p{font-size:9px}
+ .tutorial-open-youtube{font-size:10px;max-width:80px;white-space:normal}
+ .tutorial-more-heading{margin:32px 0 14px}
+ .tutorial-more-heading h3{font-size:35px}
+ .tutorial-video-grid{grid-template-columns:1fr;gap:11px}
+ .tutorial-card-select{display:grid;grid-template-columns:42% minmax(0,1fr);min-height:102px}
+ .tutorial-card-thumb{height:100%;min-height:109px;aspect-ratio:auto}
+ .tutorial-card-info{padding:12px 12px;gap:5px;justify-content:center}
+ .tutorial-card-info strong{font-size:12px;min-height:0}
+ .tutorial-card-info small{font-size:8px}
+ .tutorial-card-info>span{font-size:9px}
+ .tutorial-thumb-play{width:38px;height:30px;font-size:13px;border-radius:9px}
+ .tutorial-bottom-note{margin-top:18px;font-size:10px}
+}
+@media(max-width:420px){
+ .tutorial-player-footer{flex-direction:column}
+ .tutorial-open-youtube{max-width:none}
+ .tutorial-play-icon{width:67px;height:54px}
+ .tutorial-play-icon svg{width:53px;height:43px}
+}
+@media(prefers-reduced-motion:reduce){
+ .tutorial-card,.tutorial-card-thumb img,.tutorial-play-icon,.tutorial-channel-link{transition:none!important}
+}
