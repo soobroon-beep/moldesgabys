@@ -1,0 +1,62 @@
+
+/* Marca artesanal reproducida desde la imagen original entregada por Gaby's. */
+.site-header .header-inner{height:108px;min-height:108px;gap:16px;padding:5px 0}
+.brand.brand-oficial{display:inline-flex;align-items:center;gap:9px;min-width:255px;width:auto;flex-shrink:0;text-decoration:none}
+.brand-oficial .brand-bird-large{display:block;width:90px;height:90px;object-fit:contain;flex:none;filter:drop-shadow(0 4px 7px #42082b24)}
+.brand-oficial .brand-lettering{display:block;width:152px;max-height:103px;height:auto;object-fit:contain;filter:drop-shadow(0 2px 5px #42082b24)}
+.ft-hero-badge.ft-hero-original{display:block;min-height:0;max-width:none;height:auto;margin:-6px 0 12px}
+.ft-hero-badge.ft-hero-original>.ft-main-logo{display:block;width:clamp(280px,31vw,390px);max-width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 12px 16px #0003);animation:gabysLogoFloat 7s ease-in-out infinite alternate}
+@keyframes gabysLogoFloat{from{transform:translateY(-4px)}to{transform:translateY(4px)}}
+.hero-shell{min-height:770px;padding-top:54px;padding-bottom:54px}
+.ft-footer-logo>.ft-footer-original-logo{display:block;width:clamp(225px,24vw,290px);height:auto;max-width:100%;margin:0;object-fit:contain;filter:drop-shadow(0 7px 12px #0005)}
+.ft-footer-logo+.ft-thread{display:none}
+
+/* Sin velo blanco: el fondo de temporada se atenúa en sus propios colores. */
+#catalogo.catalog-section::before,body[data-gabys-season] #catalogo.catalog-section::before{display:none!important;content:none!important;background:none!important}
+#catalogo.catalog-section{background:#f3eff0!important;transition:background-color .8s ease;overflow:clip;isolation:isolate}
+body[data-gabys-season="halloween"] #catalogo.catalog-section{background:linear-gradient(165deg,#44205a 0%,#2e173f 47%,#211330 100%)!important}
+body[data-gabys-season="navidad"] #catalogo.catalog-section{background:linear-gradient(160deg,#233b65 0%,#172644 50%,#201b3b 100%)!important}
+body[data-gabys-season="patrias"] #catalogo.catalog-section{background:linear-gradient(150deg,#22564c 0%,#1d3838 50%,#482b3c 100%)!important}
+body[data-gabys-season="amor"] #catalogo.catalog-section{background:linear-gradient(155deg,#823857,#632a4f 55%,#3e253f)!important}
+body[data-gabys-season="bebes"] #catalogo.catalog-section{background:linear-gradient(155deg,#66547c,#514365 55%,#34344b)!important}
+body[data-gabys-season="cocina"] #catalogo.catalog-section{background:linear-gradient(155deg,#684c4e,#4d333e 55%,#302c39)!important}
+body[data-gabys-season="toda-ocasion"] #catalogo.catalog-section{background:linear-gradient(155deg,#35646a,#274b57 55%,#293948)!important}
+body[data-gabys-season]:not([data-gabys-season="todos"]) #catalogo.catalog-section{background-size:135% 135%!important;animation:gabysSeasonFade 23s ease-in-out infinite alternate}
+@keyframes gabysSeasonFade{0%{background-position:50% 0%}100%{background-position:50% 100%}}
+#catalogo .gabys-stage-sticky{mask-image:none!important;-webkit-mask-image:none!important;opacity:var(--scene-opacity,0);transition:opacity .35s ease!important}
+body[data-gabys-season]:not([data-gabys-season="todos"]) #catalogo .catalog-heading h2{color:#fff!important}
+body[data-gabys-season]:not([data-gabys-season="todos"]) #catalogo .catalog-heading p{color:#f5eafa!important}
+body[data-gabys-season]:not([data-gabys-season="todos"]) #catalogo .section-label{color:#ffdeaf!important}
+body[data-gabys-season]:not([data-gabys-season="todos"]) #catalogo .catalog-count{background:#fffdf9;border-color:#fff8}
+body[data-gabys-season]:not([data-gabys-season="todos"]) #catalogo .catalog-heading em{color:#f7c7e2}
+
+/* Punteros temáticos en computadoras, sin alterar el cursor de escritura. */
+@media(hover:hover) and (pointer:fine){
+body.gabys-cursor-active,body.gabys-cursor-active a,body.gabys-cursor-active button,
+body.gabys-cursor-active .collection,body.gabys-cursor-active .product-card,
+body.gabys-cursor-active .hero-photo,body.gabys-cursor-active .recent-card,
+body.gabys-cursor-active [role="button"]{cursor:var(--gabys-season-cursor,auto)!important}
+body.gabys-cursor-active input,body.gabys-cursor-active textarea{cursor:text!important}
+}
+@media(max-width:780px){
+.site-header .header-inner{height:89px;min-height:89px;padding:5px 0}
+.brand.brand-oficial{min-width:0;gap:6px}
+.brand-oficial .brand-bird-large{width:67px;height:67px}
+.brand-oficial .brand-lettering{width:110px;max-height:80px}
+.hero-shell{min-height:0;padding-top:42px;padding-bottom:48px}
+.ft-hero-badge.ft-hero-original>.ft-main-logo{width:min(335px,88vw)}
+.ft-footer-logo>.ft-footer-original-logo{width:255px}
+}
+@media(max-width:480px){
+.site-header .header-inner{height:81px;min-height:81px;gap:4px}
+.brand.brand-oficial{gap:3px}
+.brand-oficial .brand-bird-large{width:56px;height:56px}
+.brand-oficial .brand-lettering{width:93px;max-height:69px}
+.ft-hero-badge.ft-hero-original>.ft-main-logo{width:min(295px,88vw)}
+.hero-shell{padding-top:29px}
+.ft-footer-logo>.ft-footer-original-logo{width:min(260px,90vw)}
+}
+@media(prefers-reduced-motion:reduce){
+.ft-hero-badge.ft-hero-original>.ft-main-logo,body[data-gabys-season] #catalogo.catalog-section{animation:none!important}
+#catalogo .gabys-stage-sticky{transition:none!important}
+}
