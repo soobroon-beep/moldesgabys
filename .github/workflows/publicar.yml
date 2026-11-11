@@ -4,7 +4,7 @@ on:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 concurrency:
@@ -21,14 +21,25 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Generar PNG de instalación como archivos permanentes
+        run: |
+          python -m pip install --disable-pip-version-check Pillow==11.3.0
+          python herramientas/generar_iconos.py .
+      - name: Guardar PNG para que GitHub los entregue directamente
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/gabys-instalar-*-v3.png
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: incluir íconos de instalación PNG [skip ci]"
+            git push origin HEAD:main
+          fi
       - name: Preparar sitio público sin archivos privados
         run: |
           mkdir -p _site
           cp index.html styles.css novedades.css temporadas.css marca.css identidad-2026.css navegacion-parallax.css movil-compacto.css redes-sociales.css scroll-escenas.css scroll-escenas.js escenarios-vivos.css escenarios-vivos.js rendimiento-movil.css tutoriales.css tutoriales.js instalar-app.css instalar-app.js sw.js cursores.js navegacion-parallax.js app.js novedades.js temporadas.js catalogo.js catalogo.json navidad.js navidad.json etiquetas-visuales.js configuracion.js favicon.svg manifest.webmanifest _site/
           if [ -d images ]; then cp -r images _site/; fi
           if [ -d assets ]; then cp -r assets _site/; fi
-          python -m pip install --disable-pip-version-check Pillow==11.3.0
-          python herramientas/generar_iconos.py _site
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
         with:
