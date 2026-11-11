@@ -18,12 +18,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Preparar sitio público sin archivos privados
         run: |
           mkdir -p _site
           cp index.html styles.css novedades.css temporadas.css marca.css identidad-2026.css navegacion-parallax.css movil-compacto.css redes-sociales.css scroll-escenas.css scroll-escenas.js escenarios-vivos.css escenarios-vivos.js rendimiento-movil.css tutoriales.css tutoriales.js cursores.js navegacion-parallax.js app.js novedades.js temporadas.js catalogo.js catalogo.json navidad.js navidad.json etiquetas-visuales.js configuracion.js favicon.svg manifest.webmanifest _site/
           if [ -d images ]; then cp -r images _site/; fi
           if [ -d assets ]; then cp -r assets _site/; fi
+          python -m pip install --disable-pip-version-check Pillow==11.3.0
+          python herramientas/generar_iconos.py _site
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
         with:
