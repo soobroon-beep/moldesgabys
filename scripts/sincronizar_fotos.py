@@ -17,6 +17,7 @@ BASE=Path(__file__).resolve().parent.parent
 DEST=BASE/'images'
 DEST.mkdir(parents=True,exist_ok=True)
 products=json.loads((BASE/'catalogo.json').read_text(encoding='utf-8'))
+products+=json.loads((BASE/'navidad.json').read_text(encoding='utf-8'))
 
 
 def download_one(p):
