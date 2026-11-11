@@ -1,18 +1,23 @@
-name: Optimizar fotos de Halloween
+name: Optimizar fotos de Halloween y Navidad
 on:
   push:
     branches: [main]
     paths:
       - catalogo.json
+      - navidad.json
+      - navidad.js
+      - scripts/etiquetar_fotos.py
       - scripts/sincronizar_fotos.py
       - .github/workflows/sincronizar-fotos.yml
   workflow_dispatch:
 permissions:
   contents: write
+  pages: write
+  id-token: write
 jobs:
   optimizar:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -21,12 +26,42 @@ jobs:
       - run: python -m pip install --disable-pip-version-check Pillow requests
       - name: Crear miniaturas WebP con numeración original
         run: python scripts/sincronizar_fotos.py
+      - name: Preparar modelo CLIP en CPU
+        continue-on-error: true
+        run: |
+          python -m pip install --disable-pip-version-check torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --disable-pip-version-check "transformers==4.48.3"
+      - name: Generar índice de figuras reconocidas
+        run: python scripts/etiquetar_fotos.py
       - name: Publicar fotografías optimizadas en el mismo repositorio
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add images/
+          git add images/ etiquetas-visuales.js
           if ! git diff --cached --quiet; then
-            git commit -m "assets: fotografías optimizadas de Halloween"
+            git commit -m "assets: fotografías e índice visual de Halloween y Navidad"
             git push
           fi
+  publicar:
+    needs: optimizar
+    if: needs.optimizar.result == 'success'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preparar sitio completo
+        run: |
+          mkdir -p _site
+          cp index.html styles.css mejoras.css app.js buscador-visual.js catalogo.js catalogo.json navidad.js navidad.json etiquetas-visuales.js configuracion.js favicon.svg manifest.webmanifest _site/
+          if [ -d images ]; then cp -r images _site/; fi
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
