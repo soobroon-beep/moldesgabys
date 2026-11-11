@@ -1,1 +1,23 @@
-{"name":"Moldes y Diseños Gaby's","short_name":"Gaby's","lang":"es-MX","start_url":"./","display":"standalone","background_color":"#faf8f6","theme_color":"#17131d","icons":[{"src":"favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
+{
+  "name": "Moldes y Diseños Gaby's",
+  "short_name": "Gaby's",
+  "lang": "es-MX",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#faf8f6",
+  "theme_color": "#17131d",
+  "icons": [
+    {
+      "src": "assets/gabys-colibri.webp",
+      "sizes": "112x112",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

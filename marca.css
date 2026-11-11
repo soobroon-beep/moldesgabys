@@ -1,0 +1,42 @@
+
+/* Nueva identidad artesanal de Moldes Gaby's: colibrí del logo, letras como fieltro cosido a mano. */
+.brand-handmade{gap:8px;min-width:210px}
+.brand-handmade .ft-bird-icon{width:57px;height:57px;border-radius:18px;transform:none;background:radial-gradient(circle at 28% 18%,#fff,#fbe5f1 70%);box-shadow:0 8px 20px #5526402b;border:1px solid #f0d7e6;overflow:visible}
+.ft-bird-icon img{position:relative;z-index:2;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 2px #0002)}
+.ft-bird-icon:after{content:'';position:absolute;inset:3px;border:1px dashed #b96794;border-radius:13px;opacity:.66}
+.brand-handmade .brand-name strong{color:#ac4081}
+.brand-handmade .brand-name small{letter-spacing:.13em;font-weight:900;font-size:9px}
+.ft-hero-badge{display:flex;align-items:center;gap:12px;position:relative;margin:-12px 0 14px;max-width:380px;min-height:78px}
+.ft-hero-badge>img{width:76px;height:76px;object-fit:contain;filter:drop-shadow(0 7px 9px #0005);animation:ft-bird-float 5.2s ease-in-out infinite alternate}
+.ft-hero-badge>div{display:flex;flex-direction:column;gap:3px}
+.ft-hero-badge strong{font-size:15px;color:#fff3fa;letter-spacing:.025em}
+.ft-hero-badge div span{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-size:22px;color:#f1b9d5}
+.ft-thread{width:225px;height:35px;max-width:100%;display:block;opacity:.8}
+.ft-hero-badge .ft-thread{position:absolute;bottom:-13px;left:78px;width:220px}
+.ft-thread path{animation:ft-stitched-thread 6.8s ease-in-out infinite;stroke-dashoffset:120}
+@keyframes ft-stitched-thread{0%,10%{stroke-dashoffset:120;opacity:.2}58%,78%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:-40;opacity:.42}}
+@keyframes ft-bird-float{from{transform:translateY(-3px) rotate(-2deg)}to{transform:translateY(4px) rotate(2deg)}}
+.ft-footer-logo{display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-decoration:none;width:max-content;max-width:100%}
+.ft-footer-logo>img{width:100px;height:100px;object-fit:contain;margin:0 0 -4px 6px;filter:drop-shadow(0 9px 15px #0009)}
+.ft-brand{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.ft-row{display:flex;align-items:center;gap:1px;line-height:1.2}
+.ft-letter{font-family:"DM Sans",sans-serif;font-weight:900;color:var(--fc);display:inline-block;text-shadow:0 2px 0 #120c1c,0 3px 3px #0009;position:relative;filter:drop-shadow(0 2px 1px #0007);-webkit-text-stroke:.5px #fff7}
+.ft-letter:after{content:'';position:absolute;left:2px;right:2px;bottom:2px;border-bottom:1.5px dashed #fff9;transform:rotate(-4deg)}
+.ft-space{width:7px}
+.ft-small .ft-letter{font-size:clamp(12px,1.55vw,18px)}
+.ft-large .ft-letter{font-size:clamp(30px,3.4vw,43px)}
+.ft-footer-logo+.ft-thread{margin:5px 0 14px}
+@media(max-width:700px){.brand-handmade{min-width:0;gap:6px}.brand-handmade .ft-bird-icon{width:43px;height:43px}.brand-handmade .brand-name strong{font-size:25px}.brand-handmade .brand-name small{font-size:7px;letter-spacing:.08em}.ft-hero-badge{min-height:61px;margin:0 0 12px}.ft-hero-badge>img{width:58px;height:58px}.ft-hero-badge strong{font-size:13px}.ft-hero-badge div span{font-size:18px}.ft-hero-badge .ft-thread{bottom:-10px;left:62px;width:190px}}
+@media(prefers-reduced-motion:reduce){.ft-thread path,.ft-hero-badge>img{animation:none!important}}
+
+/* Difuminado de los bordes superior e inferior de los fondos de las colecciones. */
+#catalogo.catalog-section{background:#f3eff0}
+body[data-gabys-season="halloween"] #catalogo{--ft-color:#2b1739;background:#f3eff0}
+body[data-gabys-season="navidad"] #catalogo{--ft-color:#14203f;background:#f3eff0}
+body[data-gabys-season="patrias"] #catalogo{--ft-color:#17342e;background:#f3eff0}
+body[data-gabys-season="halloween"] #catalogo:before,body[data-gabys-season="navidad"] #catalogo:before,body[data-gabys-season="patrias"] #catalogo:before{content:'';position:absolute;z-index:0;inset:0;pointer-events:none;background:linear-gradient(to bottom,transparent 0%,var(--ft-color) 245px,var(--ft-color) calc(100% - 255px),transparent 100%);opacity:.98}
+#catalogo .gabys-stage-sticky{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 15%,#000 78%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 15%,#000 78%,transparent 100%)}
+body[data-gabys-season="halloween"] #catalogo .catalog-heading h2,body[data-gabys-season="navidad"] #catalogo .catalog-heading h2,body[data-gabys-season="patrias"] #catalogo .catalog-heading h2{color:#332638}
+body[data-gabys-season="halloween"] #catalogo .catalog-heading p,body[data-gabys-season="navidad"] #catalogo .catalog-heading p,body[data-gabys-season="patrias"] #catalogo .catalog-heading p{color:#756b7b}
+body[data-gabys-season="halloween"] #catalogo .section-label,body[data-gabys-season="navidad"] #catalogo .section-label,body[data-gabys-season="patrias"] #catalogo .section-label{color:#aa6490}
+@media(max-width:700px){body[data-gabys-season="halloween"] #catalogo:before,body[data-gabys-season="navidad"] #catalogo:before,body[data-gabys-season="patrias"] #catalogo:before{background:linear-gradient(to bottom,transparent,var(--ft-color) 175px,var(--ft-color) calc(100% - 185px),transparent)}}
