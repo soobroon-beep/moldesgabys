@@ -56,3 +56,88 @@ footer .footer-main{display:grid;grid-template-columns:minmax(210px,1.6fr) minma
 @media(max-width:700px){footer .footer-main{grid-template-columns:1fr 1fr;gap:30px}.footer-main>.footer-brand{grid-column:1/-1}.footer-main>.footer-links:nth-of-type(3){grid-column:auto}.footer-contact{grid-column:2}.recent-section{padding:52px 0 55px}.recent-card{flex-basis:190px}.recent-card img{height:190px}}
 @media(max-width:480px){footer .footer-main{grid-template-columns:1fr 1fr;gap:22px}.footer-contact{grid-column:1/-1}.footer-main>.footer-brand{grid-column:1/-1}.footer-main>.footer-links:nth-of-type(3){grid-column:2}.recent-heading{align-items:flex-start;flex-direction:column}.recent-controls{align-self:flex-end}.recent-card{flex-basis:165px}.recent-card img{height:167px}.recent-card .recent-model{font-size:12px}.hero-showcase .hero-sparkle{filter:drop-shadow(0 0 7px #f3bedd);font-size:32px}}
 @media(prefers-reduced-motion:reduce){.hero-showcase .hero-sparkle{animation:none}.recent-card,.recent-controls button{transition:none}.recent-viewport{scroll-behavior:auto}}
+
+
+/* Versión 3: nuevos fondos de temporada, marcos artísticos y transiciones suaves. */
+/* Los acercamientos muestran fotos reales cuando hay modelos en la categoría. */
+.collection-grid .collection{border-radius:25px;background:#fff8fa;box-shadow:0 9px 25px rgba(82,48,79,.065);min-height:195px;transition:box-shadow .35s,transform .35s,border-color .35s}
+.collection-grid .collection.has-photo{background:#422e3f;border-color:rgba(223,188,209,.5);color:#fff}
+.collection-grid .collection.has-photo .collection-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;transform:scale(1.58) rotate(-3deg);transition:transform 1.1s cubic-bezier(.2,.7,.15,1),filter .7s;filter:saturate(.87) blur(.8px);z-index:0;pointer-events:none}
+.collection-grid .collection.has-photo:hover .collection-photo{transform:scale(1.76) rotate(2deg);filter:saturate(1.09)}
+.collection-grid .collection.has-photo::before{position:absolute;inset:0;width:auto;height:auto;right:0;bottom:0;border-radius:inherit;content:'';background:linear-gradient(140deg,rgba(26,13,31,.72),rgba(80,39,65,.35) 47%,rgba(25,11,28,.84));z-index:1;transition:background .3s;transform:none}
+.collection-grid .collection.has-photo:hover::before{transform:none}
+.collection-grid .collection.has-photo .collection-icon,.collection-grid .collection.has-photo strong,.collection-grid .collection.has-photo small{position:relative;z-index:2}
+.collection-grid .collection.has-photo .collection-icon{background:#fff3;border:1px solid #fffd;color:#fff;backdrop-filter:blur(12px)}
+.collection-grid .collection.has-photo small{color:#fae0ee;text-shadow:0 1px 10px #17101d}
+.collection-grid .collection.has-photo::after{color:#fff;z-index:3}
+.collection-grid .collection[data-theme="patrias"]:not(.has-photo){background:radial-gradient(ellipse at 88% 25%,#ffffffa3,transparent 54%),linear-gradient(125deg,#e0f3df,#f8ebec 58%,#f9dfdc)}
+.collection-grid .collection[data-theme="amor"]:not(.has-photo){background:radial-gradient(circle at 90% 20%,#fff,transparent 42%),linear-gradient(140deg,#fbe0ea,#f8d1e2)}
+.collection-grid .collection[data-theme="bebes"]:not(.has-photo){background:radial-gradient(circle at 82% 31%,#fff,transparent 40%),linear-gradient(145deg,#e9e0f8,#fdf0eb)}
+.collection-grid .collection[data-theme="cocina"]:not(.has-photo){background:radial-gradient(circle at 91% 50%,#fff,transparent 48%),linear-gradient(145deg,#f4e7d9,#fff0f5)}
+.collection-grid .collection[data-theme="toda-ocasion"]:not(.has-photo){background:radial-gradient(circle at 91% 48%,#fff,transparent 48%),linear-gradient(145deg,#eee2f6,#f8dfec)}
+.collection-grid .collection:not(.has-photo) .collection-icon{background:#ffffffb0;border:1px solid #ffffff94;box-shadow:0 7px 19px #7a47601c}
+
+/* Fotografías de proporciones diferentes: conservar toda la figura, con soporte visual tipo Android. */
+.product-card{border-radius:25px;box-shadow:0 9px 30px rgba(72,37,67,.06);background:linear-gradient(175deg,#fffdfd,#fff9fb);border-color:#f0e4eb}
+.product-image{isolation:isolate;aspect-ratio:1/.99;overflow:hidden;background:linear-gradient(135deg,#f2d7e5,#f6e7f3 55%,#f9ecdd);padding:12px}
+.product-image::before{content:'';position:absolute;z-index:-1;width:86%;height:84%;left:-22%;top:-20%;background:linear-gradient(140deg,#fff8,#c98db42d);border-radius:42% 58% 65% 35%/40% 30% 70% 60%;transform:rotate(-24deg);pointer-events:none}
+.product-image::after{content:'';position:absolute;z-index:-1;width:70%;height:21%;right:-24%;bottom:13%;background:#e9bedba8;filter:blur(2px);border-radius:999px;transform:rotate(-27deg);pointer-events:none}
+.product-card:nth-child(4n+2) .product-image{background:linear-gradient(138deg,#e5e3f8,#e7d9ec 50%,#ffe9e7)}
+.product-card:nth-child(4n+3) .product-image{background:linear-gradient(138deg,#f6e2cf,#ffe8ea 52%,#ede3f8)}
+.product-card:nth-child(4n+4) .product-image{background:linear-gradient(135deg,#e2efed,#e5dff4 55%,#fce3f1)}
+.product-image>img{position:relative;z-index:1;background:rgba(255,255,255,.94);border:4px solid rgba(255,255,255,.8);padding:4px;border-radius:22px 34px 21px 28px;box-shadow:0 12px 28px rgba(75,40,79,.13);object-fit:contain;max-width:100%;height:100%}
+.product-card:hover .product-image>img{transform:scale(1.035) rotate(-1deg)}
+.product-image .number{z-index:3;border-radius:999px;background:rgba(255,252,255,.95);backdrop-filter:blur(8px)}
+.product-content{padding:17px 16px 19px}
+.product-content button{border-radius:999px;padding:12px;border-color:#ead6e4;letter-spacing:.01em}
+.product-card:hover{transform:translateY(-8px);box-shadow:0 21px 48px rgba(88,49,84,.14)}
+
+/* No salto entre fotos: la siguiente se carga primero y aparece sobre la anterior. */
+.hero-showcase .hero-photo{isolation:isolate}
+.hero-showcase .hero-photo>img.hero-image-next{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);object-fit:contain;border-radius:12px;background:#fff;opacity:0;transform:translateY(19px) scale(1.055) rotate(1.5deg);transition:opacity 1.3s ease,transform 1.3s cubic-bezier(.2,.8,.2,1);z-index:2;pointer-events:none}
+.hero-showcase .hero-photo>img.hero-image-next.is-visible{opacity:1;transform:translateY(0) scale(1) rotate(0)}
+.hero-showcase .hero-photo .photo-overlay,.hero-showcase .hero-photo .floating-tiny{z-index:3}
+
+/* Escaparate de últimos modelos: collage libre, no una fila cuadrada. */
+.recent-section{position:relative;padding:74px 0 76px;background:radial-gradient(ellipse at 73% 40%,#ffe6f1 0%,transparent 45%),linear-gradient(145deg,#fff9fb,#f7eef4 48%,#fff9f5);overflow:hidden}
+.recent-section::before{content:'✳';position:absolute;right:-5%;top:10%;font-size:350px;line-height:1;color:#e9bed021;transform:rotate(-14deg);pointer-events:none}
+.recent-section .shell{position:relative;z-index:1}
+.recent-heading{margin-bottom:4px;align-items:center;gap:24px}
+.recent-heading-copy{position:relative;z-index:4}
+.recent-announcement{display:inline-flex;gap:8px;align-items:center;border:1px solid #efc5da;background:#ffffffb9;border-radius:999px;padding:8px 14px;font-size:11px;color:#984a72;font-weight:900;letter-spacing:.13em;box-shadow:0 8px 20px #8c517514}
+.recent-announcement span{color:#c47d9d;font-size:16px}
+.recent-heading h2{font-size:clamp(42px,5.6vw,77px);font-weight:800;margin:14px 0 11px;line-height:1.01;letter-spacing:-.07em;text-wrap:balance}
+.recent-heading h2 em{font-family:'Instrument Serif',Georgia,serif;font-size:1.14em;font-weight:400;color:#b05c83}
+.recent-heading-star{display:inline-block;color:#e7a5c1;font-size:.48em;vertical-align:top;margin:-5px 0 0 13px;animation:recentStar 6s ease-in-out infinite}
+@keyframes recentStar{50%{transform:rotate(45deg) scale(1.2)}}
+.recent-heading p{max-width:530px;font-size:13px;line-height:1.9;color:#806c7b}
+.recent-controls{position:relative;z-index:9}
+.recent-controls button{width:43px;height:43px;border-radius:999px;box-shadow:0 10px 25px #9c588c17}
+.recent-gallery{position:relative;min-height:480px;isolation:isolate}
+.recent-viewport{height:460px;position:relative;overflow:visible;scroll-snap-type:none;scrollbar-width:none;padding:0;outline-offset:6px}
+.recent-track{position:relative;height:100%;width:100%;min-height:0;display:block;--spread:clamp(156px,20vw,242px)}
+.recent-paint{position:absolute;width:38%;height:69%;border-radius:42% 58% 72% 28%/43% 34% 66% 57%;filter:blur(1px);pointer-events:none}
+.recent-paint-a{left:22%;top:10%;background:linear-gradient(120deg,#f2d1e4b8,#ffffff55);transform:rotate(-24deg)}
+.recent-paint-b{right:11%;top:15%;background:linear-gradient(110deg,#e6d7f0ae,#ffeada77);transform:rotate(19deg)}
+.recent-floating-star{position:absolute;z-index:1;color:#d196b3;pointer-events:none;animation:recentStar 6s ease-in-out infinite}
+.recent-star-one{font-size:62px;top:10%;left:15%}.recent-star-two{font-size:42px;bottom:11%;right:12%;animation-delay:-2s}.recent-star-three{font-size:34px;right:19%;top:0;animation-delay:-3.7s}
+.recent-card{display:flex;flex-direction:column;position:absolute;left:50%;top:49%;width:clamp(212px,26vw,284px);height:365px;padding:10px 10px 16px;border-radius:25px 32px 22px 31px;background:#fffdfd;border:7px solid #ffffffed;box-shadow:0 25px 65px #47304b35;overflow:visible;text-align:left;cursor:pointer;opacity:0;pointer-events:none;filter:blur(1px);--pose:translate(-50%,-50%) translateY(60px) scale(.72) rotate(-6deg);transform:var(--pose);transition:transform 1s cubic-bezier(.2,.77,.2,1),opacity .7s ease,filter .7s ease,box-shadow .3s ease,border-color .3s ease}
+.recent-card:hover{transform:var(--pose) translateY(-7px);box-shadow:0 36px 70px #53335350;border-color:#f6d4e6}
+.recent-card:focus-visible{outline:3px solid #b15a87;outline-offset:7px}
+.recent-card.deck-active{--pose:translate(-50%,-50%) translateY(0) scale(1) rotate(-5deg);opacity:1;filter:none;pointer-events:auto;z-index:6}
+.recent-card.deck-left{--pose:translate(-50%,-50%) translateX(calc(-1 * var(--spread))) translateY(17px) scale(.78) rotate(-17deg);opacity:.98;filter:none;pointer-events:auto;z-index:4}
+.recent-card.deck-right{--pose:translate(-50%,-50%) translateX(var(--spread)) translateY(10px) scale(.8) rotate(15deg);opacity:.98;filter:none;pointer-events:auto;z-index:5}
+.recent-card.deck-back{--pose:translate(-50%,-50%) translateX(39px) translateY(-40px) scale(.81) rotate(12deg);opacity:.89;filter:none;pointer-events:auto;z-index:3}
+.recent-card img{display:block;width:100%;height:255px;flex:1 1 auto;min-height:0;object-fit:contain;overflow:hidden;background:linear-gradient(145deg,#f9e5ef,#eee5f6);border-radius:16px 38px 19px 29px;border:1px solid #f1e7ef;padding:5px}
+.recent-card:nth-child(4n+2) img{background:linear-gradient(130deg,#eee4f4,#fbe3e7)}.recent-card:nth-child(4n+3) img{background:linear-gradient(135deg,#fff0e5,#f5d9ec)}.recent-card:nth-child(4n+4) img{background:linear-gradient(135deg,#e6f1ec,#f4e6f4)}
+.recent-card .recent-cat{font-size:10px;letter-spacing:.15em;font-weight:900;margin:10px 7px 2px;color:#ab608b}
+.recent-card .recent-model{font-size:14px;line-height:1.2;color:#3c2838;margin:1px 7px;font-weight:800;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.recent-card .recent-code{font-size:10px;margin:3px 7px 0;color:#968395}
+.recent-card .recent-chip{position:absolute;z-index:3;top:19px;left:19px;background:#fffdfdf5;border:1px solid #eddde8;border-radius:999px;font-size:11px;padding:8px 11px}
+.recent-card.deck-active::after{content:'✳';position:absolute;bottom:-18px;right:-13px;display:grid;place-items:center;width:55px;height:55px;border-radius:50%;background:#f2bdd6;color:#fff;font-size:27px;box-shadow:0 9px 25px #99507940}
+.recent-current-label{position:relative;margin:-12px auto 14px;width:max-content;max-width:100%;background:#302434;color:#fff6fb;border-radius:999px;padding:12px 22px;font-size:11px;font-weight:800;letter-spacing:.07em;box-shadow:0 16px 27px #4329471a;text-align:center}
+.recent-foot{position:relative;z-index:2;margin-top:15px;font-size:11px}
+.recent-foot small{font-size:10px;color:#aa929f;font-weight:400}
+@media(max-width:750px){.recent-section{padding:57px 0 62px}.recent-gallery{min-height:405px}.recent-viewport{height:390px}.recent-track{--spread:clamp(115px,27vw,175px)}.recent-card{width:clamp(180px,40vw,235px);height:315px;padding:8px;border-width:5px}.recent-card img{height:205px}.recent-heading h2{font-size:clamp(40px,8vw,59px)}.recent-card.deck-back{--pose:translate(-50%,-50%) translateX(24px) translateY(-29px) scale(.74) rotate(10deg)}}
+@media(max-width:480px){.recent-heading h2{font-size:45px}.recent-heading p{font-size:12px;max-width:96%}.recent-gallery{min-height:362px}.recent-viewport{height:348px}.recent-track{--spread:clamp(91px,27vw,119px)}.recent-card{width:clamp(155px,52vw,207px);height:278px;padding:6px;border-width:4px;border-radius:19px 29px 22px 27px}.recent-card img{height:180px;padding:3px}.recent-card .recent-model{font-size:12px}.recent-card .recent-cat{font-size:9px}.recent-card .recent-chip{top:12px;left:10px;padding:5px 7px}.recent-current-label{margin-top:-7px;padding:9px 15px;font-size:10px}.recent-foot{align-items:flex-start;flex-direction:column;gap:8px}.recent-paint{width:60%}.recent-controls button{height:39px;width:39px}}
+@media(prefers-reduced-motion:reduce){.hero-showcase .hero-photo>img.hero-image-next,.recent-card,.collection-grid .collection.has-photo .collection-photo{transition:none}.recent-floating-star,.recent-heading-star{animation:none}}

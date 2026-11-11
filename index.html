@@ -17,8 +17,8 @@
   <script defer src="catalogo.js"></script>
   <script defer src="navidad.js"></script>
   <script defer src="etiquetas-visuales.js"></script>
-  <script defer src="app.js"></script>
-  <script defer src="novedades.js"></script>
+  <script defer src="app.js?v=3"></script>
+  <script defer src="novedades.js?v=3"></script>
 </head>
 <body>
   <div class="announcement"><span class="ann-star">✦</span> Diseños que inspiran, creaciones que enamoran <span class="announcement-divider">•</span> Más de 30 años creando contigo <span class="ann-star">✦</span></div>
@@ -65,22 +65,31 @@
 
     <section class="recent-section" id="ultimos-modelos" aria-labelledby="recent-title">
       <div class="shell">
+        
         <div class="recent-heading">
-          <div>
-            <span class="section-label">NOVEDADES DEL CATÁLOGO</span>
-            <h2 id="recent-title">Últimos <em>modelos.</em></h2>
-            <p>Descubre los últimos diseños numerados de cada colección disponible. Toca una foto para verla y seleccionarla.</p>
+          <div class="recent-heading-copy">
+            <span class="recent-announcement"><span aria-hidden="true">✺</span> ¡MIRA LOS ÚLTIMOS MODELOS! <span aria-hidden="true">✺</span></span>
+            <h2 id="recent-title">¡Últimos <em>modelos!</em><span class="recent-heading-star" aria-hidden="true">✳</span></h2>
+            <p>¡Inspírate con nuestra selección de cada temporada! Fotos superpuestas, detalles encantadores y tus favoritos a un toque.</p>
           </div>
-          <div class="recent-controls" aria-label="Controles del carrusel de modelos">
-            <button type="button" id="recent-prev" aria-label="Ver modelos anteriores">←</button>
-            <button type="button" id="recent-pause" aria-label="Pausar carrusel" aria-pressed="false">Ⅱ</button>
-            <button type="button" id="recent-next" aria-label="Ver modelos siguientes">→</button>
+          <div class="recent-controls" aria-label="Controles de la galería de modelos destacados">
+            <button type="button" id="recent-prev" aria-label="Ver modelo anterior">←</button>
+            <button type="button" id="recent-pause" aria-label="Pausar animación" aria-pressed="false">Ⅱ</button>
+            <button type="button" id="recent-next" aria-label="Ver modelo siguiente">→</button>
           </div>
         </div>
-        <div class="recent-viewport" id="recent-viewport" tabindex="0" aria-label="Últimos modelos de todas las colecciones disponibles">
-          <div class="recent-track" id="recent-track"></div>
+        <div class="recent-gallery">
+          <div class="recent-paint recent-paint-a" aria-hidden="true"></div>
+          <div class="recent-paint recent-paint-b" aria-hidden="true"></div>
+          <span class="recent-floating-star recent-star-one" aria-hidden="true">✺</span>
+          <span class="recent-floating-star recent-star-two" aria-hidden="true">✧</span>
+          <span class="recent-floating-star recent-star-three" aria-hidden="true">✦</span>
+          <div class="recent-viewport" id="recent-viewport" tabindex="0" role="region" aria-roledescription="carrusel" aria-label="Fotografías superpuestas de los últimos modelos disponibles">
+            <div class="recent-track" id="recent-track"></div>
+          </div>
+          <div class="recent-current-label" id="recent-current-label" aria-live="polite">Descubre el siguiente diseño ✦</div>
         </div>
-        <div class="recent-foot"><span id="recent-count"></span><a href="#colecciones">Explorar todas las colecciones <span aria-hidden="true">↗</span></a></div>
+        <div class="recent-foot"><span id="recent-count"></span> · <small>Selección basada en la numeración disponible.</small><a href="#colecciones">Explorar todas las colecciones <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
     <section class="collections-section" id="colecciones"><div class="shell">

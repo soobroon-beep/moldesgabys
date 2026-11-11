@@ -10,7 +10,6 @@ const seasons=[
 {key:'todos',label:'Todas las temporadas',icon:'✨'},
 {key:'halloween',label:'Halloween',icon:'🎃'},
 {key:'navidad',label:'Navidad',icon:'🎄'},
-{key:'dia-muertos',label:'Día de Muertos',icon:'🌼'},
 {key:'patrias',label:'Fiestas patrias',icon:'🇲🇽'},
 {key:'amor',label:'San Valentín',icon:'💗'},
 {key:'bebes',label:'Bebés',icon:'🧸'},
@@ -47,7 +46,19 @@ function renderCollections(){
  for(const c of seasons){
   const count=c.key==='todos'?products.length:products.filter(p=>p.seccion===c.key).length;
   const b=document.createElement('button');b.type='button';b.className='collection'+(season===c.key?' active':'');b.setAttribute('aria-pressed',String(season===c.key));
+  b.dataset.theme=c.key;
   b.innerHTML=`<span class="collection-icon">${c.icon}</span><strong>${esc(c.label)}</strong><small>${count?`${count.toLocaleString('es-MX')} modelos disponibles`:'Próximamente'}</small>`;
+  const featured={navidad:'NAV-1162',halloween:'HAL-253',todos:'NAV-1173'};
+  const preview=products.find(p=>p.codigo===featured[c.key])||products.find(p=>p.seccion===c.key);
+  if(preview){
+    b.classList.add('has-photo');
+    const backdrop=document.createElement('img');
+    backdrop.className='collection-photo';backdrop.alt='';
+    backdrop.loading='lazy';backdrop.decoding='async';
+    backdrop.src=itemImage(preview);
+    backdrop.addEventListener('error',()=>fallbackImage(backdrop,preview));
+    b.prepend(backdrop);
+  }
   b.addEventListener('click',()=>{season=c.key;activeResultCodes=null;visible=48;$('#search').value='';renderCollections();renderProducts();$('#catalogo').scrollIntoView({behavior:'smooth'})});wrap.appendChild(b);
  }
 }
