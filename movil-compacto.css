@@ -1,0 +1,295 @@
+/* Moldes y Diseños Gaby's — experiencia móvil compacta.
+   Toda regla es exclusiva de teléfono; escritorio conserva su diseño. */
+@media (max-width:680px) {
+  html{scroll-padding-top:78px}
+  .hero{
+    min-height:0!important;
+    height:auto!important;
+    overflow:hidden;
+  }
+  .hero .hero-shell{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    min-height:0!important;
+    align-items:center;
+    gap:0!important;
+    padding:10px 0 2px!important;
+  }
+  .hero .hero-copy{
+    display:flex!important;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    margin:0!important;
+    padding:0!important;
+    min-height:0!important;
+  }
+  .hero .hero-copy>.eyebrow,
+  .hero .hero-copy>h1,
+  .hero .hero-copy>p,
+  .hero .hero-copy>.hero-actions,
+  .hero .hero-copy>.hero-mini-proof{display:none!important}
+  .hero .ft-hero-badge.ft-hero-original{
+    display:flex!important;align-items:center;justify-content:center;
+    min-height:0!important;height:auto!important;max-width:100%;
+    margin:0 auto!important;padding:0!important;
+  }
+  .hero .ft-hero-badge.ft-hero-original>.ft-main-logo{
+    display:block;width:min(262px,71vw)!important;
+    max-width:100%;height:auto;
+    filter:drop-shadow(0 9px 18px rgba(0,0,0,.27));
+  }
+  .hero .hero-showcase{
+    width:min(490px,100%)!important;
+    height:clamp(238px,75vw,324px)!important;
+    min-height:0!important;
+    margin:0 auto!important;
+    padding:0!important;
+  }
+  .hero .showcase-halo{opacity:.68}
+  .hero .hero-photo{padding:5px;border-radius:15px}
+  .hero .hero-photo img{border-radius:11px}
+  .hero .photo-main{width:57%;height:85%;left:22%;top:5%}
+  .hero .photo-left{width:42%;height:62%;left:0;top:23%}
+  .hero .photo-right{width:38%;height:64%;top:16%;right:0}
+  .hero .photo-overlay{
+    bottom:9px;left:8px;right:8px;padding:7px 9px;
+    font-size:9px;border-radius:9px
+  }
+  .hero .floating-tiny{bottom:9px;left:5px;padding:5px 6px;font-size:8px}
+  .hero .hero-rotating-badge{
+    width:56px;height:56px;right:0;bottom:3%;
+    box-shadow:0 8px 18px #120e2070;
+  }
+  .hero .hero-rotating-badge .badge-content>span{font-size:18px}
+  .hero .hero-rotating-badge .badge-content small{font-size:5px;line-height:1.3}
+  .hero .hero-bottom{display:none!important}
+  .hero + .ticker{display:none!important}
+
+  /* Últimos modelos inmediatamente después de la galería de portada */
+  #ultimos-modelos.recent-section{
+    padding:27px 0 12px!important;
+    margin:0!important;
+  }
+  #ultimos-modelos .recent-heading{
+    margin:0 0 5px!important;
+    gap:8px!important;
+  }
+  #ultimos-modelos .recent-heading h2{
+    font-size:clamp(32px,8.5vw,42px)!important;
+    line-height:1.03;
+    margin:7px 0 3px!important;
+  }
+  #ultimos-modelos .recent-heading p{display:none!important}
+  #ultimos-modelos .recent-announcement{font-size:9px}
+  #ultimos-modelos .recent-controls{
+    gap:8px;align-self:flex-end;margin:0!important
+  }
+  #ultimos-modelos .recent-controls button{
+    height:34px!important;width:34px!important
+  }
+  #ultimos-modelos .recent-gallery{
+    min-height:0!important;margin:0!important;
+    padding:0!important
+  }
+  #ultimos-modelos .recent-viewport{
+    height:355px!important;max-height:355px!important;
+    min-height:0!important;
+    padding:10px 4px 15px!important;
+    scroll-padding-inline:17px;
+  }
+  #ultimos-modelos #recent-track{
+    padding:0 11px!important;gap:10px!important;
+    min-height:0!important
+  }
+  #ultimos-modelos #recent-track .recent-card{
+    flex:0 0 clamp(208px,64vw,267px)!important;
+    width:clamp(208px,64vw,267px)!important;
+    height:320px!important;
+    margin-left:0!important;
+    padding:8px 8px 11px!important;
+    border-radius:19px 27px 20px 25px;
+  }
+  #ultimos-modelos #recent-track .recent-card img{
+    height:225px!important;
+    border-radius:13px 22px 13px 20px
+  }
+  #ultimos-modelos .recent-current-label{
+    margin:0 auto 4px!important;
+    padding:6px 12px!important;
+    font-size:9px!important;
+  }
+  #ultimos-modelos .recent-foot{
+    margin:3px 0 0!important;
+    gap:5px!important;
+    line-height:1.4;
+    font-size:10px;
+  }
+  #ultimos-modelos .recent-foot small{display:none!important}
+  #ultimos-modelos .recent-foot a{font-size:10px}
+  #colecciones.collections-section{
+    padding:25px 0 48px!important;
+    margin:0!important
+  }
+  #colecciones .section-heading{
+    margin-bottom:16px!important;gap:7px!important
+  }
+  #colecciones .section-heading h2{
+    font-size:clamp(32px,8.6vw,41px)!important;
+    margin:7px 0 0!important;
+    line-height:1.1
+  }
+  #colecciones .section-heading>p{
+    font-size:11px;line-height:1.55;
+    margin:0!important
+  }
+
+  /* Fondo de temporada visible detrás de las tarjetas. */
+  #catalogo.catalog-section{
+    padding:44px 0 55px!important;
+  }
+  #catalogo .catalog-heading{
+    margin-bottom:16px!important;gap:12px!important
+  }
+  #catalogo .catalog-heading h2{
+    font-size:clamp(31px,8.8vw,40px)!important;
+    line-height:1.08;
+    margin:8px 0 0!important;
+  }
+  #catalogo .catalog-heading>div>p{
+    margin:10px 0 0!important;
+    font-size:12px;line-height:1.55
+  }
+  #catalogo .catalog-count{
+    min-width:0;align-self:flex-start;
+    padding:8px 12px!important;
+    border-radius:12px;
+  }
+  #catalogo .catalog-count span{font-size:17px}
+  #catalogo .catalog-count small{font-size:7px}
+  #catalogo .catalog-panel{
+    background:transparent!important;
+    background-image:none!important;
+    border:0!important;
+    box-shadow:none!important;
+    border-radius:0!important;
+    overflow:visible!important;
+  }
+  #catalogo .catalog-bar{
+    margin:0 0 12px!important;
+    padding:12px 13px!important;
+    background:rgba(26,17,39,.42)!important;
+    -webkit-backdrop-filter:blur(13px);
+    backdrop-filter:blur(13px);
+    border:1px solid rgba(255,255,255,.2)!important;
+    border-radius:14px!important;
+    box-shadow:0 8px 25px rgba(18,9,29,.1);
+    color:#fff!important;
+  }
+  #catalogo .catalog-left{gap:9px;font-size:15px}
+  #catalogo .catalog-left #catalog-heading{color:#fff!important}
+  #catalogo .available-tag{
+    font-size:8px;
+    color:#fff!important;
+    background:rgba(255,255,255,.16)!important;
+    border:1px solid rgba(255,255,255,.16);
+  }
+  #catalogo .catalog-help{display:none!important}
+  #catalogo .catalog-toolbar{
+    margin:0 0 14px!important;
+    padding:0!important;gap:9px;
+    background:transparent!important;
+  }
+  #catalogo .catalog-toolbar .searchbar,
+  #catalogo .catalog-toolbar select{
+    border-radius:12px;
+    box-shadow:0 3px 14px rgba(16,12,27,.13);
+  }
+  #catalogo .catalog-toolbar .searchbar{min-height:44px!important}
+  #catalogo .catalog-toolbar select{
+    min-height:43px!important;
+    max-width:100%!important
+  }
+  #catalogo .clear-search{color:#fff4f7!important}
+  #catalogo .product-grid{
+    padding:0!important;
+    gap:10px!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    background:transparent!important;
+  }
+  #catalogo .product-card{
+    background:#fff!important;
+    box-shadow:0 11px 27px rgba(10,6,23,.2)!important;
+    border:1px solid rgba(255,255,255,.72)!important;
+    border-radius:14px!important;
+    overflow:hidden;
+  }
+  #catalogo .product-image{padding:0!important;aspect-ratio:1/1.05}
+  #catalogo .product-image>img{border-radius:0!important}
+  #catalogo .product-content{padding:10px 9px 11px!important}
+  #catalogo .product-content h3{font-size:12px}
+  #catalogo .product-content button{
+    width:100%;min-height:36px;
+    font-size:10px
+  }
+  #catalogo .show-more-wrap,
+  #catalogo .load-more{background:transparent!important}
+
+  /* Pie de página reducido, sin el logo inferior en teléfonos. */
+  footer{
+    padding:29px 0 15px!important;
+  }
+  footer .footer-main{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    column-gap:17px!important;row-gap:22px!important;
+    padding-bottom:22px!important;
+  }
+  footer .footer-main>.footer-brand{display:none!important}
+  footer .footer-main>.footer-links:nth-of-type(3){
+    grid-column:auto!important;
+  }
+  footer .footer-main>.footer-links>strong,
+  footer .footer-main>.footer-contact>strong{
+    font-size:11px;margin:0 0 10px!important;
+    color:#fff1f9
+  }
+  footer .footer-main>.footer-links a{
+    margin:7px 0!important;font-size:11px;
+    line-height:1.35
+  }
+  footer .footer-main>.footer-links p{
+    margin:6px 0 8px!important;
+    font-size:10px;line-height:1.55
+  }
+  footer .footer-main>.footer-contact{
+    grid-column:1/-1!important;
+    display:flex;flex-direction:column;
+    align-items:flex-start;gap:11px!important;
+    padding-top:16px;
+    border-top:1px solid rgba(255,255,255,.14);
+  }
+  footer .footer-wa-compact{gap:8px}
+  footer .footer-location{max-width:100%;line-height:1.45}
+  footer .footer-location small{line-height:1.5;font-size:10px}
+  footer .footer-bottom{
+    padding-top:12px!important;
+    gap:4px!important;
+    display:flex;flex-direction:row!important;
+    justify-content:center!important;
+    text-align:center;
+    font-size:9px
+  }
+  footer .footer-bottom>small:last-child{display:none!important}
+}
+@media (max-width:360px) {
+  .hero .ft-hero-badge.ft-hero-original>.ft-main-logo{width:min(225px,73vw)!important}
+  .hero .hero-showcase{height:244px!important}
+  #ultimos-modelos .recent-viewport{height:335px!important;max-height:335px!important}
+  #ultimos-modelos #recent-track .recent-card{height:304px!important}
+  #ultimos-modelos #recent-track .recent-card img{height:212px!important}
+  footer .footer-main{column-gap:13px!important}
+}
+@media (prefers-reduced-motion:reduce) and (max-width:680px){
+  .hero .ft-main-logo,.hero .hero-photo,.hero .hero-rotating-badge{animation:none!important}
+}
