@@ -1,0 +1,16 @@
+
+/* Buscador visual y resultados en el chat */
+.ai-found{width:100%;max-width:100%;box-sizing:border-box}.ai-found-title{font-weight:700;margin-bottom:8px}
+.ai-number-list{font-size:10px;line-height:1.6;padding:8px;background:#fff;border-radius:9px;max-height:90px;overflow:auto;color:#73576d;overflow-wrap:anywhere}
+.ai-chat-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:10px}
+.ai-chat-card,.ai-gallery-card{background:#fff;cursor:pointer;border:1px solid #ead9e3;border-radius:10px;padding:4px;transition:transform .18s,box-shadow .18s;min-width:0}
+.ai-chat-card:hover,.ai-gallery-card:hover{transform:translateY(-3px);box-shadow:0 8px 18px #32233320}
+.ai-chat-card img{height:75px;width:100%;object-fit:contain;background:#f9f4f8;border-radius:7px;display:block}
+.ai-chat-card span,.ai-gallery-card span{display:block;font-size:10px;font-weight:700;color:#63455e;padding:5px 2px;text-align:center}
+.ai-open-gallery,.ai-more{display:block;width:100%;margin-top:10px;border-radius:10px;padding:11px 8px;font-size:11px;font-weight:700;cursor:pointer}
+.ai-open-gallery{background:#463448;color:#fff;border:0}.ai-more{background:#fff;border:1px solid #dbc6d5;color:#79576e}
+.ai-gallery{padding:42px 0 18px;scroll-margin-top:100px}.ai-gallery-head{display:flex;gap:12px;justify-content:space-between;align-items:center}.ai-gallery h2{font-family:"Instrument Serif",serif;font-size:clamp(28px,4vw,48px);font-weight:500}.ai-gallery-head button{background:#f1e5ec;border:0;padding:12px 16px;border-radius:99px;cursor:pointer}.ai-gallery>p{color:#7c7180;margin:7px 0 20px;font-size:12px}
+.ai-gallery-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.ai-gallery-card img{width:100%;height:195px;object-fit:contain;background:#f8f2f7;border-radius:8px;display:block}
+.footer-whatsapp{grid-column:1/-1;background:#fff;border:1px solid #e0d3dc;border-radius:16px}.footer-whatsapp a{display:flex;gap:15px;align-items:center;padding:17px 22px;text-decoration:none;color:#30273a}.footer-whatsapp svg{width:37px;height:37px;color:#25d366;flex-shrink:0}.footer-whatsapp strong{font-size:13px;display:block}.footer-whatsapp small{font-size:12px;color:#786979}.footer-whatsapp small b{color:#158448}.footer-whatsapp a>span:last-child{margin-left:auto;color:#158448;font-size:23px}
+@media(max-width:700px){.ai-gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ai-gallery-card img{height:135px}}
+@media(max-width:440px){.ai-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-gallery-head{align-items:flex-start;flex-direction:column}.footer-whatsapp a{padding:14px}.footer-whatsapp small{display:block;line-height:1.7}}
