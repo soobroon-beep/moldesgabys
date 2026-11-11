@@ -196,5 +196,6 @@ function motion(){
     area.addEventListener('pointerleave',()=>{area.style.transform='translate3d(0,0,0)'});
   }
 }
+window.GABYS_TIENDA={abrirModelo:openProduct,obtenerModelos:()=>products.slice()};
 setup();motion();
 })();
