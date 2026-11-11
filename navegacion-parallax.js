@@ -11,11 +11,14 @@ const clamp=x=>Math.min(1,Math.max(0,x));
 const lerp=(a,b,t)=>a+(b-a)*t;
 const val=(x)=>Math.round(x)+'px';
 let queued=false;
+let lastMobileMode=-1,lastMobileCompact=-1;
 header.classList.add('gabys-parallax');
 function paint(){
  queued=false;
  const y=Math.max(0,window.scrollY||document.documentElement.scrollTop||0);
- const p=reduced.matches?(y>180?1:0):clamp(y/240);
+ const isMobile=window.innerWidth<=780;
+ // En móvil se compacta en un solo cambio animado, en lugar de recalcular 20 propiedades en cada pixel.
+ const p=isMobile?(y>=120?1:0):(reduced.matches?(y>180?1:0):clamp(y/240));
  const small=window.innerWidth<=480;
  const tablet=window.innerWidth<=780&&!small;
  const sizes=small?
@@ -30,7 +33,7 @@ function paint(){
  set('--gp-padding',val(lerp(0,small?6:tablet?10:20,p)));
  set('--gp-radius',val(lerp(0,small?17:21,p)));
  set('--gp-shift',val(lerp(0,small?5:8,p)));
- set('--gp-blur',val(lerp(0,22,p)));
+ set('--gp-blur',isMobile?'0px':val(lerp(0,22,p)));
  set('--gp-head-bg','rgba(250,248,246,'+(0.86*(1-p)).toFixed(3)+')');
  set('--gp-head-border','rgba(231,219,228,'+(0.7*(1-p)).toFixed(3)+')');
  set('--gp-panel-bg','rgba(255,251,254,'+(0.93*p).toFixed(3)+')');
@@ -40,11 +43,18 @@ function paint(){
  set('--gp-links-shift',val(-1.5*p));
  set('--gp-links-alpha',(1-.055*p).toFixed(3));
  set('--gp-action-shift',val(-p));
- if(hero&&!reduced.matches){
+ if(hero&&!reduced.matches&&!isMobile){
    hero.style.setProperty('--gp-hero-shift',val(Math.min(730,y)*.075));
  }
 }
-function schedule(){if(!queued){queued=true;window.requestAnimationFrame(paint)}}
+function schedule(){
+ const width=window.innerWidth;
+ const mobileMode=width<=480?0:width<=780?1:2;
+ const compact=window.scrollY>=120?1:0;
+ if(mobileMode!==2&&lastMobileMode===mobileMode&&lastMobileCompact===compact)return;
+ lastMobileMode=mobileMode;lastMobileCompact=compact;
+ if(!queued){queued=true;window.requestAnimationFrame(paint)}
+}
 window.addEventListener('scroll',schedule,{passive:true});
 window.addEventListener('resize',schedule,{passive:true});
 reduced.addEventListener?.('change',schedule);

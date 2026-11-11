@@ -4,6 +4,7 @@
 'use strict';
 const body=document.body;
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+const mobile=window.matchMedia('(max-width:780px)');
 if(reduced.matches)return;
 const clamp=v=>Math.max(0,Math.min(1,v));
 const smooth=v=>{const x=clamp(v);return x*x*(3-2*x)};
@@ -68,6 +69,7 @@ function progressFor(el,start=.94,distance=.66){
  return clamp((window.innerHeight*start-r.top)/(window.innerHeight*distance));
 }
 function measure(){
+ if(mobile.matches||reduced.matches)return;
  // Solo se recalcula cuando hay desplazamiento/resize.
  target=progressFor(recent,.93,.66);
  if(!animFrame)animFrame=requestAnimationFrame(tick);
@@ -103,6 +105,7 @@ function tick(){
  if(current!==target)animFrame=requestAnimationFrame(tick);
 }
 function schedule(){
+ if(mobile.matches||reduced.matches)return;
  // Una sola lectura de layout por frame; no se pierden eventos al desplazar.
  if(!measureFrame)measureFrame=requestAnimationFrame(()=>{
    measureFrame=0;
@@ -112,6 +115,7 @@ function schedule(){
 window.addEventListener('scroll',schedule,{passive:true});
 window.addEventListener('resize',schedule,{passive:true});
 window.addEventListener('pageshow',schedule);
+mobile.addEventListener?.('change',()=>{if(!mobile.matches)measure()});
 reduced.addEventListener?.('change',()=>{
  if(reduced.matches){
    body.classList.remove('gs-motion-ready');
@@ -121,7 +125,7 @@ reduced.addEventListener?.('change',()=>{
    animFrame=0;measureFrame=0;
  }else{body.classList.add('gs-motion-ready');measure();}
 });
-const first=progressFor(recent,.93,.66);
+const first=mobile.matches?1:progressFor(recent,.93,.66);
 current=target=first;
-apply(first);
+if(!mobile.matches)apply(first);
 })();

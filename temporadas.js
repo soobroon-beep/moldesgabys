@@ -147,7 +147,7 @@ function makeBulbs(){
 function makeSnow(){
  const wrap=document.getElementById('gabys-xmas-snow');
  let out='';
- const count=window.innerWidth<650?45:78;
+ const count=window.innerWidth<780?27:78;
  const shape='<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.6">'+
    '<path d="M24 2 V46 M2 24 H46 M8.5 8.5 L39.5 39.5 M39.5 8.5 L8.5 39.5"/>'+
    '<path d="M18 8 L24 14 L30 8 M18 40 L24 34 L30 40 M8 18 L14 24 L8 30 M40 18 L34 24 L40 30"/>'+
@@ -196,8 +196,8 @@ function visibility(){
  const progress=clamp((vh*.75-bounds.top)/(Math.min(bounds.height,1450)+vh*.35));
  stage.style.setProperty('--h-depth',progress.toFixed(3));
  stage.style.setProperty('--h-shift',(-28*progress).toFixed(1)+'px');
- const batCount=reduced.matches?7:Math.round(7+19*progress);
- const witchCount=reduced.matches?2:Math.round(2+3*progress);
+ const batCount=reduced.matches?7:(window.innerWidth<780?Math.round(6+12*progress):Math.round(7+19*progress));
+ const witchCount=reduced.matches?2:(window.innerWidth<780?Math.round(1+2*progress):Math.round(2+3*progress));
  if(previousBats!==batCount){
    halloween.bats.forEach((node,i)=>node.classList.toggle('is-active',i<batCount));
    previousBats=batCount;
@@ -221,7 +221,12 @@ function setSeason(value){
 window.GABYS_SET_SEASON=setSeason;
 window.addEventListener('gabys:season-change',event=>setSeason(event.detail?.season));
 window.addEventListener('scroll',schedule,{passive:true});
-window.addEventListener('resize',()=>{schedule();makeSnow()},{passive:true});
+let lastSnowWidth=window.innerWidth;
+window.addEventListener('resize',()=>{
+ schedule();
+ // La barra del navegador cambia la ALTURA al deslizar: no recrear 27 SVG por ello.
+ if(Math.abs(window.innerWidth-lastSnowWidth)>24){lastSnowWidth=window.innerWidth;makeSnow()}
+},{passive:true});
 document.addEventListener('visibilitychange',()=>{stage.classList.toggle('scene-paused',document.hidden)});
 const prior=body.dataset.gabysSeason;
 setSeason(allowed.has(prior)?prior:'navidad');

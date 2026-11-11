@@ -124,13 +124,16 @@ function attachStage(){
 function setupAmbientSparkles(){
   const layer=document.createElement('div');layer.className='ambient-stars';layer.setAttribute('aria-hidden','true');
   const coords=[[3,8],[94,17],[7,29],[98,44],[4,61],[91,78],[8,89],[97,94],[5,45],[93,58],[11,11],[88,38],[2,73],[96,7],[9,53],[90,92],[4,21],[97,72],[13,80],[86,13],[6,95],[95,30],[12,67],[88,66]];
-  const stars=coords.map(([x,y],i)=>{const node=document.createElement('span');node.className='ambient-star';node.textContent=['✧','✦','✳','✺'][i%4];node.style.left=x+'%';node.style.top=y+'%';node.style.fontSize=(15+(i*7)%23)+'px';node.style.animationDelay=(-i*.58)+'s';node.style.animationDuration=(4.4+(i%5)*.65)+'s';layer.appendChild(node);return node});
+  const visibleCoords=window.innerWidth<=780?coords.filter((_,i)=>i%3===0):coords;
+  const stars=visibleCoords.map(([x,y],i)=>{const node=document.createElement('span');node.className='ambient-star';node.textContent=['✧','✦','✳','✺'][i%4];node.style.left=x+'%';node.style.top=y+'%';node.style.fontSize=(15+(i*7)%23)+'px';node.style.animationDelay=(-i*.58)+'s';node.style.animationDuration=(4.4+(i%5)*.65)+'s';layer.appendChild(node);return node});
   document.body.appendChild(layer);
   if(reduced)return;
   let scheduled=false;
   const position=()=>{scheduled=false;const y=window.scrollY;stars.forEach((star,i)=>{const a=Math.sin(y*.0018+i*1.17)*(13+i%5*3),b=Math.cos(y*.001+i*.8)*9;star.style.translate=b.toFixed(1)+'px '+a.toFixed(1)+'px'})};
-  window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(position)}},{passive:true});
-  position();
+  if(window.innerWidth>780){
+    window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(position)}},{passive:true});
+    position();
+  }
 }
 async function crossfadeHero(selector,p,version){
   if(!p)return;
@@ -184,7 +187,12 @@ function fillHero(){
   }
   frame();
   if(heroTimer)clearInterval(heroTimer);
-  if(!reduced)heroTimer=setInterval(()=>{if(!document.hidden){offset++;frame()}},10000);
+  let heroVisible=true;
+  const heroSection=document.querySelector('.hero');
+  if(heroSection&&'IntersectionObserver' in window){
+    new IntersectionObserver(items=>{heroVisible=items.some(x=>x.isIntersecting)}, {threshold:.02,rootMargin:'100px'}).observe(heroSection);
+  }
+  if(!reduced)heroTimer=setInterval(()=>{if(!document.hidden&&heroVisible){offset++;frame()}},10000);
 }
 function setup(){
   buildDeck();attachStage();fillHero();setupAmbientSparkles();

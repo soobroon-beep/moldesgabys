@@ -6,7 +6,7 @@ const holder=stage?.querySelector('.gabys-stage-sticky');
 const patrias=holder?.querySelector('.gabys-patrias');
 const catalog=document.getElementById('catalogo');
 if(!holder||!patrias||!catalog)return;
-const small=window.matchMedia('(max-width:700px)');
+const small=window.matchMedia('(max-width:780px)');
 const reduced=window.matchMedia('(prefers-reduced-motion:reduce)');
 const rand=n=>{const x=Math.sin(n*127.13+63.37)*47832.393;return x-Math.floor(x)};
 const clamp=n=>Math.max(0,Math.min(1,n));
@@ -61,42 +61,50 @@ function create(){
  const fireworks=document.createElement('div');fireworks.className='gx-patrias-sky';
  fireworks.innerHTML='<div class="gx-patrias-glow"></div>';
  const pts=[[16,26],[82,20],[12,70],[87,66],[48,15],[55,72],[31,52],[70,42],[38,82]];
- pts.forEach(([x,y],i)=>{
+ pts.slice(0,small.matches?7:pts.length).forEach(([x,y],i)=>{
   const size=(small.matches?116:151)+rand(i+49)*(small.matches?45:105);
   fireworks.insertAdjacentHTML('beforeend','<span class="gx-firework-burst '+(i>=4?'gx-late':'')+'"'+style({fx:x+'%',fy:y+'%',fs:size.toFixed(0)+'px',fd:(-i*1.21).toFixed(2)+'s',fperiod:(4.6+rand(i+10)*1.7).toFixed(2)+'s'})+'><i class="gx-fire-launch"></i>'+fireSvg(i)+'</span>');
  });
- for(let i=0;i<(small.matches?20:36);i++){
+ for(let i=0;i<(small.matches?15:36);i++){
   fireworks.insertAdjacentHTML('beforeend','<span class="gx-fire-glitter '+(i>19?'gx-late':'')+'"'+style({x:(rand(i+220)*100).toFixed(1)+'%',y:(rand(i+283)*100).toFixed(1)+'%',size:(2+rand(i+321)*5).toFixed(1)+'px',delay:(-rand(i+360)*7).toFixed(2)+'s',dur:(2.4+rand(i+390)*3).toFixed(2)+'s'})+'></span>');
  }
  patrias.appendChild(fireworks);
  const love=newScene('gx-amor','<div class="gx-love-glow"></div><div class="gx-love-ribbon"></div>');
- for(let i=0;i<(small.matches?21:40);i++)
+ for(let i=0;i<(small.matches?17:40);i++)
   love.insertAdjacentHTML('beforeend','<span class="gx-heart '+(i>=12?'gx-late':'')+'"'+style({x:(rand(i+31)*100).toFixed(1)+'%',size:(16+rand(i+71)*(small.matches?45:64)).toFixed(1)+'px',duration:(7+rand(i+110)*8).toFixed(2)+'s',delay:(-rand(i+141)*16).toFixed(2)+'s',sway:((rand(i+217)-.5)*130).toFixed(1)+'px',hue:['#ff87b3','#ffb2cb','#ef618f','#f7acc0','#eac7ef'][i%5]})+'>'+heart+'</span>');
  for(let i=0;i<(small.matches?2:3);i++)
   love.insertAdjacentHTML('beforeend','<span class="gx-cupid '+(i===2?'gx-late':'')+'"'+style({top:(14+i*26)+'%',size:(small.matches?105:155+17*rand(i+7)).toFixed(0)+'px',duration:(11+i*3.8)+'s',delay:(-i*4.3-1)+'s',wave:((i%2?1:-1)*39)+'px'})+'>'+cupid+'</span>');
- for(let i=0;i<(small.matches?6:9);i++)
+ for(let i=0;i<(small.matches?5:9);i++)
   love.insertAdjacentHTML('beforeend','<span class="gx-heart-arrow '+(i>4?'gx-late':'')+'"'+style({top:(8+rand(i+18)*82).toFixed(1)+'%',duration:(5.8+rand(i+12)*3.8).toFixed(2)+'s',delay:(-i*1.7).toFixed(2)+'s',size:(small.matches?68:104)+'px'})+'>'+arrow+'</span>');
  const babies=newScene('gx-bebes','<div class="gx-baby-glow"></div><div class="gx-baby-moon">'+moon+'</div>');
- for(let i=0;i<(small.matches?6:10);i++)
+ for(let i=0;i<(small.matches?5:10);i++)
   babies.insertAdjacentHTML('beforeend','<span class="gx-baby-cloud '+(i>5?'gx-late':'')+'"'+style({top:(3+rand(i+40)*76).toFixed(1)+'%',size:(small.matches?105+rand(i+17)*70:135+rand(i+17)*145).toFixed(1)+'px',duration:(13+rand(i+77)*12).toFixed(2)+'s',delay:(-rand(i+83)*24).toFixed(2)+'s'})+'>'+cloud+'</span>');
- for(let i=0;i<(small.matches?28:58);i++)
+ for(let i=0;i<(small.matches?20:58);i++)
   babies.insertAdjacentHTML('beforeend','<span class="gx-baby-twinkle '+(i>19?'gx-late':'')+'"'+style({x:(rand(i+221)*100).toFixed(1)+'%',y:(rand(i+282)*94).toFixed(1)+'%',size:(8+rand(i+251)*15).toFixed(1)+'px',delay:(-rand(i+307)*5).toFixed(2)+'s',duration:(3+rand(i+392)*4).toFixed(2)+'s',color:i%2?'#ffefba':'#ffc7e2'})+'>'+star+'</span>');
  const ornaments=[bottle,rattle,pacifier];
- for(let i=0;i<7;i++)
+ for(let i=0;i<(small.matches?5:7);i++)
   babies.insertAdjacentHTML('beforeend','<span class="gx-baby-ornament '+(i>3?'gx-late':'')+'"'+style({x:(8+rand(i+111)*84).toFixed(1)+'%',top:(20+rand(i+121)*66).toFixed(1)+'%',size:(small.matches?39+rand(i+10)*21:56+rand(i+10)*34).toFixed(0)+'px',duration:(5+rand(i+191)*4).toFixed(2)+'s',delay:(-i*1.7).toFixed(2)+'s'})+'>'+ornaments[i%3]+'</span>');
  const bath=newScene('gx-bano','<div class="gx-bath-caustic"></div><div class="gx-bath-light"></div>');
- for(let i=0;i<(small.matches?30:63);i++)
+ for(let i=0;i<(small.matches?23:63);i++)
   bath.insertAdjacentHTML('beforeend','<span class="gx-bubble '+(i>23?'gx-late':'')+'"'+style({x:(rand(i+123)*100).toFixed(1)+'%',size:(12+rand(i+172)*(small.matches?54:78)).toFixed(1)+'px',dur:(5.5+rand(i+230)*8).toFixed(2)+'s',delay:(-rand(i+293)*13).toFixed(2)+'s',drift:((rand(i+340)-.5)*175).toFixed(1)+'px',opacity:(.42+rand(i+360)*.40).toFixed(2)})+'><i></i></span>');
  const party=newScene('gx-todo','<div class="gx-party-glow"></div><div class="gx-party-ribbon ribbon-a"></div><div class="gx-party-ribbon ribbon-b"></div>');
  const colors=['#ffc4dd','#ffd87a','#91dfd8','#f9a5a7','#c4afea','#a6dbaa','#f3bd83'];
  const classes=['gx-confetti-dot','gx-confetti-petal','gx-confetti-spark','gx-confetti-ribbon','gx-confetti-diamond'];
- for(let i=0;i<(small.matches?52:100);i++){
+ for(let i=0;i<(small.matches?37:100);i++){
   const kind=classes[i%classes.length];
   party.insertAdjacentHTML('beforeend','<span class="gx-confetti '+kind+' '+(i>34?'gx-late':'')+'"'+style({x:(rand(i+13)*100).toFixed(1)+'%',size:(7+rand(i+74)*21).toFixed(1)+'px',dur:(6+rand(i+93)*10).toFixed(2)+'s',delay:(-rand(i+116)*16).toFixed(2)+'s',drift:((rand(i+192)-.5)*240).toFixed(1)+'px',color:colors[i%colors.length]})+'>'+(kind==='gx-confetti-spark'?star:'')+'</span>');
  }
 }
 create();
 stage.classList.add('gx-enhanced');
+// Animaciones suspendidas cuando el catálogo está lejos del área visible.
+if(small.matches&&'IntersectionObserver' in window){
+  const sceneWatch=new IntersectionObserver(entries=>{
+    stage.classList.toggle('gx-offscreen',!entries[0].isIntersecting);
+  },{rootMargin:'250px 0px 250px 0px',threshold:0});
+  sceneWatch.observe(catalog);
+}
+
 let scheduled=0,last=-1;
 function update(){
  scheduled=0;

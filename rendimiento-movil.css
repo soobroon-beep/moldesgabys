@@ -1,0 +1,103 @@
+/* Gaby's · rendimiento móvil. Efectos ligeros, mismas colecciones y diseño.
+   Solo entra en vigor en celulares/tabletas pequeñas. */
+@media(max-width:780px){
+  /* Evita repintar el fondo entero del catálogo cada fotograma. */
+  body[data-gabys-season]:not([data-gabys-season="todos"]) #catalogo.catalog-section{
+    animation:none!important;
+    background-size:100% 100%!important;
+    background-position:50% 50%!important;
+  }
+
+  /* Menú: conserva la contracción elegante, con una sola transición de CSS
+     al cambiar de estado, sin desenfoque de 22 px que sobrecarga la GPU. */
+  .site-header.gabys-parallax .header-inner{
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+    transition:height .29s cubic-bezier(.22,.7,.25,1),
+               min-height .29s cubic-bezier(.22,.7,.25,1),
+               padding .29s ease,transform .29s ease,
+               border-radius .29s ease,background .29s ease,
+               border-color .29s ease,box-shadow .29s ease!important;
+  }
+  .site-header.gabys-parallax .brand-oficial .brand-bird-large,
+  .site-header.gabys-parallax .brand-oficial .brand-lettering{
+    transition:width .29s cubic-bezier(.22,.7,.25,1),
+               height .29s cubic-bezier(.22,.7,.25,1)!important;
+  }
+  #catalogo .catalog-bar{
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+    background:rgba(35,26,49,.76)!important;
+  }
+
+  /* ScrollExpand se mantiene en escritorio. En móvil el carrusel conserva
+     sus fotos y destellos pero evita recortar y ampliar un marco cada 16 ms. */
+  .gs-motion-ready #ultimos-modelos .recent-gallery{
+    -webkit-clip-path:none!important;
+    clip-path:none!important;
+    transform:none!important;
+  }
+  .gs-motion-ready #colecciones .collection-grid,
+  .gs-motion-ready #comprar .how-grid{
+    transform:none!important;
+    opacity:1!important;
+    will-change:auto!important;
+  }
+
+  /* Apariciones sin filtros de desenfoque repetidos en decenas de modelos. */
+  .gs-motion-ready .gs-reveal,
+  .gs-motion-ready .gs-reveal[data-gs-motion]{
+    filter:none!important;
+    transition:opacity .46s ease,transform .52s cubic-bezier(.2,.7,.2,1)!important;
+  }
+  .gs-motion-ready .gs-reveal[data-gs-motion="up"]{
+    transform:translate3d(0,16px,0) scale(.99);
+  }
+  .gs-motion-ready .gs-reveal[data-gs-motion="left"]{
+    transform:translate3d(-13px,8px,0) scale(.99);
+  }
+  .gs-motion-ready .gs-reveal[data-gs-motion="right"]{
+    transform:translate3d(13px,8px,0) scale(.99);
+  }
+  .gs-motion-ready .gs-reveal[data-gs-motion="zoom"]{
+    transform:translate3d(0,12px,0) scale(.97);
+  }
+  .gs-motion-ready .gs-reveal.gs-visible,
+  .gs-motion-ready .gs-reveal[data-gs-motion].gs-visible{
+    opacity:1!important;
+    transform:translate3d(0,0,0) scale(1)!important;
+  }
+
+  /* Sin cientos de capas permanentes de GPU para partículas individuales. */
+  .gx-heart,.gx-bubble,.gx-confetti,.gx-baby-twinkle,
+  .gabys-snowflake,.gabys-h-flyer,.ambient-star{
+    will-change:auto!important;
+  }
+  .gx-heart,.gx-cupid,.gx-baby-ornament{
+    filter:none!important;
+  }
+  .gx-love-glow,.gx-bath-light,.gx-bath-caustic,.gx-party-glow,
+  .gx-patrias-glow,.gx-baby-glow,.gabys-h-sky-glow{
+    animation:none!important;
+  }
+  .gx-love-glow{filter:none!important;opacity:.72}
+  .gx-bath-caustic{opacity:.31}
+  #catalogo .gabys-stage-sticky::after{animation:none!important}
+  .hero .hero-noise{will-change:auto!important}
+}
+
+/* Suspender todo el trabajo animado de temporadas que no se ven.
+   Especialmente importante para la nieve y las alas de los murciélagos. */
+#gabys-season-stage.gx-offscreen *,
+#gabys-season-stage.scene-paused *,
+#gabys-season-stage:not([data-scene="halloween"]) .gabys-halloween *,
+#gabys-season-stage:not([data-scene="navidad"]) .gabys-christmas *{
+  animation-play-state:paused!important;
+}
+@media(prefers-reduced-motion:reduce){
+  .site-header.gabys-parallax .header-inner,
+  .site-header.gabys-parallax .brand-oficial .brand-bird-large,
+  .site-header.gabys-parallax .brand-oficial .brand-lettering{
+    transition:none!important;
+  }
+}
