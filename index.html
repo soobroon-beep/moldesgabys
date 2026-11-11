@@ -31,10 +31,11 @@
   <link rel="stylesheet" href="rendimiento-movil.css?v=1">
   <link rel="stylesheet" href="tutoriales.css?v=2">
   <link rel="stylesheet" href="instalar-app.css?v=1">
+  <link rel="stylesheet" href="asistente-ia.css?v=1">
   <script defer src="configuracion.js"></script>
   <script defer src="catalogo.js?v=2"></script>
   <script defer src="navidad.js?v=2"></script>
-  <script defer src="etiquetas-visuales.js"></script>
+  <script defer src="etiquetas-visuales.js?v=2"></script>
   <script defer src="app.js?v=7"></script>
   <script defer src="novedades.js?v=8"></script>
   <script defer src="temporadas.js?v=9"></script>
@@ -44,6 +45,7 @@
   <script defer src="scroll-escenas.js?v=2"></script>
   <script defer src="tutoriales.js?v=1"></script>
   <script defer src="instalar-app.js?v=1"></script>
+  <script defer src="asistente-ia.js?v=1"></script>
 </head>
 <body data-gabys-season="navidad">
   <div class="announcement"><span class="ann-star">✦</span> Diseños que inspiran, creaciones que enamoran <span class="announcement-divider">•</span> Más de 30 años creando contigo <span class="ann-star">✦</span></div>
@@ -229,7 +231,7 @@
   <div class="shade" id="shade" hidden></div>
   <aside class="drawer" id="cart-drawer" aria-hidden="true" aria-labelledby="cart-title" role="dialog"><div class="drawer-header"><div><small>MI MUNDO CREATIVO</small><h2 id="cart-title">Tu selección <span id="cart-subcount">(0)</span></h2></div><button class="close-x" data-close="cart" aria-label="Cerrar carrito">×</button></div><div class="drawer-body" id="cart-items"></div><div class="drawer-footer"><div class="price-row"><span>Total estimado</span><strong id="cart-total">$0 MXN</strong></div><p class="estimate-note">Precios de referencia, sujetos a confirmación. Aún no se ha realizado ningún pago.</p><button id="pay-btn" class="btn btn-primary btn-full" disabled>Pagar con Mercado Pago (pendiente)</button><button id="wa-order" class="btn btn-outline btn-full">Preparar pedido por WhatsApp <span>↗</span></button></div></aside>
   <div class="modal-wrap" id="product-modal" hidden><div class="modal-backdrop" data-close="modal"></div><article class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="close-x modal-close" data-close="modal" aria-label="Cerrar">×</button><div class="modal-visual"><img id="modal-photo" alt="Foto del modelo"><a id="modal-drive" target="_blank" rel="noopener noreferrer">Ver fotografía original en Drive ↗</a></div><div class="modal-info"><div class="section-label" id="modal-season">HALLOWEEN</div><h2 id="modal-title">Modelo</h2><div class="model-code" id="modal-code"></div><p>¿Cómo quieres recibir tu molde? Elige el formato que prefieras para añadirlo al carrito.</p><div class="format-options"><label><input type="radio" name="format" value="digital" checked><span><strong>Molde digital</strong><small>Entrega a confirmar</small></span><b id="digital-price">$30</b></label><label><input type="radio" name="format" value="fisico"><span><strong>Molde físico</strong><small>Envío a confirmar</small></span><b id="physical-price">$65</b></label></div><button id="add-cart" class="btn btn-primary btn-full">Añadir a mi selección <span>+</span></button><small class="modal-disclaimer">Foto ilustrativa del diseño terminado; no es el archivo de molde descargable.</small></div></article></div>
-  <div class="assistant-panel" id="assistant-panel" hidden aria-label="Asesor del catálogo"><div class="assistant-head"><span class="assistant-avatar">✳</span><div><strong>Asesor Gaby's</strong><small id="assistant-mode">Guía del catálogo · Disponible</small></div><button id="close-assistant" aria-label="Cerrar asistente">×</button></div><div class="assistant-messages" id="assistant-messages" aria-live="polite"></div><div class="assistant-suggestions" id="assistant-suggestions"><button data-prompt="¿Cómo compro los moldes?">¿Cómo compro?</button><button data-prompt="Muéstrame muñecos de nieve">⛄ Muñecos de nieve</button><button data-prompt="Muéstrame renos de Navidad">🦌 Renos</button><button data-prompt="Busca el modelo 253">N.º 253</button><button data-prompt="¿Cuándo puedo pagar?">Pagos</button></div><form class="assistant-input" id="assistant-form"><input id="assistant-question" placeholder="Describe un molde: muñecos de nieve..." aria-label="Escribe tu pregunta" maxlength="480" required><button type="submit" aria-label="Enviar">➤</button></form></div><button id="assistant-launcher" class="assistant-launcher"><span>✳</span><span>¿Buscas un molde? <small>Te ayudo ✦</small></span></button>
+  <!-- Colibrí: asistente con IA gratuita (asistente-ia.js) -->
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 </body>
 </html>

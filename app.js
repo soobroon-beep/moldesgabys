@@ -156,7 +156,7 @@ function openAssistant(){const panel=$('#assistant-panel');panel.hidden=false;$(
 function closeAssistant(){$('#assistant-panel').hidden=true;$('#assistant-launcher').hidden=false}
 function showInCatalog(hits){
  activeResultCodes=new Set(hits.map(p=>p.codigo));season='todos';window.GABYS_SET_SEASON?.('todos');$('#search').value='';$('#sort').value='asc';visible=48;renderCollections();renderProducts();
- closeAssistant();$('#catalogo').scrollIntoView({behavior:'smooth',block:'start'});
+ if($('#assistant-panel'))closeAssistant();$('#catalogo').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function resultMessage(hits,subject,visual){
  if(!hits.length)return;
@@ -208,7 +208,8 @@ async function askAssistant(query){
  if(search.subject){say('No encontré coincidencias verificables para «'+search.subject+'». Prueba un nombre más corto, como «renos», «muñecos de nieve» o «brujitas».');return}
  say('Descríbeme la figura que quieres o dime el número de su foto. También puedo ayudarte con tu pedido.');
 }
-function setup(){const featured=(key)=>products.filter(p=>p.seccion===key).sort((a,b)=>(b.numero??-1)-(a.numero??-1));setHeroImage('#hero-photo',featured('navidad')[0]||base[0]);setHeroImage('#hero-photo-left',featured('halloween')[0]||base[1]);setHeroImage('#hero-photo-right',featured('navidad')[1]||base[2]);renderCollections();renderProducts();renderCart();$('#open-cart').addEventListener('click',openCart);$('#shade').addEventListener('click',closeCart);document.querySelectorAll('[data-close="cart"]').forEach(x=>x.addEventListener('click',closeCart));document.querySelectorAll('[data-close="modal"]').forEach(x=>x.addEventListener('click',closeModal));$('#add-cart').addEventListener('click',addCart);$('#search').addEventListener('input',()=>{activeResultCodes=null;visible=48;renderProducts()});$('#sort').addEventListener('change',renderProducts);$('#show-more').addEventListener('click',()=>{visible+=48;renderProducts()});$('#clear-search').addEventListener('click',()=>{$('#search').value='';activeResultCodes=null;renderProducts()});$('#open-search').addEventListener('click',()=>{document.getElementById('catalogo').scrollIntoView({behavior:'smooth'});$('#search').focus()});$('#wa-order').addEventListener('click',sendWhatsapp);$('#pay-btn').addEventListener('click',startPayment);$('#assistant-launcher').addEventListener('click',openAssistant);$('#close-assistant').addEventListener('click',closeAssistant);$('#assistant-form').addEventListener('submit',e=>{e.preventDefault();askAssistant($('#assistant-question').value)});$$('[data-prompt]').forEach(x=>x.addEventListener('click',()=>askAssistant(x.dataset.prompt)));document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart();closeAssistant()}});
+function setup(){const featured=(key)=>products.filter(p=>p.seccion===key).sort((a,b)=>(b.numero??-1)-(a.numero??-1));setHeroImage('#hero-photo',featured('navidad')[0]||base[0]);setHeroImage('#hero-photo-left',featured('halloween')[0]||base[1]);setHeroImage('#hero-photo-right',featured('navidad')[1]||base[2]);renderCollections();renderProducts();renderCart();$('#open-cart').addEventListener('click',openCart);$('#shade').addEventListener('click',closeCart);document.querySelectorAll('[data-close="cart"]').forEach(x=>x.addEventListener('click',closeCart));document.querySelectorAll('[data-close="modal"]').forEach(x=>x.addEventListener('click',closeModal));$('#add-cart').addEventListener('click',addCart);$('#search').addEventListener('input',()=>{activeResultCodes=null;visible=48;renderProducts()});$('#sort').addEventListener('change',renderProducts);$('#show-more').addEventListener('click',()=>{visible+=48;renderProducts()});$('#clear-search').addEventListener('click',()=>{$('#search').value='';activeResultCodes=null;renderProducts()});$('#open-search').addEventListener('click',()=>{document.getElementById('catalogo').scrollIntoView({behavior:'smooth'});$('#search').focus()});$('#wa-order').addEventListener('click',sendWhatsapp);$('#pay-btn').addEventListener('click',startPayment);// El asesor antiguo se reemplazó por el Colibrí con IA (asistente-ia.js); solo se conecta si su marcado existe.
+if($('#assistant-launcher')){$('#assistant-launcher').addEventListener('click',openAssistant);$('#close-assistant').addEventListener('click',closeAssistant);$('#assistant-form').addEventListener('submit',e=>{e.preventDefault();askAssistant($('#assistant-question').value)});$$('[data-prompt]').forEach(x=>x.addEventListener('click',()=>askAssistant(x.dataset.prompt)))}document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeCart();if($('#assistant-panel'))closeAssistant()}});
 // When a full Node server is running, it can offer additional uploaded photos, payments and a local open-source model.
 fetch('api/config').then(r=>{if(!r.ok||!r.headers.get('content-type')?.includes('json'))throw Error('static');return r.json()}).then(async data=>{window.GABYS_PAGOS_HABILITADOS=!!data.payments_enabled;window.GABYS_IA_HABILITADA=!!data.ai_enabled;if(data.precios){PRICE.digital=Number(data.precios.digital)||PRICE.digital;PRICE.fisico=Number(data.precios.fisico)||PRICE.fisico}if(data.whatsapp)WHATSAPP=String(data.whatsapp).replace(/\D/g,'');renderCart();if(data.uploads_enabled){const r=await fetch('/api/catalogo');if(r.ok){const j=await r.json();if(Array.isArray(j.products)){products=j.products;renderCollections();renderProducts();renderCart()}}}}).catch(()=>{});
 }
@@ -227,6 +228,24 @@ function motion(){
     area.addEventListener('pointerleave',()=>{area.style.transform='translate3d(0,0,0)'});
   }
 }
-window.GABYS_TIENDA={abrirModelo:openProduct,obtenerModelos:()=>products.slice()};
+function addCode(codigo,formato){const p=products.find(x=>x.codigo===codigo);if(!p)return false;const f=formato==='fisico'?'fisico':'digital';if(!cart.some(x=>x.codigo===codigo&&x.formato===f)){cart.push({codigo,formato:f});store()}return true}
+function showSeason(key){if(!seasons.some(s=>s.key===key))return false;season=key;activeResultCodes=null;visible=48;$('#search').value='';window.GABYS_SET_SEASON?.(season);renderCollections();renderProducts();$('#catalogo').scrollIntoView({behavior:'smooth'});return true}
+window.GABYS_TIENDA={
+ abrirModelo:openProduct,
+ obtenerModelos:()=>products.slice(),
+ temporadas:()=>seasons.map(s=>({...s,total:s.key==='todos'?products.length:products.filter(p=>p.seccion===s.key).length})),
+ mostrarEnCatalogo:codes=>{const set=new Set(codes);const hits=products.filter(p=>set.has(p.codigo));if(hits.length)showInCatalog(hits);return hits.length},
+ verColeccion:showSeason,
+ agregar:addCode,
+ quitar:(codigo,formato)=>{cart=cart.filter(x=>!(x.codigo===codigo&&(!formato||x.formato===formato)));store()},
+ carrito:()=>cart.map(x=>({...x,precio:PRICE[x.formato],nombre:(products.find(p=>p.codigo===x.codigo)||{}).nombre})),
+ abrirCarrito:openCart,
+ cerrarModal:closeModal,
+ enviarWhatsapp:sendWhatsapp,
+ precios:()=>({...PRICE}),
+ whatsapp:()=>WHATSAPP,
+ imagen:itemImage,
+ imagenRespaldo:fallbackImage
+};
 setup();motion();
 })();

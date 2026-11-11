@@ -34,3 +34,10 @@ Los archivos `server.mjs`, `admin.html` y `pedido.html` permanecen **solo en el 
 - Las imágenes son ejemplos de figuras terminadas, no los patrones descargables. **No hay pagos activos**.
 - Contacto público: WhatsApp +52 272 130 0818, presente en el pie de página y en los pedidos.
 - Si Google Drive limita miniaturas al sincronizar, el catálogo conserva enlaces a las fotografías originales.
+## Colibrí: asistente con IA gratuita (noviembre 2026)
+
+- `asistente-ia.js` + `asistente-ia.css`: el colibrí del logo vuela en la esquina (alas animadas), hace preguntas («¿Buscas modelos de Santa Claus?») y abre un chat de atención a clientes.
+- Usa la IA gratuita de modelos abiertos de **Pollinations** (sin cuentas ni claves del cliente). Si la IA no responde, sigue ayudando con su guía local.
+- Busca modelos por descripción, número o código y los muestra con foto: al tocarlos se abre el modelo para elegir digital/físico y añadirlo a «Mi selección». También abre el carrito, prepara el pedido por WhatsApp y da los datos de la tienda.
+- Voz: toca el micrófono, habla todo lo que quieras y toca ✓ para enviar (no se corta solo).
+- `scripts/describir_fotos_ia.py` + workflow **IA describe las fotos del catálogo**: una IA de visión gratuita describe cada foto (figuras, tipo, colores) y genera `descripciones-ia.js` y `etiquetas-visuales.js`. Retoma donde se quedó, corre cada 4 horas hasta terminar y vuelve a describir fotos nuevas cuando cambia el catálogo.
