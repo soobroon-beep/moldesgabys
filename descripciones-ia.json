@@ -1791,6 +1791,21 @@
 "m": "openai",
 "t": "adorno"
 },
+"AMO26-0120": {
+"c": [
+"azul",
+"naranja",
+"verde",
+"rosa"
+],
+"d": "Perro de fieltro con carita tierna y una rana en el hombro, con reloj central decorativo.",
+"f": [
+"perro",
+"rana"
+],
+"m": "openai",
+"t": "adorno"
+},
 "BAN26-0001": {
 "c": [
 "azul",
@@ -1805,5 +1820,1860 @@
 ],
 "m": "openai",
 "t": "letrero de bienvenida"
+},
+"BAN26-0002": {
+"c": [
+"azul claro",
+"amarillo",
+"rojo",
+"blanco"
+],
+"d": "Figura de fieltro en forma de gota con sol, luna y estrellitas decorativas.",
+"f": [
+"sol",
+"luna",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0003": {
+"c": [
+"morado",
+"rosa",
+"verde",
+"blanco"
+],
+"d": "Dos figuras rectangulares y una ovalada con rosas moradas y hojas verdes en fondo claro.",
+"f": [
+"rosa"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0004": {
+"c": [
+"morado",
+"azul marino",
+"verde"
+],
+"d": "Adorno de fieltro con base azul y flores moradas con hojas verdes y estrellitas decorativas.",
+"f": [
+"flor",
+"hoja",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0005": {
+"c": [
+"azul",
+"verde",
+"rosa",
+"blanco"
+],
+"d": "Adorno tipo letrero con flores y hojas en tonos azules y verdes sobre tela blanca.",
+"f": [
+"flor",
+"hoja"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0006": {
+"c": [
+"azul",
+"verde",
+"morado",
+"amarillo"
+],
+"d": "Letrero de bienvenida con ramo floral en forma de greca y letras decoradas.",
+"f": [
+"ramo floral",
+"letra"
+],
+"m": "openai",
+"t": "letrero de bienvenida"
+},
+"BAN26-0007": {
+"c": [
+"naranja",
+"verde",
+"amarillo",
+"rosa"
+],
+"d": "Aplique de fieltro con un pájaro azul y flores sobre formas de hoja naranja.",
+"f": [
+"pájaro"
+],
+"m": "openai",
+"t": "letrero decorativo"
+},
+"BAN26-0008": {
+"c": [
+"azul",
+"blanco",
+"morado",
+"rosa"
+],
+"d": "Adorno de fieltro azul con flores blancas y mariposas moradas y rosas sobre diseño recortado.",
+"f": [
+"mariposa",
+"flor",
+"hoja"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0009": {
+"c": [
+"azul",
+"verde",
+"amarillo"
+],
+"d": "Adorno de pavo real con hojas verdes y fondo azul, con textura tipo fieltro bordado.",
+"f": [
+"pavo real"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0010": {
+"c": [
+"amarillo",
+"verde",
+"morado",
+"blanco"
+],
+"d": "Adorno de fieltro con flores de girasol y hojas verdes sobre base color menta.",
+"f": [
+"girasol"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0011": {
+"c": [
+"amarillo",
+"verde",
+"azul"
+],
+"d": "Mariposa amarilla con flores de girasol sobre base azul, con hojas verdes y detalles decorativos.",
+"f": [
+"mariposa",
+"girasol"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0013": {
+"c": [
+"azul",
+"blanco",
+"amarillo",
+"naranja"
+],
+"d": "Adorno de fieltro con ángeles y niños en escenas sobre formas azules con lunares.",
+"f": [
+"ángel",
+"pez",
+"niño",
+"cesta"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0014": {
+"c": [
+"azul",
+"amarillo",
+"naranja",
+"rosa"
+],
+"d": "Letrero de bienvenida infantil con animales en fieltro y arcoíris decorativo.",
+"f": [
+"oso",
+"tigre",
+"jirafa",
+"conejo"
+],
+"m": "openai",
+"t": "letrero de bienvenida"
+},
+"BAN26-0015": {
+"c": [
+"naranja",
+"azul",
+"blanco",
+"gris"
+],
+"d": "Conjunto marino de pez payaso y otros animales hechos en fieltro para decorar.",
+"f": [
+"pez payaso",
+"tiburon",
+"ballena",
+"medusa"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0016": {
+"c": [
+"morado",
+"amarillo",
+"azul",
+"verde"
+],
+"d": "Conjunto de osos de fieltro en tonos morado, amarillo y azul para decoración de mesa.",
+"f": [
+"oso",
+"corazón"
+],
+"m": "openai",
+"t": "centro de mesa"
+},
+"BAN26-0017": {
+"c": [
+"rosa",
+"azul",
+"rojo",
+"blanco"
+],
+"d": "Adorno de bebé en pijama azul dentro de un bolsillo con corazones rojos y estrellas.",
+"f": [
+"bebé",
+"corazón",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0018": {
+"c": [
+"blanco",
+"negro",
+"azul"
+],
+"d": "Adorno circular de fieltro con el ratón mickey sosteniendo una guitarra y estrellas azules.",
+"f": [
+"ratón mickey",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0019": {
+"c": [
+"amarillo",
+"azul",
+"blanco",
+"verde"
+],
+"d": "Adorno de fieltro con pollitos sobre un huevo decorado con motas blancas.",
+"f": [
+"pollito",
+"huevo"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0020": {
+"c": [
+"azul",
+"amarillo",
+"rojo",
+"blanco"
+],
+"d": "Figura de personajes infantiles en estilo cuento, con fondo de luna y estrellas.",
+"f": [
+"pato",
+"conejo",
+"gato",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0022": {
+"c": [
+"azul",
+"marrón",
+"amarillo",
+"blanco"
+],
+"d": "Porta dulces de fieltro con animales en diseños de selva.",
+"f": [
+"perrito",
+"pájaro",
+"elefante",
+"león",
+"oso"
+],
+"m": "openai",
+"t": "centro de mesa"
+},
+"BAN26-0024": {
+"c": [
+"rojo",
+"blanco",
+"verde",
+"dorado"
+],
+"d": "Bota navideña de fieltro con moño floral rojo y detalles en blanco y dorado.",
+"f": [
+"bota navideña",
+"cajita",
+"moño"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0025": {
+"c": [
+"amarillo",
+"azul",
+"negro",
+"naranja"
+],
+"d": "Adorno de fieltro con winnie pooh y amigos en paisaje azul.",
+"f": [
+"tigre",
+"winnie pooh",
+"burro",
+"conejo"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0026": {
+"c": [
+"rosa",
+"negro",
+"blanco",
+"azul"
+],
+"d": "Figura de mickey mouse en felpa con fondo rosa y flores, estilo letrero de bienvenida.",
+"f": [
+"mickey mouse"
+],
+"m": "openai",
+"t": "letrero de bienvenida"
+},
+"BAN26-0027": {
+"c": [
+"azul",
+"blanco",
+"marrón",
+"amarillo"
+],
+"d": "Adorno de fieltro con el nacimiento y el ángel, en forma de número siete azul.",
+"f": [
+"ángel",
+"bebe",
+"nacimiento"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0028": {
+"c": [
+"amarillo",
+"verde",
+"rojo",
+"morado"
+],
+"d": "Adorno navideño de felpa con tigre y Winnie Pooh, acompañado de figuras pequeñas en bolsillo.",
+"f": [
+"tigre",
+"teddy winnie pooh",
+"conejo"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0029": {
+"c": [
+"azul",
+"amarillo",
+"blanco"
+],
+"d": "Letrero con forma de pollito en fondo azul con lunares blancos.",
+"f": [
+"pollito"
+],
+"m": "openai",
+"t": "letrero de bienvenida"
+},
+"BAN26-0030": {
+"c": [
+"verde",
+"amarillo",
+"rosado",
+"morado"
+],
+"d": "Pooh y sus amigos aparecen en un adorno de fieltro con fondo verde.",
+"f": [
+"pooh",
+"cerdito",
+"pajarito",
+"conejo",
+"pollito"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0031": {
+"c": [
+"amarillo",
+"verde",
+"negro",
+"beige"
+],
+"d": "Bota navideña de fieltro decorada con girasoles y hojas verdes sobre base negra.",
+"f": [
+"bota navideña",
+"flores"
+],
+"m": "openai",
+"t": "bota navideña"
+},
+"BAN26-0032": {
+"c": [
+"rosa",
+"azul",
+"amarillo",
+"verde"
+],
+"d": "Figura de princesa con flores y detalles de hadas sobre fondo rosa.",
+"f": [
+"princesa",
+"hombre",
+"hada"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0033": {
+"c": [
+"azul",
+"turquesa",
+"verde",
+"amarillo"
+],
+"d": "Adorno marino en forma de ola con delfines y peces entre burbujas.",
+"f": [
+"delfín",
+"pez",
+"estrella de mar"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0034": {
+"c": [
+"turquesa",
+"rojo",
+"gris",
+"negro"
+],
+"d": "Aplicación con varios animales tipo cuento, en marco de fieltro turquesa.",
+"f": [
+"zorro",
+"gato",
+"conejo",
+"pájaro"
+],
+"m": "openai",
+"t": "centro de mesa"
+},
+"BAN26-0035": {
+"c": [
+"negro",
+"blanco",
+"rosa",
+"rojo"
+],
+"d": "Adorno de fieltro con diseño de Mickey y Minnie, con detalles en azul y rosa.",
+"f": [
+"cabeza de mickey mouse",
+"cabeza de minnie",
+"ratón mickey",
+"ratón minnie"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0036": {
+"c": [
+"azul",
+"rojo",
+"negro",
+"amarillo"
+],
+"d": "Adorno de fieltro con tigre, oso y conejos sobre fondo azul.",
+"f": [
+"tigre",
+"oso",
+"conejo"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0037": {
+"c": [
+"negro",
+"rojo",
+"azul",
+"verde"
+],
+"d": "Adorno de fieltro con personajes estilo mickey y perros, con colores negro y azul.",
+"f": [
+"perrito",
+"mickey mouse"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0040": {
+"c": [
+"rojo",
+"verde",
+"blanco",
+"rosa"
+],
+"d": "Corazón navideño con motivos de fresas, panda y una niña colgando en fieltro.",
+"f": [
+"corazón",
+"fresa",
+"panda",
+"niña",
+"ratón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0041": {
+"c": [
+"azul marino",
+"amarillo",
+"beige",
+"blanco"
+],
+"d": "Figura de fieltro con temática de pumas y balón de fútbol, en forma de portallaves o adorno.",
+"f": [
+"jugador de pumas",
+"escudo pumas",
+"pelota de futbol",
+"osito pumas",
+"león puma"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0042": {
+"c": [
+"azul",
+"blanco",
+"rojo",
+"negro"
+],
+"d": "Figura de felpa con futbolista gatito y escudo de equipo, con balones decorativos.",
+"f": [
+"escudo futbol",
+"balón de fútbol",
+"gatito"
+],
+"m": "openai",
+"t": "centro de mesa"
+},
+"BAN26-0043": {
+"c": [
+"rojo",
+"azul",
+"amarillo",
+"blanco"
+],
+"d": "Figura de fieltro con bebé futbolista y detalles en forma de pelota y escudo.",
+"f": [
+"futbol",
+"bebé"
+],
+"m": "openai",
+"t": "centro de mesa"
+},
+"BAN26-0045": {
+"c": [
+"azul",
+"rojo",
+"negro",
+"blanco"
+],
+"d": "Estuche o bolsita de fieltro azul con figuras de hombre araña y arañas rojas.",
+"f": [
+"spiderman",
+"araña",
+"hombre araña"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0046": {
+"c": [
+"amarillo",
+"azul",
+"rojo",
+"negro"
+],
+"d": "Letrero con silueta de balón y perro jugando fútbol con letras decorativas.",
+"f": [
+"perro",
+"fútbol"
+],
+"m": "openai",
+"t": "letrero de bienvenida"
+},
+"BAN26-0048": {
+"c": [
+"verde",
+"negro",
+"blanco",
+"rosa"
+],
+"d": "Adorno con cisnes y pavo real sobre fondo negro con flores de colores.",
+"f": [
+"pavo real",
+"cisne",
+"flor"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0049": {
+"c": [
+"azul",
+"verde",
+"rosa",
+"café"
+],
+"d": "Figura infantil con niña y personajes de animales azules sobre una base tipo tapete.",
+"f": [
+"niña",
+"perro",
+"perrito",
+"oso"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0050": {
+"c": [
+"azul",
+"verde",
+"amarillo",
+"rosa"
+],
+"d": "Adorno tipo bandera con flores y mariposas sobre fondo azul y detalles en verde.",
+"f": [
+"flor",
+"mariposa",
+"pez"
+],
+"m": "openai",
+"t": "letrero de bienvenida"
+},
+"BAN26-0051": {
+"c": [
+"amarillo",
+"azul",
+"rojo",
+"blanco"
+],
+"d": "Figura de pareja con mujer y corazón, en tonos azul y amarillo con detalles multicolor.",
+"f": [
+"pareja enamorada",
+"mujer",
+"bebé"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0052": {
+"c": [
+"azul",
+"amarillo",
+"rojo",
+"negro"
+],
+"d": "Set de figuras de animales de fieltro con capuchas y colores vivos, tipo Halloween.",
+"f": [
+"cachorro",
+"gato",
+"oso",
+"conejo",
+"perro"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0053": {
+"c": [
+"azul",
+"amarillo",
+"blanco",
+"café"
+],
+"d": "Figura de fieltro con bolso y bordes azules, con caritas de animales en el fondo.",
+"f": [
+"perro",
+"conejo",
+"gato",
+"búho",
+"pajarito"
+],
+"m": "openai",
+"t": "centro de mesa"
+},
+"BAN26-0054": {
+"c": [
+"azul",
+"verde",
+"amarillo",
+"naranja"
+],
+"d": "Dos piezas de fieltro con peces y un delfín en ambiente marino, formando una ventana decorativa.",
+"f": [
+"pez",
+"delfín"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0055": {
+"c": [
+"azul",
+"beige",
+"verde",
+"blanco"
+],
+"d": "Escena infantil con animales y niño en paisaje de playa con hojas verdes.",
+"f": [
+"osito",
+"jirafa",
+"niño",
+"vaca"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0056": {
+"c": [
+"rosa",
+"celeste",
+"morado"
+],
+"d": "Adorno de fieltro con un gato celeste y moño rosa, con fondo morado y detalles en corazón.",
+"f": [
+"gato"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0057": {
+"c": [
+"rosa",
+"azul",
+"morado",
+"amarillo"
+],
+"d": "Corona de fieltro con retratos de princesas y personajes de cuento en círculos.",
+"f": [
+"princesa",
+"bruja",
+"hada",
+"reina",
+"chica vampiro",
+"duende"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0058": {
+"c": [
+"rosa",
+"azul",
+"negro",
+"blanco"
+],
+"d": "Dos siluetas de mickey y minnie en fieltro sobre fondo rosa, tipo decorativo.",
+"f": [
+"mickey mouse",
+"minnie mouse"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0059": {
+"c": [
+"azul",
+"blanco",
+"dorado",
+"rosado"
+],
+"d": "Nacimiento en forma rectangular con niño dios, ángel y escena invernal azul con detalles dorados.",
+"f": [
+"nacimiento",
+"niño dios",
+"ángel",
+"pez",
+"castillo"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0060": {
+"c": [
+"azul",
+"morado",
+"amarillo",
+"rojo"
+],
+"d": "Tapete de fieltro con bruja morada, duende y estrellas en fondo azul.",
+"f": [
+"bruja",
+"duende",
+"estrella"
+],
+"m": "openai",
+"t": "tapete"
+},
+"BAN26-0060-02": {
+"c": [
+"azul",
+"morado",
+"rosa",
+"amarillo"
+],
+"d": "Tapete de fieltro con figuras de hada, bruja y estrellas decorativas.",
+"f": [
+"hada",
+"bruja",
+"estrella"
+],
+"m": "openai",
+"t": "tapete"
+},
+"BAN26-0061": {
+"c": [
+"azul",
+"blanco",
+"verde"
+],
+"d": "Adorno de fieltro con pajaritos en el pasto y un corralito con un huevito amarillo.",
+"f": [
+"pajaritos",
+"corralito",
+"huevito"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0062": {
+"c": [
+"azul",
+"dorado",
+"naranja",
+"blanco"
+],
+"d": "Dos angelitos de fieltro con luna, estrellas y marco blanco en forma de babero.",
+"f": [
+"ángel",
+"luna"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0063": {
+"c": [
+"amarillo",
+"lila",
+"verde",
+"azul"
+],
+"d": "Adorno de fieltro con un angelito y flores alrededor, en forma de marco doble.",
+"f": [
+"ángel",
+"flor"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0064": {
+"c": [
+"morado",
+"rojo",
+"amarillo",
+"rosa"
+],
+"d": "Colgante de puerta morado con ave roja, ramas y flores rosas decorativas.",
+"f": [
+"ave cardenal",
+"flor",
+"rama"
+],
+"m": "openai",
+"t": "colgante de puerta"
+},
+"BAN26-0065": {
+"c": [
+"rojo",
+"beige",
+"blanco",
+"azul"
+],
+"d": "Adorno de osito teddy con corazones y texto de día mamás.",
+"f": [
+"osos teddy",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0066": {
+"c": [
+"azul",
+"rojo",
+"negro",
+"amarillo"
+],
+"d": "Adorno navideño de Mickey Mouse en forma de calcetín con letras y estrellas.",
+"f": [
+"mickey mouse"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0067": {
+"c": [
+"morado",
+"rosa",
+"negro",
+"azul"
+],
+"d": "Letrero de bienvenida con silueta de ratón minnie y corazones decorativos.",
+"f": [
+"ratón minnie",
+"corazones"
+],
+"m": "openai",
+"t": "letrero de bienvenida"
+},
+"BAN26-0068": {
+"c": [
+"verde",
+"negro",
+"amarillo",
+"blanco"
+],
+"d": "Figura de fieltro con una niña usando vestido verde y fondo amarillo.",
+"f": [
+"reina de ajedrez",
+"bebé"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0069": {
+"c": [
+"verde",
+"azul",
+"amarillo",
+"blanco"
+],
+"d": "Adorno circular con zombie verde, sol amarillo y flores en un paisaje.",
+"f": [
+"zombie",
+"sol",
+"flor"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0070": {
+"c": [
+"morado",
+"rosado",
+"amarillo",
+"verde"
+],
+"d": "Adorno de pared con tres búhos de fieltro en ramas floridas.",
+"f": [
+"búho"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0071": {
+"c": [
+"amarillo",
+"azul",
+"morado",
+"negro"
+],
+"d": "Figura de minions estilo caricatura con ojos grandes y colores vivos para adorno.",
+"f": [
+"minion",
+"sobrino minion",
+"minion morado"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0072": {
+"c": [
+"rosa",
+"morado",
+"blanco",
+"amarillo"
+],
+"d": "Figura de fieltro en forma de vaquita con flores y moño en fondo rosa.",
+"f": [
+"vaca",
+"mariposa"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0073": {
+"c": [
+"rojo",
+"blanco",
+"azul",
+"amarillo"
+],
+"d": "Adorno de fieltro con ratón y un reloj con moño sobre fondo rojo.",
+"f": [
+"ratón",
+"reloj",
+"bolsa",
+"moño"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0074": {
+"c": [
+"rojo",
+"azul",
+"blanco",
+"negro"
+],
+"d": "Figura de payasos de fieltro con sonrisa y sombrero rojo, estilo decorativo.",
+"f": [
+"payaso",
+"payasito"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0075": {
+"c": [
+"rosa",
+"verde",
+"azul"
+],
+"d": "Adorno de flor de pascua con hojas verdes y moño azul sobre base en forma circular.",
+"f": [
+"flor de pascua"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0076": {
+"c": [
+"naranja",
+"morado",
+"azul",
+"verde"
+],
+"d": "Adorno con paloma y flores de colores sobre fondo naranja.",
+"f": [
+"paloma",
+"flores"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0077": {
+"c": [
+"verde",
+"blanco",
+"dorado",
+"rojo"
+],
+"d": "Corona navideña con un adorno central de muñeca y moños blancos con puntas doradas.",
+"f": [
+"corona de navidad",
+"muñeca"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0078": {
+"c": [
+"azul",
+"rosa",
+"verde",
+"amarillo"
+],
+"d": "Adorno de fieltro con niña marina y criaturas del mar como peces y cangrejo.",
+"f": [
+"niña",
+"pez",
+"cangrejo",
+"pulpo"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0078-02": {
+"c": [
+"marrón",
+"amarillo",
+"morado",
+"verde"
+],
+"d": "Porta servilletas de fieltro decorado con flores y una base beige.",
+"f": [
+"flor",
+"corazones",
+"tulipán"
+],
+"m": "openai",
+"t": "porta servilletas"
+},
+"BAN26-0079": {
+"c": [
+"rojo",
+"verde",
+"amarillo",
+"rosa"
+],
+"d": "Dos mariquitas de fieltro con flores y manchas verdes en un adorno.",
+"f": [
+"mariquita"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0080": {
+"c": [
+"blanco",
+"azul",
+"verde",
+"naranja"
+],
+"d": "Pareja de conejitos de fieltro con zanahorias y flores sobre fondo azul.",
+"f": [
+"conejo",
+"zanahoria"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0080-02": {
+"c": [
+"azul",
+"rojo",
+"verde",
+"blanco"
+],
+"d": "Bolsita de fieltro con vaquero y niño jugando entre cactus decorativos.",
+"f": [
+"vaquero",
+"niño",
+"cactus"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0081": {
+"c": [
+"rojo",
+"rosa",
+"negro",
+"blanco"
+],
+"d": "Figura de mariquita con vestido rosa y moños, con alas y corazón decorativo.",
+"f": [
+"mariquita",
+"mariquita con vestido"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0082": {
+"c": [
+"verde",
+"amarillo",
+"blanco"
+],
+"d": "Figura de rana de fieltro con gran sonrisa y expresión tierna.",
+"f": [
+"rana"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0083": {
+"c": [
+"azul",
+"rosa",
+"amarillo",
+"dorado"
+],
+"d": "Figura de unicornio sobre fondo de estrellas y luna, con listones y detalles florales decorativos.",
+"f": [
+"unicornio",
+"estrella",
+"luna"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0084": {
+"c": [
+"rosa",
+"blanco",
+"beige",
+"verde"
+],
+"d": "Conejo de fieltro en forma ovalada con flores y moños decorativos en tonos pastel.",
+"f": [
+"conejo"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0085": {
+"c": [
+"azul",
+"verde",
+"amarillo",
+"blanco"
+],
+"d": "Corazón de fieltro azul con detalles pintados y ojos grandes decorativos.",
+"f": [
+"corazón"
+],
+"m": "openai",
+"t": "centro de mesa"
+},
+"BAN26-0086": {
+"c": [
+"café",
+"beige",
+"verde"
+],
+"d": "Adorno de osito tierno con carita sonriente sobre fondo de hojas.",
+"f": [
+"osito"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0087": {
+"c": [
+"beige",
+"azul",
+"verde",
+"amarillo"
+],
+"d": "Figura decorativa de estilo mexicano con venado, flores y motivos coloridos.",
+"f": [
+"cabeza de cariñosa",
+"venado con flor",
+"sol de flor"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0088": {
+"c": [
+"blanco",
+"negro",
+"rosa",
+"amarillo"
+],
+"d": "Adorno de conejo blanco con ojos grandes y moño amarillo, sobre fondo colorido.",
+"f": [
+"conejo"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0089": {
+"c": [
+"blanco",
+"azul",
+"amarillo",
+"rojo"
+],
+"d": "Muñeco de nieve de fieltro con sombrerito rojo y bufanda roja, decorado con flores y hojas.",
+"f": [
+"muñeco de nieve"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0090": {
+"c": [
+"verde",
+"morado",
+"amarillo",
+"rosa"
+],
+"d": "Rana verde con flores grandes moradas, rosas y amarillas alrededor, estilo mural decorativo.",
+"f": [
+"rana"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0091": {
+"c": [
+"negro",
+"rosa",
+"verde",
+"dorado"
+],
+"d": "Muñecas de fieltro con moños y capas, estilo tradicional, decoradas con detalles brillantes.",
+"f": [
+"muñeca",
+"corazón",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0092": {
+"c": [
+"amarillo",
+"azul",
+"rosa"
+],
+"d": "Adorno en forma de abeja de fieltro con flores coloridas alrededor.",
+"f": [
+"abejita",
+"flor"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0093": {
+"c": [
+"amarillo",
+"verde",
+"morado",
+"dorado"
+],
+"d": "Adorno de fieltro con colibrí posado sobre un sol y hojas decorativas.",
+"f": [
+"colibrí",
+"sol",
+"hojas"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0094": {
+"c": [
+"morado",
+"turquesa",
+"dorado",
+"rosa"
+],
+"d": "Figura de sirena de fieltro con detalles brillantes, acompañada de pez y conchas marinas.",
+"f": [
+"sirena",
+"pez",
+"concha",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0095": {
+"c": [
+"rosa",
+"azul",
+"verde",
+"morado"
+],
+"d": "Figura de ángel de fieltro con estrella y corazón, con moño y alas decoradas.",
+"f": [
+"ángel",
+"estrella",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0096": {
+"c": [
+"azul",
+"amarillo",
+"verde",
+"blanco"
+],
+"d": "Decoración con números azules con bordes blancos y motivos de girasol verdes.",
+"f": [
+"número 1",
+"número 0",
+"flor girasol"
+],
+"m": "openai",
+"t": "letrero decorativo"
+},
+"BAN26-0097": {
+"c": [
+"azul",
+"amarillo",
+"verde",
+"blanco"
+],
+"d": "Número nueve de fieltro azul con girasoles amarillos y hojas verdes.",
+"f": [
+"número nueve"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0098": {
+"c": [
+"azul",
+"verde",
+"blanco",
+"café"
+],
+"d": "Adorno infantil con animales y motivos de avión y bosque en tonos azules.",
+"f": [
+"avestruz"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0099": {
+"c": [
+"azul",
+"blanco",
+"amarillo",
+"rosa"
+],
+"d": "Adorno infantil con conejos, perrito y pollito rodeados de flores sobre fondo azul.",
+"f": [
+"perrito",
+"conejo",
+"flores",
+"pollito"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0100": {
+"c": [
+"turquesa",
+"verde",
+"azul marino",
+"amarillo"
+],
+"d": "Un dragón verde con música y bigotes en una pieza tipo mural y un portabotella a juego.",
+"f": [
+"dragón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0101": {
+"c": [
+"azul marino",
+"blanco",
+"verde"
+],
+"d": "Adorno de fieltro con delfines en forma de bolsillo y una funda a juego.",
+"f": [
+"delfín"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0102": {
+"c": [
+"negro",
+"rojo",
+"amarillo",
+"celeste"
+],
+"d": "Figuras de mickey y minnie en fieltro tipo adorno, con fondo celeste y siluetas recortadas.",
+"f": [
+"mickey mouse",
+"minnie mouse"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0103": {
+"c": [
+"verde",
+"naranja",
+"negro",
+"blanco"
+],
+"d": "Dos mariposas de colores naranja y negro sobre base verde, con estilo de aplique.",
+"f": [
+"mariposa"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0104": {
+"c": [
+"negro",
+"azul",
+"rosa",
+"amarillo"
+],
+"d": "Adorno de puerta en color negro con arreglos de flores y mariposas de colores.",
+"f": [
+"mariposa",
+"flor"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0001": {
+"c": [
+"azul",
+"amarillo",
+"blanco",
+"rosa"
+],
+"d": "Adorno de fieltro con bebé y conejitos en un carrito, con fondo azul y decoraciones.",
+"f": [
+"bebé",
+"conejo",
+"muñeco de nieve",
+"carrito"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0002": {
+"c": [
+"blanco",
+"azul",
+"naranja",
+"rosa"
+],
+"d": "Adorno de ángel con bebé en brazos, con moño decorativo y alas blancas.",
+"f": [
+"angel",
+"bebé"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0003": {
+"c": [
+"blanco",
+"azul",
+"rojo",
+"amarillo"
+],
+"d": "Cigüeña con alas azules cargando un bebé y sosteniendo un corazón amarillo.",
+"f": [
+"cigüeña",
+"bebé",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0004": {
+"c": [
+"amarillo",
+"azul",
+"rosa",
+"café"
+],
+"d": "Adorno colgante con luna y osito, con ratoncitos y corazones decorativos.",
+"f": [
+"luna",
+"oso",
+"ratón",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0005": {
+"c": [
+"azul",
+"dorado",
+"blanco"
+],
+"d": "Figura de ángel con paloma, abrazando a un niño recién dormido.",
+"f": [
+"ángel",
+"niño dios",
+"paloma"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0006": {
+"c": [
+"azul",
+"verde",
+"blanco",
+"amarillo"
+],
+"d": "Letrero de fieltro con letras y figuritas de animales en colores vivos.",
+"f": [
+"letra b",
+"estrella",
+"perrito",
+"pajarito",
+"oso",
+"reloj de arena"
+],
+"m": "openai",
+"t": "letrero decorativo"
+},
+"BEB26-0007": {
+"c": [
+"rosa",
+"azul",
+"blanco",
+"morado"
+],
+"d": "Adorno con banderines blancos con personajes infantiles y cintas con letrero Joy y Mamá.",
+"f": [
+"letra \"joy\"",
+"niño",
+"oso",
+"gato"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0008": {
+"c": [
+"azul",
+"amarillo",
+"blanco",
+"rojo"
+],
+"d": "Adorno de letra con motivo de ángel y bebé, en azul con detalles navideños.",
+"f": [
+"ángel",
+"bebé"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0009": {
+"c": [
+"azul",
+"blanco",
+"rosa",
+"verde"
+],
+"d": "Conjunto de figuras de fieltro para bebé, con baberitos, mamelucos y un adorno tipo cuna.",
+"f": [
+"bebé",
+"cuna",
+"pañal",
+"mameluco",
+"tetero"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0010": {
+"c": [
+"amarillo",
+"rosa",
+"verde",
+"celeste"
+],
+"d": "Paño decorativo amarillo con muñeca de fieltro y figuras pequeñas como campanas y corazones.",
+"f": [
+"muñeca",
+"campana",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0012": {
+"c": [
+"rosa",
+"morado",
+"amarillo",
+"gris"
+],
+"d": "Adorno de muñeca de fieltro con listón rosa y varios animalitos alrededor.",
+"f": [
+"muñeca",
+"oso",
+"ratón",
+"oso de peluche",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0013": {
+"c": [
+"azul",
+"marrón",
+"amarillo",
+"rosa"
+],
+"d": "Tres animalitos de fieltro sostienen letras y decoran un letrero infantil.",
+"f": [
+"conejo",
+"oso",
+"perro"
+],
+"m": "openai",
+"t": "centro de mesa"
+},
+"BEB26-0014": {
+"c": [
+"azul",
+"rosa",
+"amarillo",
+"morado"
+],
+"d": "Corona de ositos sobre una nube con arcoíris y letrero que dice “ya viene el bebé”.",
+"f": [
+"osos",
+"nube",
+"corazón",
+"arcoíris"
+],
+"m": "openai",
+"t": "letrero de bienvenida"
+},
+"BEB26-0015": {
+"c": [
+"azul",
+"amarillo",
+"rosa",
+"blanco"
+],
+"d": "Corona de luna amarilla con osos azules, estrellitas y un arcoíris sobre fondo de puerta.",
+"f": [
+"oso",
+"estrella",
+"luna"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0016": {
+"c": [
+"morado",
+"azul",
+"amarillo",
+"verde"
+],
+"d": "Letrero con letras decoradas y figuras de estrellas, osito y flor sobre fondo de madera.",
+"f": [
+"letra b",
+"estrella",
+"oso de peluche",
+"flor"
+],
+"m": "openai",
+"t": "letrero decorativo"
+},
+"BEB26-0017": {
+"c": [
+"amarillo",
+"azul",
+"rosa",
+"morado"
+],
+"d": "Guirnalda de fieltro con una estrella amarilla, ositos y un osito bebé con letrero.",
+"f": [
+"estrella",
+"oso",
+"bebé"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0018": {
+"c": [
+"azul",
+"celeste",
+"blanco"
+],
+"d": "Un osito azul sostiene un porta servilletas con casilleros decorados con animalitos.",
+"f": [
+"osito",
+"oso"
+],
+"m": "openai",
+"t": "porta servilletas"
+},
+"BEB26-0019": {
+"c": [
+"naranja",
+"azul",
+"amarillo",
+"rosa"
+],
+"d": "Adorno infantil con osito, estrella y lunita dentro de un aro naranja con detalles en fieltro.",
+"f": [
+"oso",
+"osito de peluche",
+"estrella",
+"lunita"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0022": {
+"c": [
+"café",
+"morado",
+"rosa",
+"amarillo"
+],
+"d": "Oso de fieltro sosteniendo un corazón morado y vestido con falda rosa y detalles amarillos.",
+"f": [
+"oso"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BEB26-0023": {
+"c": [
+"verde",
+"rosa",
+"azul"
+],
+"d": "Adorno de fieltro con bebé dormido, estrellita y osito en tonos verde, rosa y azul.",
+"f": [
+"bebé",
+"estrella",
+"oso de peluche"
+],
+"m": "openai",
+"t": "adorno"
 }
 }
