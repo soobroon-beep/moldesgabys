@@ -14,7 +14,7 @@
 /* Sin velo blanco: el fondo de temporada se atenúa en sus propios colores. */
 #catalogo.catalog-section::before,body[data-gabys-season] #catalogo.catalog-section::before{display:none!important;content:none!important;background:none!important}
 #catalogo.catalog-section{background:#f3eff0!important;transition:background-color .8s ease;overflow:clip;isolation:isolate}
-body[data-gabys-season="halloween"] #catalogo.catalog-section{background:linear-gradient(165deg,#44205a 0%,#2e173f 47%,#211330 100%)!important}
+body[data-gabys-season="halloween"] #catalogo.catalog-section{background:radial-gradient(ellipse at 75% 11%,rgba(129,44,91,.35),transparent 45%),linear-gradient(165deg,#3d1b4a 0%,#2b1539 48%,#180e2a 100%)!important}
 body[data-gabys-season="navidad"] #catalogo.catalog-section{background:linear-gradient(160deg,#233b65 0%,#172644 50%,#201b3b 100%)!important}
 body[data-gabys-season="patrias"] #catalogo.catalog-section{background:linear-gradient(150deg,#22564c 0%,#1d3838 50%,#482b3c 100%)!important}
 body[data-gabys-season="amor"] #catalogo.catalog-section{background:linear-gradient(155deg,#823857,#632a4f 55%,#3e253f)!important}

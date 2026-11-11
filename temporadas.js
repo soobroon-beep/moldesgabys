@@ -10,25 +10,105 @@ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
 const allowed=new Set(['halloween','navidad','patrias','amor','bebes','bano','toda-ocasion']);
 const clamp=(v,lo=0,hi=1)=>Math.min(hi,Math.max(lo,v));
 const random=n=>{const v=Math.sin(n*127.1+31.7)*43758.5453;return v-Math.floor(v)};
-const witchPath="M12,12 L13,14 L21,18 L22,20 L21,22 L23,24 L23,27 L26,27 L28,29 L26,32 L28,32 L27,44 L25,44 L26,46 L22,49 L18,49 L16,51 L9,53 L1,47 L0,48 L8,54 L9,56 L13,57 L15,59 L22,61 L20,64 L21,67 L29,75 L33,83 L37,79 L41,85 L43,89 L42,95 L45,93 L47,87 L52,93 L52,99 L54,98 L55,90 L53,81 L49,83 L47,82 L47,80 L45,79 L43,77 L51,78 L54,76 L62,80 L59,81 L62,82 L59,83 L68,83 L72,89 L78,95 L73,89 L85,98 L85,97 L90,99 L82,93 L89,97 L87,96 L93,98 L90,96 L96,96 L93,95 L95,94 L88,92 L98,93 L94,92 L97,91 L95,90 L98,90 L94,89 L99,88 L94,86 L96,86 L91,85 L99,84 L91,83 L99,81 L90,81 L93,80 L87,80 L87,79 L91,79 L81,78 L85,78 L67,78 L62,73 L63,75 L61,75 L62,76 L61,76 L61,77 L56,75 L62,69 L66,68 L69,69 L64,67 L49,67 L53,63 L55,57 L73,62 L80,61 L84,60 L86,58 L85,52 L89,49 L85,49 L79,53 L77,51 L78,47 L81,42 L86,40 L90,40 L93,43 L91,39 L86,38 L81,38 L56,43 L56,42 L60,41 L51,40 L45,36 L39,31 L42,31 L48,35 L46,34 L51,34 L54,33 L49,33 L48,31 L54,32 L59,29 L55,31 L52,30 L60,27 L56,27 L60,26 L57,25 L51,26 L50,26 L52,25 L49,25 L51,23 L43,25 L47,23 L42,24 L37,22 L45,21 L35,16 L36,12 L34,9 L37,8 L38,3 L41,3 L43,5 L45,4 L39,0 L30,3 L23,12Z";
-const batPaths=["M0,5 L18,43 L20,60 L28,64 L33,75 L31,78 L35,77 L32,87 L36,98 L45,97 L49,90 L50,95 L52,88 L60,82 L67,89 L72,83 L83,89 L89,83 L99,83 L97,71 L91,61 L72,43 L72,40 L63,56 L62,40 L56,55 L54,44 L50,36 L48,41 L48,55 L45,56 L37,21 L26,8 L13,0Z","M99,8 L87,0 L75,5 L72,2 L71,12 L60,36 L58,35 L58,21 L54,30 L49,32 L44,26 L45,36 L42,36 L34,17 L32,4 L15,4 L0,21 L4,27 L9,46 L15,50 L22,64 L32,71 L37,83 L36,90 L38,86 L50,98 L57,87 L61,91 L72,65 L79,61 L86,45 L92,39 L93,23Z","M0,33 L6,51 L15,59 L22,74 L33,74 L43,81 L45,87 L47,84 L51,93 L58,98 L67,76 L69,77 L69,72 L78,59 L85,54 L90,37 L96,24 L99,3 L91,0 L80,6 L75,14 L72,12 L73,16 L60,37 L56,31 L57,5 L53,11 L50,24 L47,14 L42,9 L46,33 L45,42 L31,35 L29,28 L7,27Z"];
+/* Bosque con ramas cónicas curvas: volúmenes naturales, no trazos uniformes. */
+function gabysTreeSVG(seed,mirror=false){
+ const shapes=[];
+ const fmt=n=>Number(n).toFixed(1);
+ function limb(x,y,length,angle,width,level,k){
+   if(level<1||length<5||width<.6)return;
+   const dx=Math.cos(angle)*length,dy=Math.sin(angle)*length;
+   const nx=-Math.sin(angle),ny=Math.cos(angle);
+   const bend=(random(seed+k*1.37)-.5)*length*.24;
+   const bx=-ny*bend,by=nx*bend;
+   const c1x=x+dx*.30+bx,c1y=y+dy*.30+by;
+   const c2x=x+dx*.75-bx*.48,c2y=y+dy*.75-by*.48;
+   const endX=x+dx,endY=y+dy;
+   const tip=Math.max(.5,width*(level<3?.18:.42));
+   const coords=(xx,yy)=>fmt(xx)+' '+fmt(yy);
+   shapes.push('<path d="M'+coords(x+nx*width*.5,y+ny*width*.5)+
+     ' C'+coords(c1x+nx*width*.40,c1y+ny*width*.40)+' '+coords(c2x+nx*tip*.7,c2y+ny*tip*.7)+' '+coords(endX+nx*tip*.5,endY+ny*tip*.5)+
+     ' L'+coords(endX-nx*tip*.5,endY-ny*tip*.5)+
+     ' C'+coords(c2x-nx*tip*.7,c2y-ny*tip*.7)+' '+coords(c1x-nx*width*.40,c1y-ny*width*.40)+' '+coords(x-nx*width*.5,y-ny*width*.5)+' Z"/>');
+   if(level===1)return;
+   const variation=random(seed+67+k);
+   limb(endX,endY,length*(.67+variation*.12),angle-.34-variation*.24,width*.59,level-1,k*2+1);
+   const split=.73+random(seed+k+121)*.14;
+   limb(x+dx*split,y+dy*split,length*(.58+random(seed+k+19)*.15),
+     angle+.36+random(seed+k+27)*.30,width*.51,level-1,k*2+2);
+   if(level>=5){
+     const at=.45+random(seed+k+201)*.22;
+     limb(x+dx*at,y+dy*at,length*.42,angle-.85,width*.27,level-3,k*3+91);
+   }
+ }
+ limb(15,970,310,-1.31,59,7,1);
+ limb(-18,850,210,-.88,25,5,283);
+ const flip=mirror?' transform="translate(500 0) scale(-1 1)"':'';
+ return '<svg viewBox="0 0 500 1000" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><g'+flip+'>'+
+   '<path d="M-60 1000 Q18 926 42 943 Q63 952 90 1000Z"/>'+shapes.join('')+'</g></svg>';
+}
+const gabysBatShape='<svg viewBox="0 0 130 58" aria-hidden="true">'+
+  '<path class="bat-wing bat-wing-left" d="M64 29 C46 8 24 8 0 21 Q13 23 17 37 Q30 25 39 42 Q49 34 64 35Z"/>'+
+  '<path class="bat-wing bat-wing-right" d="M66 29 C84 8 106 8 130 21 Q117 23 113 37 Q100 25 91 42 Q81 34 66 35Z"/>'+
+  '<path class="bat-body" d="M60 24 L61 16 L65 21 L69 16 L70 25 Q77 41 65 50 Q53 41 60 24Z"/></svg>';
+const gabysWitchShape='<svg viewBox="0 0 235 112" aria-hidden="true"><g class="witch-silhouette">'+
+  '<path d="M18 81 Q29 68 47 75 L207 66 L214 72 L47 84 Q30 89 18 81Z"/>'+
+  '<path d="M18 81 L0 66 L12 81 L2 96 L21 84 L32 94 L26 79Z"/>'+
+  '<path d="M88 44 Q98 42 116 47 L140 59 L155 85 L121 78 L101 91 L95 66Z"/>'+
+  '<path d="M103 79 L79 94 L69 91 L88 74Z M119 80 L101 100 L89 99 L106 76Z"/>'+
+  '<path d="M119 22 Q123 8 134 2 Q141 18 151 22 L167 30 L130 32 L116 31Z"/>'+
+  '<path d="M111 31 Q137 26 171 31 Q169 36 150 36 L116 36Z"/>'+
+  '<path d="M125 32 Q144 32 151 43 L163 47 L152 52 Q149 59 133 53 Q124 48 125 32Z"/>'+
+  '<path d="M126 35 Q113 47 113 58 L105 52 L105 39Z"/>'+
+  '<path d="M145 56 Q161 59 169 70 L163 74 L145 66Z"/>'+
+  '</g></svg>';
+function makeHalloween(){
+ const forest=document.getElementById('gabys-h-forest');
+ forest.innerHTML=
+   '<div class="gabys-h-tree tree-left-back">'+gabysTreeSVG(31)+'</div>'+
+   '<div class="gabys-h-tree tree-right-back">'+gabysTreeSVG(47,true)+'</div>'+
+   '<div class="gabys-h-tree tree-left">'+gabysTreeSVG(7)+'</div>'+
+   '<div class="gabys-h-tree tree-right">'+gabysTreeSVG(18,true)+'</div>';
+ const wrap=document.getElementById('gabys-h-flight');
+ let out='';
+ for(let i=0;i<26;i++){
+   const size=(24+random(i+17)*34).toFixed(1);
+   const top=(9+random(i+42)*75).toFixed(1);
+   const duration=(4.5+random(i+81)*2.9).toFixed(2);
+   const delay=(-random(i+128)*9).toFixed(2);
+   const sway=((random(i+167)-.5)*90).toFixed(1);
+   const opacity=(.60+random(i+193)*.32).toFixed(2);
+   const sx=(7+random(i+211)*82).toFixed(1);
+   out+='<span class="gabys-h-flyer gabys-h-flying-bat" style="--top:'+top+'%;--size:'+size+'px;--dur:'+duration+'s;--delay:'+delay+'s;--sway:'+sway+'px;--visual-opacity:'+opacity+';--static-x:'+sx+'%">'+gabysBatShape+'</span>';
+ }
+ for(let i=0;i<5;i++){
+   const top=(13+i*14+random(i+270)*5).toFixed(1);
+   const size=(104+random(i+285)*42).toFixed(1);
+   const duration=(7.0+random(i+303)*2.1).toFixed(2);
+   const delay=(-i*1.9-1.1).toFixed(2);
+   const sway=((random(i+332)-.5)*75).toFixed(1);
+   const sx=(12+i*17).toFixed(1);
+   out+='<span class="gabys-h-flyer gabys-h-flying-witch" style="--top:'+top+'%;--size:'+size+'px;--dur:'+duration+'s;--delay:'+delay+'s;--sway:'+sway+'px;--visual-opacity:.87;--static-x:'+sx+'%">'+gabysWitchShape+'</span>';
+ }
+ wrap.innerHTML=out;
+ return {
+   bats:Array.from(wrap.querySelectorAll('.gabys-h-flying-bat')),
+   witches:Array.from(wrap.querySelectorAll('.gabys-h-flying-witch'))
+ };
+}
 const stage=document.createElement('div');
 stage.id='gabys-season-stage';
 stage.setAttribute('aria-hidden','true');
 stage.innerHTML='<div class="gabys-stage-sticky">'+
 '<div class="gabys-scene gabys-halloween">'+
+ '<div class="gabys-h-sky-glow"></div>'+
  '<div class="gabys-h-moon"></div>'+
  '<div class="gabys-h-haze"></div>'+
- '<svg class="gabys-h-trees" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'+
- '<path class="tree-trunk" d="M-28 941 C80 763 142 616 111 479 C92 379 34 336 -15 295 M111 479 C188 399 219 304 214 206 M111 479 C48 446 22 416 -34 384 M214 206 C275 154 298 119 321 39 M214 206 C188 112 162 86 136 -18 M111 479 C187 490 219 469 271 393 M271 393 C315 345 355 347 392 286 M137 610 C203 573 246 556 292 482 M292 482 C342 467 380 426 401 373"/>'+
- '<path class="tree-trunk" d="M1475 936 C1358 789 1302 625 1353 486 C1379 400 1426 338 1482 280 M1353 486 C1284 434 1251 381 1244 290 M1353 486 C1403 445 1432 422 1489 402 M1244 290 C1175 241 1162 182 1136 121 M1244 290 C1263 196 1290 149 1284 39 M1332 587 C1278 570 1228 524 1217 462 M1217 462 C1162 432 1142 396 1122 335 M1258 721 C1205 666 1164 638 1115 606 M1115 606 C1068 555 1052 517 1010 492"/>'+
- '<path class="tree-twigs" d="M214 206 L163 183 M214 206 L250 148 M292 482 L314 413 M392 286 L404 240 M1244 290 L1204 195 M1136 121 L1091 95 M1115 606 L1099 558 M1010 492 L991 443 M1217 462 L1171 438"/>'+
- '</svg>'+
- '<div class="gabys-h-witch witch-one"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="'+witchPath+'"/></svg></div>'+
- '<div class="gabys-h-witch witch-two"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="'+witchPath+'"/></svg></div>'+
- '<div class="gabys-h-bats" id="gabys-h-bats"></div>'+
+ '<div class="gabys-h-fog fog-far"></div>'+
+ '<div class="gabys-h-forest" id="gabys-h-forest"></div>'+
+ '<div class="gabys-h-flight" id="gabys-h-flight"></div>'+
+ '<div class="gabys-h-fog fog-near"></div>'+
  '</div>'+
- '<div class="gabys-scene gabys-christmas">'+
+'<div class="gabys-scene gabys-christmas">'+
   '<div class="gabys-xmas-glow"></div>'+
   '<div class="gabys-xmas-wires" id="gabys-xmas-wires"></div>'+
   '<div class="gabys-xmas-snow" id="gabys-xmas-snow"></div>'+
@@ -38,17 +118,6 @@ stage.innerHTML='<div class="gabys-stage-sticky">'+
 catalog.insertBefore(stage,catalog.firstChild);
 // Compatibility: remove the obsolete floating canvas from the previous design.
 document.getElementById('gabys-season-effects')?.remove();
-function makeBats(){
- const wrap=document.getElementById('gabys-h-bats');let out='';
- const spots=[[7,12,42,0],[17,27,55,1],[5,60,46,2],[12,79,33,0],
-  [92,17,49,2],[83,32,37,1],[95,56,56,0],[85,80,43,2],[4,41,28,1]];
- spots.forEach(([x,y,size,n],i)=>{
-   const delay=-(i*.91).toFixed(2);
-   out+='<span class="gabys-h-bat" style="--x:'+x+'%;--y:'+y+'%;--size:'+size+'px;--delay:'+delay+'s;--duration:'+(3.3+i%3*.9)+'s">'+
-   '<svg viewBox="0 0 100 100" aria-hidden="true"><path d="'+batPaths[n]+'"/></svg></span>';
- });
- wrap.innerHTML=out;
-}
 function makeBulbs(){
  const wrap=document.getElementById('gabys-xmas-wires');
  const colors=['#fc4e61','#29cb75','#53a4ff','#ffcd50','#b574f8','#3df1e3','#ff8b37'];
@@ -110,20 +179,39 @@ function makeFireworks(){
  });
  wrap.innerHTML=out;
 }
-makeBats();makeBulbs();makeSnow();makeFireworks();
-let theme='todos', raf=0;
+const halloween=makeHalloween();makeBulbs();makeSnow();makeFireworks();
+let theme='todos', raf=0, previousBats=-1, previousWitches=-1;
 function visibility(){
  raf=0;
  const bounds=catalog.getBoundingClientRect(),vh=window.innerHeight;
- // Fade smoothly in and out when crossing the catalog boundaries.
+ // Decoraciones siempre detrás de fotos y textos; suave desvanecimiento en los bordes.
  const enter=clamp((vh*.92-bounds.top)/(vh*.64));
  const exit=clamp((bounds.bottom-vh*.18)/(vh*.72));
  const amount=theme==='todos'?0:Math.min(enter,exit);
  stage.style.setProperty('--scene-opacity',amount.toFixed(3));
+ if(theme!=='halloween')return;
+ // La densidad crece durante los primeros ~1500px de recorrido de Halloween.
+ const progress=clamp((vh*.75-bounds.top)/(Math.min(bounds.height,1450)+vh*.35));
+ stage.style.setProperty('--h-depth',progress.toFixed(3));
+ stage.style.setProperty('--h-shift',(-28*progress).toFixed(1)+'px');
+ const batCount=reduced.matches?7:Math.round(7+19*progress);
+ const witchCount=reduced.matches?2:Math.round(2+3*progress);
+ if(previousBats!==batCount){
+   halloween.bats.forEach((node,i)=>node.classList.toggle('is-active',i<batCount));
+   previousBats=batCount;
+ }
+ if(previousWitches!==witchCount){
+   halloween.witches.forEach((node,i)=>node.classList.toggle('is-active',i<witchCount));
+   previousWitches=witchCount;
+ }
 }
 function schedule(){if(!raf)raf=requestAnimationFrame(visibility)}
 function setSeason(value){
  theme=allowed.has(value)?value:'todos';
+ if(theme!=='halloween'){
+   halloween.bats.concat(halloween.witches).forEach(node=>node.classList.remove('is-active'));
+   previousBats=-1;previousWitches=-1;
+ }
  body.dataset.gabysSeason=theme;
  stage.dataset.scene=theme;
  schedule();
@@ -136,5 +224,5 @@ document.addEventListener('visibilitychange',()=>{stage.classList.toggle('scene-
 const prior=body.dataset.gabysSeason;
 setSeason(allowed.has(prior)?prior:'navidad');
 if(reduced.matches)stage.classList.add('scene-reduced');
-reduced.addEventListener?.('change',()=>stage.classList.toggle('scene-reduced',reduced.matches));
+reduced.addEventListener?.('change',()=>{stage.classList.toggle('scene-reduced',reduced.matches);previousBats=-1;previousWitches=-1;schedule()});
 })();
