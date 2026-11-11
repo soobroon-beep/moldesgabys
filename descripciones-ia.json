@@ -1,0 +1,1809 @@
+{
+"AMO26-0001": {
+"c": [
+"blanco",
+"rojo",
+"dorado",
+"azul"
+],
+"d": "Adorno de ángel con alas blancas y aureola dorada, sosteniendo un bastón.",
+"f": [
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0002": {
+"c": [
+"blanco",
+"negro",
+"rojo"
+],
+"d": "Figura de gato decorativo con accesorios rojos y blancos.",
+"f": [
+"gato",
+"taco",
+"tomate"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0003": {
+"c": [
+"blanco",
+"rojo",
+"amarillo"
+],
+"d": "Figura de un ángel con alas blancas sosteniendo varios corazones rojos.",
+"f": [
+"ángel",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0004": {
+"c": [
+"amarillo",
+"blanco",
+"rojo"
+],
+"d": "Ángel de fieltro con alas y arco, sosteniendo un corazón rojo sobre nube blanca con corazones.",
+"f": [
+"ángel",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0005": {
+"c": [
+"morado",
+"rosa",
+"blanco",
+"rojo"
+],
+"d": "Figura de hipopótamo con flores y corazón rosa, estilo decorativo para colgar.",
+"f": [
+"hipopótamo",
+"nube",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0006": {
+"c": [
+"negro",
+"rojo",
+"amarillo",
+"blanco"
+],
+"d": "Figura de mickey mouse de fieltro con orejas grandes, botas y guantes blancos.",
+"f": [
+"mickey mouse"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0007": {
+"c": [
+"rojo",
+"blanco",
+"negro",
+"café"
+],
+"d": "Adorno de fieltro con un gato de ojos felices entre corazones y letras de amor.",
+"f": [
+"corazón",
+"beso",
+"gato",
+"hueso"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0008": {
+"c": [
+"rojo",
+"azul",
+"amarillo",
+"blanco"
+],
+"d": "Adorno en forma de corazón con Winnie Pooh y Eeyore bordando con amor.",
+"f": [
+"winnie pooh",
+"eeyore"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0009": {
+"c": [
+"amarillo",
+"azul",
+"rojo"
+],
+"d": "Figura de ángel tierno sosteniendo un corazón rojo con el mensaje love.",
+"f": [
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0010": {
+"c": [
+"amarillo",
+"azul",
+"verde",
+"rosa"
+],
+"d": "Un ángel con cestita de corazones de colores, listo para colgarse como adorno.",
+"f": [
+"ángel",
+"cesta",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0011": {
+"c": [
+"rojo",
+"blanco",
+"rosa",
+"gris"
+],
+"d": "Adorno de corazón rojo con gatito blanco sosteniendo un arco y flecha.",
+"f": [
+"corazón",
+"gatito"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0012": {
+"c": [
+"azul",
+"blanco",
+"rosa",
+"amarillo"
+],
+"d": "Adorno de unicornios y dragón con estrellas, estilo infantil, en tonos pastel.",
+"f": [
+"unicornio",
+"dragón",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0013": {
+"c": [
+"amarillo",
+"naranja",
+"negro",
+"rosa"
+],
+"d": "Adorno en forma de abeja con alas de flores sobre puerta.",
+"f": [
+"abeja",
+"flor"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0014": {
+"c": [
+"café",
+"blanco",
+"rojo",
+"amarillo"
+],
+"d": "Dos ositos con ropa navideña y alas decorativas, uno como ángel, ambos con corazón.",
+"f": [
+"oso",
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0014-02": {
+"c": [
+"blanco",
+"celeste",
+"rosa",
+"dorado"
+],
+"d": "Adorno de ángel de fieltro con alitas celestes y corazón rosa en el pecho.",
+"f": [
+"ángel",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0015": {
+"c": [
+"rojo",
+"amarillo",
+"azul"
+],
+"d": "Piolín con ojos grandes dentro de un marco de nubes rojas.",
+"f": [
+"piolín"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0016": {
+"c": [
+"amarillo",
+"rojo",
+"azul",
+"morado"
+],
+"d": "Adorno de oso de felpa con corazones y moño azul, en estilo tierno y romántico.",
+"f": [
+"oso",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0017": {
+"c": [
+"rojo",
+"azul",
+"verde",
+"amarillo"
+],
+"d": "Guirnalda de personajes con letreros rojos y corazones en colores vivos.",
+"f": [
+"caracol",
+"titere",
+"hombre de malvaviscos",
+"corazón",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0018": {
+"c": [
+"rojo",
+"azul",
+"dorado",
+"blanco"
+],
+"d": "Guirnalda con corazón y dos bebés sosteniendo un corazón rojo.",
+"f": [
+"corazón",
+"bebé",
+"muñeca"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0019": {
+"c": [
+"rojo",
+"rosa",
+"blanco",
+"celeste"
+],
+"d": "Un cupidito sobre nubes con un gran corazón rojo de fondo.",
+"f": [
+"corazón",
+"cupidito",
+"nube"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0020": {
+"c": [
+"dorado",
+"beige",
+"azul marino",
+"rojo"
+],
+"d": "Ángel de fieltro con arco y dos flechas, posando con sonrisa y alas.",
+"f": [
+"ángel arquero",
+"arco",
+"flechas"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0021": {
+"c": [
+"rojo",
+"amarillo",
+"azul",
+"blanco"
+],
+"d": "Adorno con forma de corazón y personajes de Winnie Pooh con regalos.",
+"f": [
+"winnie pooh",
+"conejito",
+"liebre",
+"regalo"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0022": {
+"c": [
+"amarillo",
+"rojo",
+"azul"
+],
+"d": "Pajarito estilo piolín sosteniendo un corazón rojo con moño azul.",
+"f": [
+"pajarito piolín"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0023": {
+"c": [
+"blanco",
+"azul",
+"dorado",
+"verde"
+],
+"d": "Figura de ángel de felito con aureola dorada y manos juntas, sosteniendo un corazón.",
+"f": [
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0024": {
+"c": [
+"rojo",
+"azul",
+"verde",
+"blanco"
+],
+"d": "Adorno con tres m&m sobre un gran corazón rojo para celebrar San Valentín.",
+"f": [
+"m&m azul",
+"m&m verde",
+"m&m rojo",
+"corazòn"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0025": {
+"c": [
+"azul claro",
+"rojo",
+"blanco",
+"rosa"
+],
+"d": "Gatito azul con corbata y corazón rojo con texto love you.",
+"f": [
+"gato"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0026": {
+"c": [
+"rojo",
+"amarillo",
+"azul",
+"rosa"
+],
+"d": "Un pajarito sobre un corazón rojo con la frase “I love you”.",
+"f": [
+"corazón",
+"pajarito"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0027": {
+"c": [
+"rojo",
+"rosa",
+"negro",
+"dorado"
+],
+"d": "Adorno de hada con varita dentro de un corazón rojo tejido en fieltro.",
+"f": [
+"hada"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0028": {
+"c": [
+"morado",
+"celeste",
+"rosa"
+],
+"d": "Adorno de corazón con un gatito azul con moño rosa y antifaz púrpura.",
+"f": [
+"gatito"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0029": {
+"c": [
+"amarillo",
+"azul",
+"rojo",
+"morado"
+],
+"d": "Winnie pooh con alas sostiene un corazón morado con el mensaje “I love you”.",
+"f": [
+"winnie pooh",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0030": {
+"c": [
+"negro",
+"blanco",
+"dorado",
+"rojo"
+],
+"d": "Figura de gato con bigotes y flecha estilo caricatura.",
+"f": [
+"gato",
+"flecha"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0031": {
+"c": [
+"amarillo",
+"rojo",
+"azul",
+"blanco"
+],
+"d": "Piolín de fieltro con moñito rojo y brazos extendidos, listo para colgar o decorar.",
+"f": [
+"pájaro piolín"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0032": {
+"c": [
+"amarillo",
+"azul",
+"rosa"
+],
+"d": "Ángel de fieltro en una nube con estrellitas, colgante con globos de colores.",
+"f": [
+"ángel",
+"estrella",
+"nube"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0033": {
+"c": [
+"amarillo",
+"celeste",
+"rosa",
+"vino tinto"
+],
+"d": "Ángel de fieltro con arco y una nube azul sosteniendo un corazón rosa.",
+"f": [
+"ángel",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0034": {
+"c": [
+"rosa",
+"morado",
+"café",
+"azul"
+],
+"d": "Adorno con un osito de peluche dentro de un corazón y estrellitas alrededor.",
+"f": [
+"osito de peluche",
+"corazón",
+"ratoncito",
+"conejo",
+"gatito",
+"pajarito"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0035": {
+"c": [
+"amarillo",
+"rojo",
+"azul"
+],
+"d": "Figuras de winnie pooh y tigger sosteniendo un regalo frente a una puerta.",
+"f": [
+"winnie pooh",
+"tigger"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0036": {
+"c": [
+"rojo",
+"negro",
+"amarillo",
+"rosa"
+],
+"d": "Figuras de mickey y minnie sosteniendo un corazón rojo con listón.",
+"f": [
+"corazón",
+"mickey mouse",
+"minnie mouse"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0037": {
+"c": [
+"negro",
+"rojo",
+"amarillo",
+"verde"
+],
+"d": "Figura de mickey mouse sosteniendo un ramo de flores de colores.",
+"f": [
+"mickey mouse"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0038": {
+"c": [
+"rojo",
+"café",
+"blanco",
+"azul"
+],
+"d": "Adorno de duendecita de felpa con manos al frente y estrella en el pecho.",
+"f": [
+"muñeca",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0039": {
+"c": [
+"blanco",
+"azul",
+"rojo",
+"marrón"
+],
+"d": "Ángel niño dios de fieltro con alas y vestido blanco, cargando un letrero azul y sostén rojo.",
+"f": [
+"niño dios"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0040": {
+"c": [
+"rosa",
+"celeste",
+"verde"
+],
+"d": "Dos personajes de fieltro abrazados dentro de un corazón morado con el texto love you.",
+"f": [
+"niño",
+"niña"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0041": {
+"c": [
+"rojo",
+"dorado",
+"blanco",
+"amarillo"
+],
+"d": "Hada sobre un corazón rojo decorado con florecitas y corazones bordados.",
+"f": [
+"hada"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0042": {
+"c": [
+"rojo",
+"negro",
+"rosa",
+"blanco"
+],
+"d": "Figura de minnie con moños rosa sobre un gran corazón rojo.",
+"f": [
+"minnie",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0043": {
+"c": [
+"rosa",
+"azul",
+"amarillo",
+"blanco"
+],
+"d": "Adorno en forma de corazón con pareja de enamorados y corazones decorativos alrededor.",
+"f": [
+"pareja de enamorados"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0044": {
+"c": [
+"azul",
+"negro",
+"rojo",
+"blanco"
+],
+"d": "Figura de burro azul con corazón rojo en la barriga.",
+"f": [
+"burro",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0045": {
+"c": [
+"rosa",
+"verde",
+"blanco",
+"café"
+],
+"d": "Ángel de fieltro con alitas y moño, suspendido sobre nube de corazones.",
+"f": [
+"ángel",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0046": {
+"c": [
+"azul",
+"amarillo",
+"rosa",
+"verde"
+],
+"d": "Adorno de fieltro con oso sosteniendo un reloj, abeja y mariposa con globos de colores.",
+"f": [
+"oso",
+"abeja",
+"mariposa"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0047": {
+"c": [
+"rojo",
+"negro",
+"blanco",
+"amarillo"
+],
+"d": "Adorno de fieltro con mickey y minnie abrazados sobre un corazón rojo.",
+"f": [
+"mickey mouse",
+"minnie mouse",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0048": {
+"c": [
+"naranja",
+"rojo",
+"blanco",
+"negro"
+],
+"d": "Adorno de gato naranja con ojos grandes y un corazón rojo en la mano.",
+"f": [
+"gato",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0049": {
+"c": [
+"rojo",
+"negro",
+"blanco",
+"rosa"
+],
+"d": "Pareja de ratones estilo mickey y minnie abrazados sobre un corazón rojo.",
+"f": [
+"ratón mickey",
+"ratona minnie"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0050": {
+"c": [
+"azul claro",
+"café",
+"rojo"
+],
+"d": "Adorno de fieltro con un mono abrazando un corazón rojo y corazones pequeños por el fondo.",
+"f": [
+"mono",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0052": {
+"c": [
+"amarillo",
+"blanco",
+"rojo",
+"azul"
+],
+"d": "Ángel de fieltro con campana roja y detalles en azul, con alas blancas y flequillo amarillo.",
+"f": [
+"ángel",
+"campana",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0053": {
+"c": [
+"rosa",
+"amarillo",
+"blanco",
+"azul"
+],
+"d": "Una hada con alas blancas sobre dos corazones rosas y un tocado amarillo.",
+"f": [
+"hada",
+"corazones"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0054": {
+"c": [
+"negro",
+"blanco",
+"rojo"
+],
+"d": "Figura de conejo y perro sosteniendo un corazón rojo con detalles navideños.",
+"f": [
+"perro",
+"conejo"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0055": {
+"c": [
+"blanco",
+"dorado",
+"azul",
+"rojo"
+],
+"d": "Ángel de fieltro con alas blancas, cabello dorado y un corazón rojo en la mano.",
+"f": [
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0056": {
+"c": [
+"azul claro",
+"blanco",
+"amarillo",
+"rosa"
+],
+"d": "Dos figuras de ángel y niño dios con vestiditos en tonos pastel, sobre base circular.",
+"f": [
+"ángel",
+"niño dios"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0057": {
+"c": [
+"blanco",
+"amarillo",
+"azul",
+"rosa"
+],
+"d": "Adorno de ángel de fieltro con alas blancas y aureola amarilla.",
+"f": [
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0058": {
+"c": [
+"blanco",
+"amarillo",
+"morado",
+"rosa"
+],
+"d": "Ángel de fieltro sentado con arpa y alas blancas, estilo navideño.",
+"f": [
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0059": {
+"c": [
+"blanco",
+"dorado",
+"rosa",
+"verde"
+],
+"d": "Pequeño ángel de fieltro con alas blancas sosteniendo un corazón rosa.",
+"f": [
+"ángel",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0060": {
+"c": [
+"blanco",
+"beige",
+"rojo",
+"azul"
+],
+"d": "Oso de fieltro con un corazón rojo que dice “Eres el amor de mi vida”.",
+"f": [
+"oso",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0061": {
+"c": [
+"rojo",
+"morado",
+"amarillo",
+"blanco"
+],
+"d": "Corazón rojo con un angelito de fieltro y texto de felicitación en el centro.",
+"f": [
+"corazón",
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0062": {
+"c": [
+"rojo",
+"blanco",
+"amarillo",
+"verde"
+],
+"d": "Ángel con alitas sosteniendo una flecha dentro de un corazón rojo decorativo.",
+"f": [
+"ángel",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0063": {
+"c": [
+"rojo",
+"blanco",
+"dorado",
+"café"
+],
+"d": "Ángel sosteniendo un corazón rojo con el texto “Te quiero”.",
+"f": [
+"ángel",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0064": {
+"c": [
+"azul",
+"verde",
+"rosa"
+],
+"d": "Adorno de niño sosteniendo globos de colores y un ratoncito de fieltro.",
+"f": [
+"niño",
+"ratón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0065": {
+"c": [
+"rojo",
+"azul",
+"blanco",
+"amarillo"
+],
+"d": "Adorno de corazón rojo con figura de perro sosteniendo un letrero de “te amo”.",
+"f": [
+"corazón",
+"perro"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0066": {
+"c": [
+"rojo",
+"blanco",
+"amarillo",
+"verde"
+],
+"d": "Adorno en forma de corazón con ratón sosteniendo un huevito y decoraciones de corazones.",
+"f": [
+"ratón mickey",
+"corazón",
+"huevito de pascua"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0067": {
+"c": [
+"rojo",
+"azul",
+"verde",
+"rosa"
+],
+"d": "Adorno de corazón rojo con ratón y koala abrazados y la palabra “te amo”.",
+"f": [
+"corazón",
+"ratoncito",
+"ratón koala"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0068": {
+"c": [
+"blanco",
+"dorado",
+"rojo",
+"coral"
+],
+"d": "Ángel de felpa con arco y corazones colgantes rojos y corales.",
+"f": [
+"ángel",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0069": {
+"c": [
+"blanco",
+"dorado",
+"rojo",
+"marrón"
+],
+"d": "Ángel de fieltro con alas blancas y aureola, sosteniendo un corazón con varitas y listones rojos.",
+"f": [
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0070": {
+"c": [
+"morado",
+"amarillo",
+"rojo",
+"blanco"
+],
+"d": "Adorno de corazón morado con Winnie Pooh y el texto “TE AMO”.",
+"f": [
+"winnie pooh",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0071": {
+"c": [
+"blanco",
+"amarillo",
+"rojo",
+"azul"
+],
+"d": "Ángel de fieltro sonriente con alas y manos levantadas, acompañado de corazones rojos.",
+"f": [
+"angel",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0072": {
+"c": [
+"rojo",
+"amarillo",
+"azul",
+"blanco"
+],
+"d": "Adorno de corazón con dos patos y la frase “Te amo”.",
+"f": [
+"pato"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0073": {
+"c": [
+"amarillo",
+"azul",
+"rojo",
+"blanco"
+],
+"d": "Dos minions con un corazón rojo que dice feliz día del amor.",
+"f": [
+"minion"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0074": {
+"c": [
+"amarillo",
+"rojo",
+"blanco",
+"café"
+],
+"d": "Pajarito de fieltro con alas y piernas rojas, sosteniendo una campanita.",
+"f": [
+"pajarito",
+"campana"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0075": {
+"c": [
+"rojo",
+"blanco",
+"verde",
+"amarillo"
+],
+"d": "Un conejo de fieltro sobre un gran corazón rojo decorado con flores y corazones pequeños.",
+"f": [
+"conejo",
+"corazón",
+"zanahoria",
+"estrella",
+"flor"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0076": {
+"c": [
+"beige",
+"dorado",
+"rojo",
+"blanco"
+],
+"d": "Ángel navideño sosteniendo un letrero con la palabra ¡TEAM!",
+"f": [
+"ángel",
+"letra t"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0077": {
+"c": [
+"rojo",
+"blanco",
+"azul",
+"amarillo"
+],
+"d": "Guirnalda en forma de corazón con una niña ángel y moños de corazones.",
+"f": [
+"niña con ángel",
+"corazones",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0078": {
+"c": [
+"rojo",
+"azul marino",
+"amarillo",
+"blanco"
+],
+"d": "Adorno de fieltro con bebé central y corazones, estrella y campanas alrededor.",
+"f": [
+"bebé",
+"estrella",
+"corazón",
+"campana"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0079": {
+"c": [
+"rojo",
+"blanco",
+"amarillo",
+"azul"
+],
+"d": "Ángel con alas blancas y corazón rojo con la leyenda Feliz Día del Mamá.",
+"f": [
+"ángel",
+"corazón",
+"estrellitas",
+"mamá noel",
+"duende",
+"reno"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0080": {
+"c": [
+"blanco",
+"rosa",
+"morado",
+"rojo"
+],
+"d": "Corazón decorativo con gatita blanca de moño rosa y mejillas rojas.",
+"f": [
+"gatita",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0081": {
+"c": [
+"rosa",
+"morado",
+"beige",
+"rojo"
+],
+"d": "Un osito con corazón y mariposas en tonos rosa y morado.",
+"f": [
+"osito",
+"corazones"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0082": {
+"c": [
+"rojo",
+"dorado",
+"blanco",
+"beige"
+],
+"d": "Adorno navideño con venado color beige y corazones rojos sobre una base circular roja.",
+"f": [
+"venado",
+"corazón",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0083": {
+"c": [
+"amarillo",
+"blanco",
+"rojo",
+"rosa"
+],
+"d": "Pequeño ángel de fieltro con alas blancas y corazón rojo que dice I Love Mama.",
+"f": [
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0084": {
+"c": [
+"amarillo",
+"blanco",
+"rojo"
+],
+"d": "Un ángel con alas blancas sostiene una estrella y un letrero rojo de feliz día del amor y amistad.",
+"f": [
+"ángel",
+"estrella",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0085": {
+"c": [
+"morado",
+"rosa",
+"blanco",
+"dorado"
+],
+"d": "Corazón rosa con ángel y glitter, con moñito y decoración de corazones y estrellitas.",
+"f": [
+"corazón",
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0086": {
+"c": [
+"morado",
+"rosa",
+"negro",
+"blanco"
+],
+"d": "Corazón de fieltro rosa con personaje tipo Minnie en morado y detalles de corazones.",
+"f": [
+"corazón",
+"mariposa"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0087": {
+"c": [
+"rosa",
+"rojo",
+"dorado",
+"negro"
+],
+"d": "Corazón de fieltro con silueta de ratón abrazando una flor y corazones decorativos.",
+"f": [
+"corazón",
+"ratón",
+"florero"
+],
+"m": "openai",
+"t": "centro de mesa"
+},
+"AMO26-0088": {
+"c": [
+"rojo",
+"blanco",
+"rosa",
+"amarillo"
+],
+"d": "Adorno de corazón rojo con Minnie y corazones blancos, en estilo tierno y romántico.",
+"f": [
+"minnie mouse"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0089": {
+"c": [
+"rojo",
+"rosa",
+"negro",
+"amarillo"
+],
+"d": "Adorno de corazón con diseño de Mickey y Minnie abrazando a un bebé.",
+"f": [
+"corazón",
+"ratón",
+"ratoncita",
+"bebe"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0090": {
+"c": [
+"morado",
+"rojo",
+"negro",
+"amarillo"
+],
+"d": "Corazón de fieltro con ratoncita estilo mickey y moño rojo con lunares, con estrellitas decorativas.",
+"f": [
+"ratoncita mickey",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0091": {
+"c": [
+"amarillo",
+"rojo",
+"morado",
+"beige"
+],
+"d": "Cojín decorativo con oso teddy y detalles de flores y corazones.",
+"f": [
+"oso teddy"
+],
+"m": "openai",
+"t": "cojín"
+},
+"AMO26-0092": {
+"c": [
+"rojo",
+"negro",
+"blanco",
+"amarillo"
+],
+"d": "Pareja de ratones de fieltro con corazoncitos y moño de lunares, en cuadro decorativo.",
+"f": [
+"ratón",
+"ratona"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0093": {
+"c": [
+"azul",
+"rosa",
+"amarillo",
+"blanco"
+],
+"d": "Adorno con un burro azul con flores en las manos y corazones alrededor.",
+"f": [
+"burro",
+"flores"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0094": {
+"c": [
+"beige",
+"rojo",
+"blanco",
+"amarillo"
+],
+"d": "Dos ángeles de fieltro con corazones rojos, alas blancas y posiciones de brazos distintas.",
+"f": [
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0095": {
+"c": [
+"café",
+"blanco",
+"rojo",
+"amarillo"
+],
+"d": "Dos ositos con alas, uno con moñito rojo y otro sosteniendo corazón, estilo tierno navideño.",
+"f": [
+"osito de peluche",
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0096": {
+"c": [
+"rosa",
+"rojo",
+"blanco",
+"negro"
+],
+"d": "Adorno de corazón de fieltro con mickey, minnie, flores y un banquito decorativo.",
+"f": [
+"minnie y mickey",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0097": {
+"c": [
+"rojo",
+"negro",
+"beige",
+"blanco"
+],
+"d": "Adornos en fieltro de mickey y minnie con moños rojos y alas, tipo cortina.",
+"f": [
+"mickey mouse",
+"minnie mouse"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0098": {
+"c": [
+"rojo",
+"rosa",
+"negro",
+"amarillo"
+],
+"d": "Adorno en forma de corazón con Minnie y Mickey abrazados.",
+"f": [
+"corazón",
+"minnie",
+"mickey"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0099": {
+"c": [
+"rojo",
+"negro",
+"blanco",
+"rosa"
+],
+"d": "Adorno con mickey y minnie sobre corazón rojo, con alas y detalles en flores.",
+"f": [
+"mickey mouse",
+"minnie mouse",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0100": {
+"c": [
+"negro",
+"rojo",
+"rosa",
+"amarillo"
+],
+"d": "Figura de ratones de estilo caricatura con flores decorativas en colores vivos.",
+"f": [
+"ratón mickey",
+"ratón minnie",
+"gato",
+"pato",
+"flor"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0101": {
+"c": [
+"negro",
+"rosa",
+"rojo",
+"amarillo"
+],
+"d": "Figura de minnie mouse con moño rojo y vestido rosa, sosteniendo una bolsita de regalo.",
+"f": [
+"minnie mouse"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0102": {
+"c": [
+"negro",
+"blanco",
+"rojo",
+"rosa"
+],
+"d": "Adorno de fieltro con un gato negro cargando un corazón rojo y globos de colores.",
+"f": [
+"gato",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0103": {
+"c": [
+"amarillo",
+"rojo",
+"rosa",
+"morado"
+],
+"d": "Corazones de fieltro con pajarito tipo piolín y mensajes para mamá.",
+"f": [
+"corazón",
+"pajarito",
+"tweety"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0104": {
+"c": [
+"negro",
+"blanco",
+"rojo"
+],
+"d": "Adorno de perrito negro con moño blanco y collar rojo que dice \"mamá\".",
+"f": [
+"perrito"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0105": {
+"c": [
+"rojo",
+"beige",
+"rosa",
+"blanco"
+],
+"d": "Adorno en forma de corazón rojo con un osito de peluche abrazándolo.",
+"f": [
+"oso"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0106": {
+"c": [
+"amarillo",
+"verde",
+"rosa",
+"morado"
+],
+"d": "Tres abejitas con moños y flores decoran una lámina con fondo blanco.",
+"f": [
+"abeja",
+"flor",
+"moño"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0107": {
+"c": [
+"morado",
+"verde",
+"blanco",
+"rosa"
+],
+"d": "Racimo de uvas de fieltro morado con hojas verdes, montado al centro de un adorno decorativo.",
+"f": [
+"racimo de uvas"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0108": {
+"c": [
+"morado",
+"negro",
+"blanco",
+"rosa"
+],
+"d": "Figura de mickey y minnie abrazados con un fondo de letras en forma de notas.",
+"f": [
+"mickey mouse",
+"minnie mouse"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0109": {
+"c": [
+"blanco",
+"negro",
+"amarillo",
+"rojo"
+],
+"d": "Dos animalitos de fieltro con formas recortadas, uno con traje y otro con lentes.",
+"f": [
+"gatito",
+"perro"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0110": {
+"c": [
+"café",
+"rojo",
+"blanco",
+"dorado"
+],
+"d": "Dos ositos de fieltro, uno con corazón rojo y otro con campanita dorada.",
+"f": [
+"oso",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0111": {
+"c": [
+"amarillo",
+"rosa",
+"morado",
+"blanco"
+],
+"d": "Adornos en fieltro con dos ángeles sosteniendo una estrella decorativa.",
+"f": [
+"niña ángel",
+"estrella"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0112": {
+"c": [
+"rojo",
+"gris",
+"blanco",
+"rosa"
+],
+"d": "Ositos de fieltro sostienen un corazón rojo con la frase amor infinito.",
+"f": [
+"oso"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0113": {
+"c": [
+"rojo",
+"amarillo",
+"azul",
+"verde"
+],
+"d": "Adorno de fieltro con un reno rojo sosteniendo un duende con gorro.",
+"f": [
+"reno",
+"duende"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0114": {
+"c": [
+"rosa",
+"blanco",
+"azul",
+"negro"
+],
+"d": "Adorno en forma de gatito blanco con mejillas rosadas y corazones rojos y azules.",
+"f": [
+"gatito",
+"corazones"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0115": {
+"c": [
+"rosa",
+"amarillo",
+"morado",
+"blanco"
+],
+"d": "Muñeca de fieltro con gran moño rosa y campanitas decorativas.",
+"f": [
+"muñeca",
+"moño",
+"campana"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0116": {
+"c": [
+"amarillo",
+"azul",
+"blanco"
+],
+"d": "Dos ángeles sobre flores decorativas, con vestidos en tonos azul y amarillo.",
+"f": [
+"flor",
+"ángel"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0117": {
+"c": [
+"amarillo",
+"blanco",
+"rojo"
+],
+"d": "Osito de peluche recostado sobre nube blanca con corazones rojos.",
+"f": [
+"osito",
+"corazón"
+],
+"m": "openai",
+"t": "adorno"
+},
+"AMO26-0118": {
+"c": [
+"amarillo",
+"rojo",
+"morado",
+"verde"
+],
+"d": "Letrero de osito amarillo con corazón rojo y un ramo de flores moradas.",
+"f": [
+"osito",
+"corazón",
+"letra",
+"ramo de flores"
+],
+"m": "openai",
+"t": "letrero decorativo"
+},
+"AMO26-0119": {
+"c": [
+"rosa",
+"azul",
+"marrón",
+"gris"
+],
+"d": "Panel circular y vertical con osito y pequeños animalitos decorativos en tonos pastel.",
+"f": [
+"osito",
+"ratón",
+"conejo"
+],
+"m": "openai",
+"t": "adorno"
+},
+"BAN26-0001": {
+"c": [
+"azul",
+"rosa",
+"blanco",
+"negro"
+],
+"d": "Banderín azul con conejos y pájaros entre tulipanes, con marco decorativo y círculo central.",
+"f": [
+"pájaro",
+"conejo"
+],
+"m": "openai",
+"t": "letrero de bienvenida"
+}
+}
