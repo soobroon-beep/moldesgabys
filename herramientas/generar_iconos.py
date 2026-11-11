@@ -1,35 +1,37 @@
 #!/usr/bin/env python3
-"""Iconos PWA hechos del diseño aprobado: logo completo con fondo negro.
+"""Íconos PNG para instalar Moldes Gaby´s: logo aprobado completo y fondo negro.
 
-La imagen aprobada se conserva íntegra. Únicamente se redimensiona para
-los tamaños que requieren Android, iPhone, accesos directos y favicons.
+Genera archivos PNG reales en assets/, versionados para evitar cachés antiguas.
+Es seguro ejecutarlo varias veces y no modifica el logotipo dentro de la página.
 """
 from pathlib import Path
 import sys
-
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT
-ASSETS = OUTPUT / "assets"
+DEST = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT
+ASSETS = DEST / "assets"
 ASSETS.mkdir(parents=True, exist_ok=True)
 SOURCE = ROOT / "assets" / "gabys-install-source.avif"
 
-def generate(size: int, name: str, safe_margin: float = 0.0) -> None:
-    with Image.open(SOURCE) as loaded:
-        src = loaded.convert("RGB")
-    canvas = Image.new("RGB", (size, size), (0, 0, 0))
-    side = round(size * (1.0 - 2.0 * safe_margin))
-    resized = src.resize((side, side), Image.Resampling.LANCZOS)
-    offset = ((size - side) // 2, (size - side) // 2)
-    canvas.paste(resized, offset)
-    destination = ASSETS / name
-    canvas.save(destination, format="PNG", optimize=True)
-    print(f"{name}: {size}x{size}, source={SOURCE.name}, margin={safe_margin:.2f}")
+with Image.open(SOURCE) as raw:
+    approved = raw.convert("RGB")
 
-generate(48, "gabys-app-48.png")
-generate(180, "gabys-app-180.png")
-generate(192, "gabys-app-192.png")
-generate(512, "gabys-app-512.png")
-# El icono adaptable necesita márgenes de seguridad dentro de la silueta.
-generate(512, "gabys-app-maskable-512.png", safe_margin=0.10)
+def write(size, filename, margin=0.0):
+    image = Image.new("RGB", (size, size), "black")
+    side = round(size * (1 - 2 * margin))
+    resized = approved.resize((side, side), Image.Resampling.LANCZOS)
+    at = ((size - side) // 2, (size - side) // 2)
+    image.paste(resized, at)
+    output = ASSETS / filename
+    image.save(output, format="PNG", optimize=True)
+    with Image.open(output) as check:
+        assert check.size == (size, size) and check.format == "PNG"
+    print(f"OK {output}: PNG {size}x{size}, {output.stat().st_size} bytes")
+
+# Archivo con nombre NUEVO: los navegadores actualizan los íconos que guardaron.
+write(48, "gabys-instalar-48-v3.png")
+write(180, "gabys-instalar-ios-180-v3.png")
+write(192, "gabys-instalar-192-v3.png")
+write(512, "gabys-instalar-512-v3.png")
+write(512, "gabys-instalar-maskable-512-v3.png", margin=0.14)

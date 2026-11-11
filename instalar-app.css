@@ -1,0 +1,39 @@
+/* Acceso de instalación discreto, sin alterar el diseño del catálogo.
+   Solo aparece en la parte inferior de la versión de celular. */
+.gabys-install-card{display:none}
+@media(max-width:780px){
+ .gabys-install-card{
+   display:flex;align-items:center;gap:11px;flex-wrap:wrap;
+   margin:10px 0 0;padding:11px 12px;
+   background:rgba(255,255,255,.065);
+   border:1px solid rgba(255,255,255,.20);
+   border-radius:14px;max-width:100%;
+ }
+ .gabys-install-icon{
+   width:48px;height:48px;object-fit:cover;display:block;
+   flex:0 0 48px;border-radius:12px;background:#000;
+   box-shadow:0 4px 14px rgba(0,0,0,.28);
+ }
+ .gabys-install-copy{flex:1;min-width:125px;display:flex;flex-direction:column;gap:3px}
+ .gabys-install-copy strong{font-size:11px;color:#fff;font-weight:800}
+ .gabys-install-copy span{font-size:10px;color:#e4cadb;line-height:1.4}
+ .gabys-install-button{
+   appearance:none;cursor:pointer;border:none;border-radius:10px;
+   background:#f7cade;color:#442136;font-size:11px;font-weight:850;
+   padding:10px 13px;min-height:39px;
+ }
+ .gabys-install-button:hover{background:#fff0f7}
+ .gabys-install-button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+ .gabys-install-button:disabled{opacity:.64;cursor:default}
+ .gabys-install-help{
+   flex-basis:100%;margin:0;padding:8px 0 0;
+   border-top:1px solid rgba(255,255,255,.16);
+   font-size:10px;line-height:1.5;color:#fff2f8;
+ }
+ .gabys-install-help[hidden]{display:none!important}
+}
+@media(max-width:380px){
+ .gabys-install-card{gap:8px}
+ .gabys-install-icon{width:42px;height:42px;flex-basis:42px}
+ .gabys-install-button{padding:9px 11px}
+}
